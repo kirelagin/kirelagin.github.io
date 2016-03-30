@@ -1,7 +1,7 @@
 $(document).ready(function() {
         $('.tooltip').tooltipster({
                 theme: 'tooltipster-noir',
-                position: 'right',
+                position: 'top',
                 animation: 'fade',
                 delay: 0,
                 speed: 600,

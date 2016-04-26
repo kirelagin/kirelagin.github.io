@@ -1,0 +1,3549 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>×</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/tooltipster.css" />
+        <link rel="stylesheet" href="css/themes/tooltipster-noir.css" />
+
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+
+        <ul id="users">
+<li class="user">
+<div class="uid">60674</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl (Singl n)) = Singl n
+concatOC (BiCons x y (Singl z)) = concat3OC x y z
+concatOC (BiCons x y (BiCons z v w)) = concat3OC (concat3OC x y z) v (concatOC w)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl x) (Singl y) z = BiCons x y z
+concat3OC (BiCons x y z) w v = BiCons x y (concat3OC z w v)
+concat3OC (Singl x) (BiCons y v w) z = BiCons x y (concat3OC (Singl v) w z)
+
+
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl (Singl n)) = Singl n
+concatOC (BiCons x y (Singl z)) = concat3OC x y z
+concatOC (BiCons x y (BiCons z v w)) = concat3OC (concat3OC x y z) v (concatOC w)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl x) (Singl y) z = BiCons x y z
+concat3OC (BiCons x y z) w v = BiCons x y (concat3OC z w v)
+concat3OC (Singl x) (BiCons y v w) z = BiCons x y (concat3OC (Singl v) w z)
+
+
+
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons x y (Singl z)) = concat3OC x y z
+concatOC (BiCons x y (BiCons z v w)) = concat3OC (concat3OC x y z) v (concatOC w)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1863811</div>
+<ul class="submissions">
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons x y z) = concat3OC x y (concatOC z)
+
+
+fromList :: [a] -&gt; OddCont a
+fromList [a] = Singl a
+fromList (x:y:z) = BiCons x y $ fromList z
+
+toList :: OddCont a -&gt; [a]
+toList (Singl e) = [e]
+toList (BiCons x y z) = x : y : toList z</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons x y z) = concat3OC x y (concatOC z)
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC x y z = fromList $ toList x ++ toList y ++ toList z
+
+fromList :: [a] -&gt; OddCont a
+fromList [a] = Singl a
+fromList (x:y:z) = BiCons x y $ fromList z
+
+toList :: OddCont a -&gt; [a]
+toList (Singl e) = [e]
+toList (BiCons x y z) = x : y : toList z</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">150149</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons x y (Singl z)) = BiCons x y z
+concatOC (BiCons x y z) = BiCons x y (concatOC z)
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons (Singl x) y z) = BiCons x y z
+concatOC (BiCons x (Singl y) z) = BiCons x y z
+concatOC (BiCons x y (Singl z)) = BiCons x y z
+concatOC (BiCons x y z) = BiCons (concatOC x) (concatOC y) (concatOC z)
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons (Singl x) y z) = BiCons x y z
+concatOC (BiCons x (Singl y) z) = BiCons x y z
+concatOC (BiCons (Singl x) (Singl y) z) = BiCons x y z
+concatOC (BiCons x y (Singl z)) = BiCons x y z
+concatOC (BiCons (Singl x) y (Singl z)) = BiCons x y z
+concatOC (BiCons x (Singl y) (Singl z)) = BiCons x y z
+concatOC (BiCons (Singl x) (Singl y) (Singl z)) = BiCons x y z
+concatOC (BiCons x y z) = BiCons (concatOC x) (concatOC y) (concatOC z)
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons (Singl x) y z) = BiCons x y z
+concatOC (BiCons x (Singl y) z) = BiCons x y z
+concatOC (BiCons (Singl x) (Singl y) z) = BiCons x y z
+concatOC (BiCons x y (Singl z)) = BiCons x y z
+concatOC (BiCons (Singl x) y (Singl z)) = BiCons x y z
+concatOC (BiCons x (Singl y) (Singl z)) = BiCons x y z
+concatOC (BiCons (Singl x) (Singl y) (Singl z)) = BiCons x y z
+concatOC (BiCons (BiCons one two three) y z) = BiCons (concatOC (BiCons one two three) y z
+concatOC (BiCons x (BiCons one two three) z) = BiCons x (concatOC (BiCons one two three) z
+concatOC (BiCons (BiCons one two three) (BiCons four five six) z = BiCons (concatOC (BiCons one two three)) (concatOC (BiCons four five six)) z)
+concatOC (BiCons x y (BiCons one tow three) = BiCons x y (concatOC (BiCons one two three))
+concatOC (BiCons (BiCons one two three) y (BiCons four five six)) = BiCons (concatOC (BiCons one two three)) y (concatOC (BiCons four five six))
+concatOC (BiCons x (BiCons one two three) (BiCons four five six)) = BiCons x (concatOC (BiCons one two three)) (concatOC (BiCons four five six))
+concatOC (BiCons (BiCons one two three) (BiCons four five six) (BiCons seven eight nine) = BiCons (concatOC (BiCons one two three)) (concatOC (BiCons four five six)) (concatOC (BiCons seven eight nine))
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons (Singl x) y z) = BiCons x y z
+concatOC (BiCons x (Singl y) z) = BiCons x y z
+concatOC (BiCons (Singl x) (Singl y) z) = BiCons x y z
+concatOC (BiCons x y (Singl z)) = BiCons x y z
+concatOC (BiCons (Singl x) y (Singl z)) = BiCons x y z
+concatOC (BiCons x (Singl y) (Singl z)) = BiCons x y z
+concatOC (BiCons (Singl x) (Singl y) (Singl z)) = BiCons x y z
+concatOC (BiCons (BiCons one two three) y z) = BiCons (concatOC (BiCons one two three)) y z
+concatOC (BiCons x (BiCons one two three) z) = BiCons x (concatOC (BiCons one two three)) z
+concatOC (BiCons (BiCons one two three) (BiCons four five six) z) = BiCons (concatOC (BiCons one two three)) (concatOC (BiCons four five six)) z
+concatOC (BiCons x y (BiCons one tow three)) = BiCons x y (concatOC (BiCons one two three))
+concatOC (BiCons (BiCons one two three) y (BiCons four five six)) = BiCons (concatOC (BiCons one two three)) y (concatOC (BiCons four five six))
+concatOC (BiCons x (BiCons one two three) (BiCons four five six)) = BiCons x (concatOC (BiCons one two three)) (concatOC (BiCons four five six))
+concatOC (BiCons (BiCons one two three) (BiCons four five six) (BiCons seven eight nine) = BiCons (concatOC (BiCons one two three)) (concatOC (BiCons four five six)) (concatOC (BiCons seven eight nine))
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+
+concatOC (Singl x) = x
+concatOC (BiCons (Singl x) (Singl y) (Singl z)) = BiCons x y z
+concatOC (BiCons (Singl x) (Singl y) (BiCons one two three)) = BiCons x y (concatOC(BiCons (Singl one) (Singl two) three))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+
+concatOC (Singl x) = x
+concatOC (BiCons (Singl x) (Singl y) (Singl z)) = BiCons x y z
+concatOC (BiCons (Singl x) (Singl y) (BiCons one two three)) = BiCons x y (concatOC(BiCons one two three))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+
+concatOC (Singl x) = x
+concatOC (BiCons (Singl x) (Singl y) (Singl z)) = BiCons x y z
+concatOC (BiCons (BiCons one two three) (Singl y) (Singl z)) = BiCons (concatOC(BiCons one two three)) y z
+concatOC (BiCons (Singl x) (Singl y) (BiCons one two three)) = BiCons x y (concatOC(BiCons one two three))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+data EvenCont a = Pair a a | EvenCons a a (EvenCont a) deriving (Eq, Show)
+
+headOC :: OddCont a -&gt; a
+headOC (Singl x) = x
+headOC (BiCons x _ _) = x
+
+tailOC :: OddCont a -&gt; EvenCont a
+tailOC (Singl x) = Pair x x
+tailOC (BiCons x y (Singl z)) = Pair y z
+tailOC (BiCons x y z) = EvenCons y (headOC z) (tailOC z)
+
+mergeToEven :: OddCont a -&gt; OddCont a -&gt; EvenCont a
+mergeToEven (Singl x) (Singl y) = Pair x y
+mergeToEven (Singl x) (BiCons y z (Singl rest)) = EvenCons x y (Pair z rest)
+mergeToEven (Singl x) (BiCons y z rest) = EvenCons x y (EvenCons z (headOC rest) (tailOC rest))
+mergeToEven (BiCons x y (Singl z)) (Singl rest) = EvenCons x y (Pair z rest)
+mergeToEven (BiCons x y z) rest = EvenCons x y (mergeToEven z rest)
+
+extendOdd :: OddCont a -&gt; EvenCont a -&gt; OddCont a
+extendOdd (Singl x) (Pair y z) = BiCons x y (Singl z)
+extendOdd (Singl x) (EvenCons y z rest) = BiCons x y (extendOdd (Singl z) rest)
+extendOdd (BiCons x y z) rest = BiCons x y (extendOdd z rest)
+
+
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+
+concatOC (Singl x) = x
+
+concatOC (BiCons (Singl x) (Singl y) (Singl z)) = BiCons x y z
+concatOC (BiCons (Singl x) (Singl y) (BiCons one two three)) = BiCons x y (concatOC (BiCons one two three))
+concatOC (BiCons (Singl x) (BiCons one two three) (Singl z)) = BiCons x one (extendOdd (Single two) (mergeToEven three z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+data EvenCont a = Pair a a | EvenCons a a (EvenCont a) deriving (Eq, Show)
+
+headOC :: OddCont a -&gt; a
+headOC (Singl x) = x
+headOC (BiCons x _ _) = x
+
+tailOC :: OddCont a -&gt; EvenCont a
+tailOC (Singl x) = Pair x x
+tailOC (BiCons x y (Singl z)) = Pair y z
+tailOC (BiCons x y z) = EvenCons y (headOC z) (tailOC z)
+
+mergeToEven :: OddCont a -&gt; OddCont a -&gt; EvenCont a
+mergeToEven (Singl x) (Singl y) = Pair x y
+mergeToEven (Singl x) (BiCons y z (Singl rest)) = EvenCons x y (Pair z rest)
+mergeToEven (Singl x) (BiCons y z rest) = EvenCons x y (EvenCons z (headOC rest) (tailOC rest))
+mergeToEven (BiCons x y (Singl z)) (Singl rest) = EvenCons x y (Pair z rest)
+mergeToEven (BiCons x y z) rest = EvenCons x y (mergeToEven z rest)
+
+extendOdd :: OddCont a -&gt; EvenCont a -&gt; OddCont a
+extendOdd (Singl x) (Pair y z) = BiCons x y (Singl z)
+extendOdd (Singl x) (EvenCons y z rest) = BiCons x y (extendOdd (Singl z) rest)
+extendOdd (BiCons x y z) rest = BiCons x y (extendOdd z rest)
+
+
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+
+concatOC (Singl x) = x
+
+concatOC (BiCons (Singl x) (Singl y) (Singl z)) = BiCons x y z
+concatOC (BiCons (Singl x) (Singl y) (BiCons one two three)) = BiCons x y (concatOC (BiCons one two three))
+concatOC (BiCons (Singl x) (BiCons one two three) (Singl z)) = BiCons x one (extendOdd (Single two) (mergeToEven three z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+data EvenCont a = Pair a a | EvenCons a a (EvenCont a) deriving (Eq, Show)
+
+headOC :: OddCont a -&gt; a
+headOC (Singl x) = x
+headOC (BiCons x _ _) = x
+
+tailOC :: OddCont a -&gt; EvenCont a
+tailOC (Singl x) = Pair x x
+tailOC (BiCons x y (Singl z)) = Pair y z
+tailOC (BiCons x y z) = EvenCons y (headOC z) (tailOC z)
+
+mergeToEven :: OddCont a -&gt; OddCont a -&gt; EvenCont a
+mergeToEven (Singl x) (Singl y) = Pair x y
+mergeToEven (Singl x) (BiCons y z (Singl rest)) = EvenCons x y (Pair z rest)
+mergeToEven (Singl x) (BiCons y z rest) = EvenCons x y (EvenCons z (headOC rest) (tailOC rest))
+mergeToEven (BiCons x y (Singl z)) (Singl rest) = EvenCons x y (Pair z rest)
+mergeToEven (BiCons x y z) rest = EvenCons x y (mergeToEven z rest)
+
+extendOdd :: OddCont a -&gt; EvenCont a -&gt; OddCont a
+extendOdd (Singl x) (Pair y z) = BiCons x y (Singl z)
+extendOdd (Singl x) (EvenCons y z rest) = BiCons x y (extendOdd (Singl z) rest)
+extendOdd (BiCons x y z) rest = BiCons x y (extendOdd z rest)
+
+
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+
+concatOC (Singl x) = x
+
+concatOC (BiCons (Singl x) (Singl y) (Singl z)) = BiCons x y z
+concatOC (BiCons (Singl x) (Singl y) (BiCons one two three)) = BiCons x y (concatOC (BiCons one two three))
+concatOC (BiCons (Singl x) (BiCons one two three) (Singl z)) = BiCons x one (extendOdd (Singl two) (mergeToEven three z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+data EvenCont a = Pair a a | EvenCons a a (EvenCont a) deriving (Eq, Show)
+
+headOC :: OddCont a -&gt; a
+headOC (Singl x) = x
+headOC (BiCons x _ _) = x
+
+tailOC :: OddCont a -&gt; EvenCont a
+tailOC (Singl x) = Pair x x
+tailOC (BiCons x y (Singl z)) = Pair y z
+tailOC (BiCons x y z) = EvenCons y (headOC z) (tailOC z)
+
+mergeToEven :: OddCont a -&gt; OddCont a -&gt; EvenCont a
+mergeToEven (Singl x) (Singl y) = Pair x y
+mergeToEven (Singl x) (BiCons y z (Singl rest)) = EvenCons x y (Pair z rest)
+mergeToEven (Singl x) (BiCons y z rest) = EvenCons x y (EvenCons z (headOC rest) (tailOC rest))
+mergeToEven (BiCons x y (Singl z)) (Singl rest) = EvenCons x y (Pair z rest)
+mergeToEven (BiCons x y z) rest = EvenCons x y (mergeToEven z rest)
+
+extendOdd :: OddCont a -&gt; EvenCont a -&gt; OddCont a
+extendOdd (Singl x) (Pair y z) = BiCons x y (Singl z)
+extendOdd (Singl x) (EvenCons y z rest) = BiCons x y (extendOdd (Singl z) rest)
+extendOdd (BiCons x y z) rest = BiCons x y (extendOdd z rest)
+
+
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+
+concatOC (Singl x) = x
+
+concatOC (BiCons (Singl x) (Singl y) (Singl z)) = BiCons x y z
+concatOC (BiCons (Singl x) (Singl y) (BiCons one two three)) = BiCons x y (concatOC (BiCons one two three))
+concatOC (BiCons (Singl x) (BiCons one two three) (Singl z)) = BiCons x one (extendOdd (Singl two) (mergeToEven three z))
+concatOC (BiCons (Singl x) (BiCons one two three) (BiCons four five six)) = BiCons x one (extendOdd (Singl two) (mergeToEven three (concatOC (BiCons four five six))))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+data EvenCont a = Pair a a | EvenCons a a (EvenCont a) deriving (Eq, Show)
+
+headOC :: OddCont a -&gt; a
+headOC (Singl x) = x
+headOC (BiCons x _ _) = x
+
+tailOC :: OddCont a -&gt; EvenCont a
+tailOC (Singl x) = Pair x x
+tailOC (BiCons x y (Singl z)) = Pair y z
+tailOC (BiCons x y z) = EvenCons y (headOC z) (tailOC z)
+
+mergeToEven :: OddCont a -&gt; OddCont a -&gt; EvenCont a
+mergeToEven (Singl x) (Singl y) = Pair x y
+mergeToEven (Singl x) (BiCons y z (Singl rest)) = EvenCons x y (Pair z rest)
+mergeToEven (Singl x) (BiCons y z rest) = EvenCons x y (EvenCons z (headOC rest) (tailOC rest))
+mergeToEven (BiCons x y (Singl z)) (Singl rest) = EvenCons x y (Pair z rest)
+mergeToEven (BiCons x y z) rest = EvenCons x y (mergeToEven z rest)
+
+extendOdd :: OddCont a -&gt; EvenCont a -&gt; OddCont a
+extendOdd (Singl x) (Pair y z) = BiCons x y (Singl z)
+extendOdd (Singl x) (EvenCons y z rest) = BiCons x y (extendOdd (Singl z) rest)
+extendOdd (BiCons x y z) rest = BiCons x y (extendOdd z rest)
+
+
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+
+concatOC (Singl x) = x
+
+concatOC (BiCons (Singl x) (Singl y) (Singl z)) = BiCons x y z
+concatOC (BiCons (Singl x) (Singl y) (BiCons one two three)) = BiCons x y (concatOC (BiCons one two three))
+concatOC (BiCons (Singl x) (BiCons one two three) (Singl z)) = BiCons x one (extendOdd (Singl two) (mergeToEven three z))
+concatOC (BiCons (Singl x) (BiCons one two three) (BiCons four five six)) = BiCons x one (concat3OC (Singl two) three (concatOC (BiCons four five six)))
+concatOC (BiCons (BiCons one two three) (Singl y) (Singl z)) = BiCons one two (extendOdd three (mergeToEven (Singl y) z))
+concatOC (BiCons (BiCons one two three) (Singl y) (BiCons four five six)) = BiCons one two (concat3OC three (Singl y) (concatOC (BiCons four five six)))
+concatOC (BiCons (BiCons one two three) (BiCons four five six) (Singl z)) = BiCons one two (concat3OC(concat3OC three (Singl four) (Singl five)) six z)
+concatOC (BiCons (BiCons one two three) (BiCons four five six) (BiCons seven eight nine)) = BiCons one two (concat3OC(concat3OC three (Singl four) (Singl five)) six (concatOC(BiCons seven eight nine)))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+data EvenCont a = Pair a a | EvenCons a a (EvenCont a) deriving (Eq, Show)
+
+headOC :: OddCont a -&gt; a
+headOC (Singl x) = x
+headOC (BiCons x _ _) = x
+
+tailOC :: OddCont a -&gt; EvenCont a
+tailOC (Singl x) = Pair x x
+tailOC (BiCons x y (Singl z)) = Pair y z
+tailOC (BiCons x y z) = EvenCons y (headOC z) (tailOC z)
+
+mergeToEven :: OddCont a -&gt; OddCont a -&gt; EvenCont a
+mergeToEven (Singl x) (Singl y) = Pair x y
+mergeToEven (Singl x) (BiCons y z (Singl rest)) = EvenCons x y (Pair z rest)
+mergeToEven (Singl x) (BiCons y z rest) = EvenCons x y (EvenCons z (headOC rest) (tailOC rest))
+mergeToEven (BiCons x y (Singl z)) (Singl rest) = EvenCons x y (Pair z rest)
+mergeToEven (BiCons x y z) rest = EvenCons x y (mergeToEven z rest)
+
+extendOdd :: OddCont a -&gt; EvenCont a -&gt; OddCont a
+extendOdd (Singl x) (Pair y z) = BiCons x y (Singl z)
+extendOdd (Singl x) (EvenCons y z rest) = BiCons x y (extendOdd (Singl z) rest)
+extendOdd (BiCons x y z) rest = BiCons x y (extendOdd z rest)
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC x y z = extendOdd x (mergeToEven y z)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+
+concatOC (Singl x) = x
+
+concatOC (BiCons (Singl x) (Singl y) (Singl z)) = BiCons x y z
+concatOC (BiCons (Singl x) (Singl y) (BiCons one two three)) = BiCons x y (concatOC (BiCons one two three))
+concatOC (BiCons (Singl x) (BiCons one two three) (Singl z)) = BiCons x one (extendOdd (Singl two) (mergeToEven three z))
+concatOC (BiCons (Singl x) (BiCons one two three) (BiCons four five six)) = BiCons x one (concat3OC (Singl two) three (concatOC (BiCons four five six)))
+concatOC (BiCons (BiCons one two three) (Singl y) (Singl z)) = BiCons one two (extendOdd three (mergeToEven (Singl y) z))
+concatOC (BiCons (BiCons one two three) (Singl y) (BiCons four five six)) = BiCons one two (concat3OC three (Singl y) (concatOC (BiCons four five six)))
+concatOC (BiCons (BiCons one two three) (BiCons four five six) (Singl z)) = BiCons one two (concat3OC(concat3OC three (Singl four) (Singl five)) six z)
+concatOC (BiCons (BiCons one two three) (BiCons four five six) (BiCons seven eight nine)) = BiCons one two (concat3OC(concat3OC three (Singl four) (Singl five)) six (concatOC(BiCons seven eight nine)))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1880838</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons x y z) b c = BiCons x y (concat3OC z b c)
+concat3OC (Singl a) (Singl b) (Singl c) = BiCons a b (Singl c)
+concat3OC (Singl a) (BiCons x y z) c = BiCons a x (concat3OC (Singl y) z c)
+concat3OC (Singl a) (Singl b) c = BiCons a b c
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons x y (Singl z)) = concat3OC x y z
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons x y z) b c = BiCons x y (concat3OC z b c)
+concat3OC (Singl a) (Singl b) (Singl c) = BiCons a b (Singl c)
+concat3OC (Singl a) (BiCons x y z) c = BiCons a x (concat3OC (Singl y) z c)
+concat3OC (Singl a) (Singl b) c = BiCons a b c
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons x y (Singl z)) = concat3OC x y z
+concatOC (BiCons x y (BiCons a b c)) = concat3OC x y (concatOC (BiCons a b c))
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1945481</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a
+concatOC (BiCons a1 a2 a3) = BiCons (ConcatOC a1) (ConcatOC a2) (ConcatOC a3)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a
+concatOC (BiCons a1 a2 a3) = BiCons (concatOC a1) (concatOC a2) (concatOC a3)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1408781</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl a) (Singl b) c = BiCons a b c
+concat3OC (Singl a) (BiCons b c d) e = BiCons a b (concat3OC (Singl c) d e)
+concat3OC (BiCons a b c) d f = BiCons a b (concat3OC c d f)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a
+concatOC (BiCons a b c) = concat3OC a b c</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl a) (Singl b) c = BiCons a b c
+concat3OC (Singl a) (BiCons b c d) e = BiCons a b (concat3OC (Singl c) d e)
+concat3OC (BiCons a b c) d f = BiCons a b (concat3OC c d f)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a
+concatOC (BiCons a b c) = concat3OC (a b c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl a) (Singl b) c = BiCons a b c
+concat3OC (Singl a) (BiCons b c d) e = BiCons a b (concat3OC (Singl c) d e)
+concat3OC (BiCons a b c) d f = BiCons a b (concat3OC c d f)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a
+concatOC (BiCons a b (Singl c)) = concat3OC a b c</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl a) (Singl b) c = BiCons a b c
+concat3OC (Singl a) (BiCons b c d) e = BiCons a b (concat3OC (Singl c) d e)
+concat3OC (BiCons a b c) d f = BiCons a b (concat3OC c d f)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a
+concatOC (BiCons a b (Singl c)) = concat3OC a b c
+concatOC (BiCons a b (BiCons c d (Singl f))) = concat3OC (concat3OC a b c) d f</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl a) (Singl b) c = BiCons a b c
+concat3OC (Singl a) (BiCons b c d) e = BiCons a b (concat3OC (Singl c) d e)
+concat3OC (BiCons a b c) d f = BiCons a b (concat3OC c d f)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a
+concatOC (BiCons a b c) = foldrOC (concat3OC a) b c</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f x0 (Singl r) = f r x0
+foldrOC f x0 (BiCons a d c) = f a (f d (foldrOC f x0 c))
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl a) (Singl b) c = BiCons a b c
+concat3OC (Singl a) (BiCons b c d) e = BiCons a b (concat3OC (Singl c) d e)
+concat3OC (BiCons a b c) d f = BiCons a b (concat3OC c d f)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a
+concatOC (BiCons a b c) = foldrOC (concat3OC a) b c</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f x0 (Singl r) = f r x0
+foldrOC f x0 (BiCons a d c) = f a (f d (foldrOC f x0 c))
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl a) (Singl b) c = BiCons a b c
+concat3OC (Singl a) (BiCons b c d) e = BiCons a b (concat3OC (Singl c) d e)
+concat3OC (BiCons a b c) d f = BiCons a b (concat3OC c d f)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a
+concatOC (BiCons a b c) = foldrOC (concat3OC a) (concatOC c) (Singl b)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">343822</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC a b c = hlp a b c where
+  hlp (BiCons a1 b1 c1) a2 a3 = BiCons a1 b1 (hlp c1 a2 a3)
+  hlp (Singl a1) (BiCons a2 b2 c2) a3 = BiCons a1 a2 (hlp2 b2 c2 a3)
+  hlp (Singl a1) (Singl a2) a3 = BiCons a1 a2 (hlp3 a3)
+
+  hlp2 x (BiCons a2 b2 c2) a3 = BiCons x a2 (hlp2 b2 c2 a3)
+  hlp2 x (Singl a2) a3 = BiCons x a2 (hlp3 a3)
+
+  hlp3 (BiCons a3 b3 c3) = BiCons a3 b3 (hlp3 c3)
+  hlp3 (Singl a3) = Singl a3
+
+
+headOC a = hlp a where
+  hlp (Singl a) = a
+  hlp (BiCons a b c) = a
+
+lastOC :: OddCont a -&gt; a
+lastOC a = hlp a where
+  hlp (Singl a) = a
+  hlp (BiCons a b c) = hlp c
+
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC a = hlp a where
+  hlp (Singl a) = a
+  hlp (BiCons a b c) = concat3OC a b (hlp c)
+
+
+
+lastOC :: OddCont a -&gt; a
+lastOC a = hlp a where
+  hlp (Singl a) = a
+  hlp (BiCons a b c) = hlp c</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+concat3OC a b c = hlp a b c where
+  hlp (BiCons a1 b1 c1) a2 a3 = BiCons a1 b1 (hlp c1 a2 a3)
+  hlp (Singl a1) (BiCons a2 b2 c2) a3 = BiCons a1 a2 (hlp2 b2 c2 a3)
+  hlp (Singl a1) (Singl a2) a3 = BiCons a1 a2 (hlp3 a3)
+
+  hlp2 x (BiCons a2 b2 c2) a3 = BiCons x a2 (hlp2 b2 c2 a3)
+  hlp2 x (Singl a2) a3 = BiCons x a2 (hlp3 a3)
+
+  hlp3 (BiCons a3 b3 c3) = BiCons a3 b3 (hlp3 c3)
+  hlp3 (Singl a3) = Singl a3
+
+
+headOC a = hlp a where
+  hlp (Singl a) = a
+  hlp (BiCons a b c) = a
+
+lastOC :: OddCont a -&gt; a
+lastOC a = hlp a where
+  hlp (Singl a) = a
+  hlp (BiCons a b c) = hlp c
+
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC a = hlp a where
+  hlp (Singl a) = a
+  hlp (BiCons a b c) = concat3OC a b (hlp c)
+
+
+
+lastOC :: OddCont a -&gt; a
+lastOC a = hlp a where
+  hlp (Singl a) = a
+  hlp (BiCons a b c) = hlp c</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+concat3OC a b c = hlp a b c where
+  hlp (BiCons a1 b1 c1) a2 a3 = BiCons a1 b1 (hlp c1 a2 a3)
+  hlp (Singl a1) (BiCons a2 b2 c2) a3 = BiCons a1 a2 (hlp2 b2 c2 a3)
+  hlp (Singl a1) (Singl a2) a3 = BiCons a1 a2 (hlp3 a3)
+
+  hlp2 x (BiCons a2 b2 c2) a3 = BiCons x a2 (hlp2 b2 c2 a3)
+  hlp2 x (Singl a2) a3 = BiCons x a2 (hlp3 a3)
+
+  hlp3 (BiCons a3 b3 c3) = BiCons a3 b3 (hlp3 c3)
+  hlp3 (Singl a3) = Singl a3
+
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC a = hlp a where
+  hlp (Singl a) = a
+  hlp (BiCons a b c) = concat3OC a b (hlp c)
+
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2115346</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl (Singl x))= Singl x
+concatOC (BiCons (BiCons a b (c)) (d) (x))= BiCons a b (concatOC $ BiCons (c) (d) (x) )
+concatOC (BiCons (Singl a) (BiCons d e (f)) (x))= BiCons a d (concatOC $ BiCons (Singl (e)) (f) (x) )
+concatOC (BiCons (Singl a) (Singl d) (Singl x)) = BiCons a d (x)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl (Singl x))= Singl x
+concatOC (BiCons (BiCons a b (c)) (d) (x))= BiCons a b (concatOC $ BiCons (c) (d) (x) )
+concatOC (BiCons (Singl a) (BiCons d e (f)) (x))= BiCons a d (concatOC $ BiCons (Singl (e)) (f) (x) )
+concatOC (BiCons (Singl a) (Singl d) (Singl x)) = BiCons a d x</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl (x))=  x
+concatOC (BiCons (BiCons a b (c)) (d) (x))= BiCons a b (concatOC $ BiCons (c) (d) (x) )
+concatOC (BiCons (Singl a) (BiCons d e (f)) (x))= BiCons a d (concatOC $ BiCons (Singl (e)) (f) (x) )
+concatOC (BiCons (Singl a) (Singl d) (Singl x)) = BiCons a d x</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl (x))=  x
+concatOC (BiCons (BiCons a b (c)) (d) (x))= BiCons a b (concatOC $ BiCons (c) (d) (x) )
+concatOC (BiCons (Singl a) (BiCons d e (f)) (x))= BiCons a d (concatOC $ BiCons (Singl e) (f) (x) )
+concatOC (BiCons (Singl a) (Singl d) (Singl x)) = BiCons a d x
+concatOC (BiCons (Singl a) (Singl d) (BiCons x y (z))) = BiCons a d (concatOC $ BiCons (x) (y) (z) )</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1164564</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>-- prev function
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b cc) oc2             oc3 = BiCons a b (concat3OC cc oc2 oc3)
+concat3OC (Singl a)       (BiCons b c dc) oc3 = BiCons a b (concat3OC (Singl c) dc oc3)
+concat3OC (Singl a)       (Singl b)       oc3 = BiCons a b oc3
+
+-- 8th task
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl oc) = oc
+concatOC (BiCons ac bc occ) = concat3OC ac bc (concatOC occ)
+
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">127769</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl cont) = cont
+concatOC (BiCons cont1 cont2 cont3) = concat3OC cont1 cont2 (concatOC cont3)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl x1) (Singl x2) (Singl x3) = BiCons x1 x2 (Singl x3)
+concat3OC (BiCons x1 x2 cont) cont2 cont3 =
+  BiCons x1 x2 (concat3OC cont cont2 cont3)
+concat3OC (Singl x1) (BiCons x2 x3 cont) cont2 =
+  BiCons x1 x2 (concat3OC (Singl x3) cont cont2)
+concat3OC (Singl x1) (Singl x2) (BiCons x3 x4 cont) =
+  BiCons x1 x2 (concat3OC (Singl x3) (Singl x4) cont)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl cont) = cont
+concatOC (BiCons cont1 cont2 cont3) = concat3OC cont1 cont2 (concatOC cont3)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">142490</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl a1) (Singl b1) (Singl c1)        = BiCons a1 b1 (Singl c1) 
+concat3OC (Singl a1) (Singl b1) (BiCons c1 c2 c3) = BiCons a1 b1 (BiCons c1 c2 c3)
+concat3OC (Singl a1) (BiCons b1 b2 b3) c1         = concat3OC (Singl a1) (Singl b1) (concat3OC (Singl b2) b3 c1) 
+concat3OC (BiCons a1 a2 a3) b1 c1                 = BiCons a1 a2 (concat3OC a3 b1 c1)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a
+concatOC (BiCons a1 a2 a3) = concat3OC a1 a2 (concatOC a3)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl a1) (Singl b1) c1 = BiCons a1 b1 c1
+concat3OC (Singl a1) (BiCons b1 b2 b3) c1 = concat3OC (Singl a1) (Singl b1) (concat3OC (Singl b2) b3 c1) 
+concat3OC (BiCons a1 a2 a3) b1 c1 = BiCons a1 a2 (concat3OC a3 b1 c1)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a
+concatOC (BiCons a1 a2 a3) = concat3OC a1 a2 (concatOC a3)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2076187</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC a b c = concatAcc a b c
+  where concatAcc (BiCons a1 a2 a3) b c = BiCons a1 a2 (concatAcc a3 b c)
+        concatAcc (Singl a) b c = concatAccP a b c
+        concatAccP prev (Singl b) c = BiCons prev b c
+        concatAccP prev (BiCons b1 b2 b3) c = BiCons prev b1 (concatAccP b2 b3 c)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2161692</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a 
+concatOC (BiCons tst1 tst2 (Singl tst3)) = concat3OC tst1 tst2 tst3</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a 
+concatOC (BiCons tst1 tst2 (Singl tst3)) = concat3OC tst1 tst2 tst3
+
+concat3OC (BiCons b1 b2 b3) a c = BiCons b1 b2 (concat3OC b3 a c)
+concat3OC (Singl b) (Singl a) c = BiCons b a c
+concat3OC (Singl a) b c = revOC a b c
+
+revOC fst (Singl a) b = BiCons fst a b
+revOC fst (BiCons a b c) d = (BiCons fst a (revOC b c d))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a 
+concatOC (BiCons tst1 tst2 (Singl tst3)) = concat3OC (concatOC tst1) (concatOC tst2) (concatOC tst3)
+
+concat3OC (BiCons b1 b2 b3) a c = BiCons b1 b2 (concat3OC b3 a c)
+concat3OC (Singl b) (Singl a) c = BiCons b a c
+concat3OC (Singl a) b c = revOC a b c
+
+revOC fst (Singl a) b = BiCons fst a b
+revOC fst (BiCons a b c) d = (BiCons fst a (revOC b c d))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a 
+concatOC (BiCons tst1 tst2 (Singl tst3)) = concat3OC tst1 tst2 tst3
+
+concat3OC (BiCons b1 b2 b3) a c = BiCons b1 b2 (concat3OC b3 a c)
+concat3OC (Singl b) (Singl a) c = BiCons b a c
+concat3OC (Singl a) b c = revOC a b c
+
+revOC fst (Singl a) b = BiCons fst a b
+revOC fst (BiCons a b c) d = (BiCons fst a (revOC b c d))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a 
+concatOC (BiCons tst1 tst2 tst3) = concat3OC tst1 tst2 (concatOC tst3)
+
+concat3OC (BiCons b1 b2 b3) a c = BiCons b1 b2 (concat3OC b3 a c)
+concat3OC (Singl b) (Singl a) c = BiCons b a c
+concat3OC (Singl a) b c = revOC a b c
+
+revOC fst (Singl a) b = BiCons fst a b
+revOC fst (BiCons a b c) d = (BiCons fst a (revOC b c d))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">748165</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl a) (Singl b) (Singl c) = BiCons a b (Singl c)
+concat3OC (BiCons a b c) (Singl d) (Singl e) = BiCons a b (concat3OC c (Singl d) (Singl e))
+concat3OC a (BiCons b c d) (Singl e) = concat3OC (concat3OC a (Singl b) (Singl c)) d (Singl e)
+concat3OC a (Singl b) (BiCons c d e) = concat3OC a (BiCons b c (Singl d)) e
+concat3OC a (BiCons b c d) (BiCons e f j) = concat3OC (concat3OC a (Singl b) (Singl c)) (concat3OC d (Singl e) (Singl f)) j
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons x y (Singl z)) = concat3OC x y z</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+toList :: OddCont a -&gt; [a]
+toList (Singl a) = [a]
+toList (BiCons a b c) = a : b : toList c
+
+fromList :: [a] -&gt; OddCont a
+fromList [a] = Singl a
+fromList (a:b:c) = BiCons a b (fromList c)
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC a b c = fromList $ toList a ++ toList b ++ toList c
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons x y (Singl z)) = concat3OC x y z</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+toList :: OddCont a -&gt; [a]
+toList (Singl a) = [a]
+toList (BiCons a b c) = a : b : toList c
+
+fromList :: [a] -&gt; OddCont a
+fromList [a] = Singl a
+fromList (a:b:c) = BiCons a b (fromList c)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = fromList $ toList a
+concatOC (BiCons a b (Singl c)) = fromList $ concat [toList a, toList b, toList c]</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+toList :: OddCont a -&gt; [a]
+toList (Singl a) = [a]
+toList (BiCons a b c) = a : b : toList c
+
+fromList :: [a] -&gt; OddCont a
+fromList [a] = Singl a
+fromList (a:b:c) = BiCons a b (fromList c)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a
+concatOC (BiCons a b (Singl c)) = fromList $ concat [toList a, toList b, toList c]</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">131873</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons oc1 oc2 ococ) = concat3OC oc1 oc2 (concatOC ococ)
+
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl a) (Singl b) x = BiCons a b x
+concat3OC (Singl a) (BiCons b c d) w = BiCons a b (concat3OC (Singl c) d w)
+concat3OC (BiCons a b c) d e = BiCons a b (concat3OC c d e)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1355682</div>
+<ul class="submissions">
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini oc@(Singl a) = f a ini
+foldrOC f ini (BiCons a b oc) = f a y
+  where y = f b z
+        z = foldrOC f ini oc
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC a b c = concat3ListToOC $ concat3OCtoList a b c
+
+concat3OCtoList :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; [a]
+concat3OCtoList a b c = foldrOC (:) bcs a
+  where
+    cs  = foldrOC (:) [] c
+    bcs = foldrOC (:) cs b
+
+concat3ListToOC :: [a] -&gt; OddCont a
+concat3ListToOC []       = error &quot;Even lenght list!!!&quot;
+concat3ListToOC [x]      = (Singl x)
+concat3ListToOC (x:y:xs) = (BiCons x y (concat3ListToOC xs))
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl (Singl a)) = (Singl a)
+concatOC (BiCons a b (Singl c)) = concat3ListToOC (concat3OCtoList a b c)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct warn bad" title="<code><pre>foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini oc@(Singl a) = f a ini
+foldrOC f ini (BiCons a b oc) = f a y
+  where y = f b z
+        z = foldrOC f ini oc
+
+buildOC :: ((a -&gt; [a] -&gt; [a]) -&gt; [t1] -&gt; t) -&gt; t
+buildOC g = g (:) []
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC a b c = concat3ListToOC $ concat3OCtoList a b c
+
+concatOCList :: OddCont (OddCont a) -&gt; [a]
+concatOCList xs = buildOC (\c n -&gt; foldrOC (\x y -&gt; foldrOC c y x) n xs)
+
+concat3OCtoList :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; [a]
+concat3OCtoList a b c = foldrOC (:) bcs a
+  where
+    cs  = foldrOC (:) [] c
+    bcs = foldrOC (:) cs b
+
+concat3ListToOC :: [a] -&gt; OddCont a
+concat3ListToOC []       = error &quot;Even lenght list!!!&quot;
+concat3ListToOC [x]      = (Singl x)
+concat3ListToOC (x:y:xs) = (BiCons x y (concat3ListToOC xs))
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC a = concat3ListToOC (concatOCList a)
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">151536</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b tail) x y= BiCons a b (concat3OC tail x y)
+concat3OC (Singl a) (BiCons ax bx tail) y= BiCons a ax (concat2OC bx tail y)
+concat3OC (Singl a) (Singl ax) y= BiCons a ax y
+
+concat2OC :: a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat2OC first (BiCons a b tail) x= BiCons first a (concat2OC b tail x)
+concat2OC first (Singl ax) y= BiCons first ax y
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons a b x) = concat3OC a b (concatOC x)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">436316</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC = helper 0 where
+    helper i (Singl _) = i + 1
+    helper i (BiCons _ _ oc) = helper (i + 2) oc
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC = helper 0 where
+    helper i (Singl _) = i + 1
+    helper i (BiCons _ _ oc) = helper (i + 1) oc
+    
+headOC :: OddCont a -&gt; a
+headOC (Singl a) = a
+headOC (BiCons a _ _) = a
+
+lastOC :: OddCont a -&gt; a
+lastOC (Singl a) = a
+lastOC (BiCons _ _ oc) = lastOC oc
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC = helper 0 where
+    helper i (Singl a) = i + a
+    helper i (BiCons a b oc) = helper (i + a + b) oc
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC func = helper where
+    helper (Singl a) = if (func a) then Just a else Nothing
+    helper (BiCons a b oc) = if (func a) then Just a else
+        if (func b) then Just b else
+            helper oc
+            
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n _ | n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+takeNCons n oc = helper n oc where
+    helper _ (Singl a) = Singl a
+    helper i (BiCons a b oc)
+        | i == 1 = Singl a
+        | otherwise = BiCons a b (helper (i - 1) oc)
+        
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f acc (Singl v) = f v acc
+foldrOC f acc (BiCons a b oc) = f a (f b (foldrOC f acc oc))
+
+replaceLastOC :: OddCont a -&gt; OddCont a -&gt; OddCont a
+replaceLastOC x (Singl _)= x
+replaceLastOC x (BiCons a b oc)= BiCons a b (replaceLastOC x oc)
+
+extendOC ::  a -&gt; a -&gt; OddCont a -&gt; OddCont a
+extendOC b e (Singl a) = BiCons b a (Singl e)
+extendOC bb ee (BiCons a b oc)= BiCons bb a (extendOC b ee oc)
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC a b c = flip replaceLastOC a . replaceLastOC c . extendOC (lastOC a) (headOC c) $ b
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons a b oc) = concat3OC a b (concatOC oc)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1948204</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons x y z) u v = BiCons x y (concat3OC z u v)
+concat3OC (Singl x) (BiCons y z u) v = BiCons x y (concat3OC (Singl z) u v)
+concat3OC (Singl x) (Singl y) v = BiCons x y v
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons x y z) = concat3OC x y (concatOC z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">402290</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl x) (Singl y) s = BiCons x y s
+concat3OC (Singl x1) (BiCons x2 y2 s2) s3 = BiCons x1 x2 (concat3OC (Singl y2) s2 s3)
+concat3OC (BiCons x y s1) s2 s3 = BiCons x y (concat3OC s1 s2 s3)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl s) = s
+concatOC (BiCons s1 s2 (Singl s3)) = concat3OC s1 s2 s3</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl x) (Singl y) s = BiCons x y s
+concat3OC (Singl x1) (BiCons x2 y2 s2) s3 = BiCons x1 x2 (concat3OC (Singl y2) s2 s3)
+concat3OC (BiCons x y s1) s2 s3 = BiCons x y (concat3OC s1 s2 s3)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl s) = s
+concatOC (BiCons s1 s2 (Singl s3)) = concat3OC s1 s2 s3
+concatOC (BiCons s1 s2 ss) = concat3OC s1 s2 (concatOC ss)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">761006</div>
+<ul class="submissions">
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+toList (Singl a)      = [a]
+toList (BiCons a b c) = [a, b] ++ toList c
+
+fromList ([x])  = Singl x
+fromList (x:y:xs) = BiCons x y (fromList xs) 
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC a b c = fromList ((toList a) ++ (toList b) ++ (toList c))
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f arg oc = foldr f arg (toList oc)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = fromList(toList a)
+concatOC (BiCons a b (Singl c)) = fromList((toList a) ++ (toList b) ++ (toList c))</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+toList (Singl a)      = [a]
+toList (BiCons a b c) = [a, b] ++ toList c
+
+fromList ([x])  = Singl x
+fromList (x:y:xs) = BiCons x y (fromList xs) 
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = fromList(toList a)
+concatOC (BiCons a b (Singl c)) = fromList((toList a) ++ (toList b) ++ (toList c))</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+toList (Singl a)      = [a]
+toList (BiCons a b c) = [a, b] ++ toList c
+
+fromList ([x])  = Singl x
+fromList (x:y:xs) = BiCons x y (fromList xs) 
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = fromList(toList a)
+concatOC (BiCons a b (Singl c)) = fromList((toList a) ++ (toList b) ++ (toList c))
+concatOC (BiCons a b (BiCons c d e)) = fromList((toList a) ++ (toList b) ++ (toList c))</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+toList (Singl a)      = [a]
+toList (BiCons a b c) = [a, b] ++ toList c
+
+fromList ([x])  = Singl x
+fromList (x:y:xs) = BiCons x y (fromList xs) 
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = fromList(toList a)
+concatOC (BiCons a b (Singl c)) = fromList((toList a) ++ (toList b) ++ (toList c))
+concatOC (BiCons a b (BiCons c d e)) = fromList((toList a) ++ (toList b) ++ (toList c) ++ (toList d) ++ (toList e))</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+toList (Singl a)      = [a]
+toList (BiCons a b c) = [a, b] ++ toList c
+
+fromList ([x])  = Singl x
+fromList (x:y:xs) = BiCons x y (fromList xs) 
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = fromList(toList a)
+concatOC (BiCons a b (Singl c)) = fromList((toList a) ++ (toList b) ++ (toList c))
+concatOC (BiCons a b (BiCons c d e)) = fromList((toList a) ++ (toList b) ++ concatOC (BiCons c d e))</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+toList (Singl a)      = [a]
+toList (BiCons a b c) = [a, b] ++ toList c
+
+fromList ([x])  = Singl x
+fromList (x:y:xs) = BiCons x y (fromList xs) 
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = fromList(toList a)
+concatOC (BiCons a b (Singl c)) = fromList((toList a) ++ (toList b) ++ (toList c))
+concatOC (BiCons a b x) = fromList((toList a) ++ (toList b) ++ concatOC x)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+toList (Singl a)      = [a]
+toList (BiCons a b c) = [a, b] ++ toList c
+
+fromList ([x])  = Singl x
+fromList (x:y:xs) = BiCons x y (fromList xs) 
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = fromList(toList a)
+concatOC (BiCons a b (Singl c)) = fromList((toList a) ++ (toList b) ++ (toList c))
+concatOC (BiCons a b x) = fromList((toList a) ++ (toList b) ++ toList(concatOC x))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">152495</div>
+<ul class="submissions">
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC x y z = build (conc ) where
+                                    take&#x27; (Singl a) = [a]
+                                    take&#x27; (BiCons a b c) = a:b:(take&#x27; c)
+                                    conc (BiCons x y z) = concat [take&#x27; x, take&#x27; y, conc z]
+                                    build [q] = Singl q
+                                    build (w:e:xs) = BiCons w e (build xs)
+                                                    </pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC x y z = build . conc  where
+                                    take&#x27; (Singl a) = [a]
+                                    take&#x27; (BiCons a b c) = a:b:(take&#x27; c)
+                                    conc (BiCons x y z) = concat [take&#x27; x, take&#x27; y, conc z]
+                                    build [q] = Singl q
+                                    build (w:e:xs) = BiCons w e (build xs)
+                                                    </pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC x y z = build . conc  where
+                                    take&#x27; (Singl a) = [a]
+                                    take&#x27; (BiCons a b c) = a:b:(take&#x27; c)
+                                    conc (Singl s) = take&#x27; s
+                                    conc (BiCons x y z) = concat [take&#x27; x, take&#x27; y, conc z]
+                                    build [q] = Singl q
+                                    build (w:e:xs) = BiCons w e (build xs)
+                                                    </pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC x y z = build . conc  where
+                                    take&#x27; (Singl a) = [a]
+                                    take&#x27; (BiCons a b c) = a:b:(take&#x27; c)
+                                    conc (Singl s) = take&#x27; s
+                                    conc (BiCons x&#x27; y&#x27; z&#x27;) = concat [take&#x27; x&#x27;, take&#x27; y&#x27;, conc z&#x27;]
+                                    build [q] = Singl q
+                                    build (w:e:xs) = BiCons w e (build xs)
+                                                    </pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC x y z = build . conc  where
+                                    take&#x27; (Singl a) = [a]
+                                    take&#x27; (BiCons a b c) = a:b:(take&#x27; c)
+                                    conc (Singl s) = [s]
+                                    conc (BiCons x&#x27; y&#x27; z&#x27;) = concat [take&#x27; x&#x27;, take&#x27; y&#x27;, conc z&#x27;]
+                                    build [q] = Singl q
+                                    build (w:e:xs) = BiCons w e (build xs)
+                                                    </pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC  = build . conc  where
+                                    take&#x27; (Singl a) = [a]
+                                    take&#x27; (BiCons a b c) = a:b:(take&#x27; c)
+                                    conc (Singl s) = [s]
+                                    conc (BiCons x&#x27; y&#x27; z&#x27;) = concat [take&#x27; x&#x27;, take&#x27; y&#x27;, conc z&#x27;]
+                                    build [q] = Singl q
+                                    build (w:e:xs) = BiCons w e (build xs)
+                                                    </pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC  = build . conc  where
+                                    take&#x27; (Singl a) = [a]
+                                    take&#x27; (BiCons a b c) = a:b:(take&#x27; c)
+                                    conc (Singl s) = [s]
+                                    conc (BiCons x&#x27; y&#x27; z&#x27;) = concat [take&#x27; x&#x27;, take&#x27; y&#x27;, conc z&#x27;]
+                                    build [q] = Singl q
+                                    build (w:e:xs) = BiCons w e (build xs)
+                                                    </pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC  = build ( conc)  where
+                                    take&#x27; (Singl a) = [a]
+                                    take&#x27; (BiCons a b c) = a:b:(take&#x27; c)
+                                    conc (Singl s) = [s]
+                                    conc (BiCons x&#x27; y&#x27; z&#x27;) = concat [take&#x27; x&#x27;, take&#x27; y&#x27;, conc z&#x27;]
+                                    build [q] = Singl q
+                                    build (w:e:xs) = BiCons w e (build xs)
+                                                    </pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC  = build ( conc)  where
+                                    take&#x27; (Singl a) = [a]
+                                    take&#x27; (BiCons a b c) = a:b:(take&#x27; c)
+                                    conc (Singl s) = take&#x27; s
+                                    conc (BiCons x&#x27; y&#x27; z&#x27;) = concat [take&#x27; x&#x27;, take&#x27; y&#x27;, conc z&#x27;]
+                                    build [q] = Singl q
+                                    build (w:e:xs) = BiCons w e (build xs)
+                                                    </pre></code>">&nbsp;</li>
+<li class="submission tooltip correct warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC  = build . conc  where
+                                    take&#x27; (Singl a) = [a]
+                                    take&#x27; (BiCons a b c) = a:b:(take&#x27; c)
+                                    conc (Singl s) = take&#x27; s
+                                    conc (BiCons x&#x27; y&#x27; z&#x27;) = concat [take&#x27; x&#x27;, take&#x27; y&#x27;, conc z&#x27;]
+                                    build [q] = Singl q
+                                    build (w:e:xs) = BiCons w e (build xs)
+                                                    </pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1823921</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl (Singl a)) = Singl a
+concatOC (Singl (BiCons a b (Singl c))) = BiCons a b (Singl c)
+concatOC (Singl (BiCons a b oc)) = BiCons a b (concatOC (Singl oc))
+concatOC (BiCons (Singl a) (Singl b) (Singl (Singl c))) = BiCons a b (Singl c)
+concatOC (BiCons (BiCons a b oc) oc2 oc3) = BiCons a b (concatOC (BiCons oc oc2 oc3))
+concatOC (BiCons (Singl a) (BiCons b c oc) oc2) = BiCons a b (concatOC (BiCons (Singl c) oc oc2))
+concatOC (BiCons (Singl a) (Singl b) (Singl (BiCons c d oc)) ) = BiCons a b (concatOC (BiCons (Singl c) (Singl d) (Singl oc)) )</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl (Singl a)) = Singl a
+concatOC (Singl (BiCons a b (Singl c))) = BiCons a b (Singl c)
+concatOC (Singl (BiCons a b oc)) = BiCons a b (concatOC (Singl oc))
+concatOC (BiCons (Singl a) (Singl b) (Singl (Singl c))) = BiCons a b (Singl c)
+concatOC (BiCons (BiCons a b oc) oc2 oc3) = BiCons a b (concatOC (BiCons oc oc2 oc3))
+concatOC (BiCons (Singl a) (BiCons b c oc) oc2) = BiCons a b (concatOC (BiCons (Singl c) oc oc2))
+concatOC (BiCons (Singl a) (Singl b) (Singl (BiCons c d oc)) ) = BiCons a b (concatOC (BiCons (Singl c) (Singl d) (Singl oc)) )
+
+concatOC (BiCons (Singl a) (Singl b) (BiCons c d (Singl oc)) ) = BiCons a b (concatOC (BiCons c d (Singl oc) ))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1055156</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a
+concatOC (BiCons x y z) = concat3OC x y (concatOC z)
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC cont1 cont2 cont3 = let
+           helper1 (Singl x) = helper2 x cont2
+           helper1 (BiCons x y z) = BiCons x y (helper1 z)
+           helper2 acc (Singl b) = BiCons acc b cont3
+           helper2 acc (BiCons x y z) = BiCons acc x (helper2 y z)
+           in
+           helper1 cont1</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2070199</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (BiCons tst1 tst2 ttt) = concat3OC tst1 tst2 (concatOC ttt)
+concatOC (Singl ttt) = ttt</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+concat2OC (BiCons a b c) tail = (a, (BiCons b d newtail)) where
+	(d, newtail) = concat2OC c tail
+concat2OC (Singl c) tail = (c,tail)
+
+concat3OC (Singl a) r2 r3 = (BiCons a b tail) where 
+	(b,tail) = concat2OC r2 r3
+concat3OC (BiCons a b c) r2 r3 = BiCons a b (concat3OC c r2 r3)
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (BiCons tst1 tst2 ttt) = concat3OC tst1 tst2 (concatOC ttt)
+concatOC (Singl ttt) = ttt</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2155448</div>
+<ul class="submissions">
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+toList :: OddCont a -&gt; [a]
+toList (Singl a) = [a]
+toList (BiCons a b tail) = a:b:toList tail
+
+fromList :: [a] -&gt; OddCont a
+fromList [a] = Singl a
+fromList (x:y:xs) = BiCons x y (fromList xs)
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC a b c = fromList $ (toList a) ++ (toList b) ++ (toList c)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl (Singl a)) = Singl a
+concatOC (BiCons a b (Singl c)) = concat3OC a b c</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+toList :: OddCont a -&gt; [a]
+toList (Singl a) = [a]
+toList (BiCons a b tail) = a:b:toList tail
+
+fromList :: [a] -&gt; OddCont a
+fromList [a] = Singl a
+fromList (x:y:xs) = BiCons x y (fromList xs)
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC a b c = fromList $ (toList a) ++ (toList b) ++ (toList c)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a
+concatOC (BiCons a b c) = concat3OC a b $ concatOC c</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2178233</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons x y z) = concat3OC x y z
+
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl x) (Singl y) z = BiCons x y z
+concat3OC x (BiCons y1 y2 ys) z = concat3OC x (Singl y1) (concat3OC (Singl y2) ys z)
+concat3OC (BiCons x1 x2 xs) y z = BiCons x1 x2 (concat3OC xs y z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons x y (Singl z)) = concat3OC x y z
+
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl x) (Singl y) z = BiCons x y z
+concat3OC x (BiCons y1 y2 ys) z = concat3OC x (Singl y1) (concat3OC (Singl y2) ys z)
+concat3OC (BiCons x1 x2 xs) y z = BiCons x1 x2 (concat3OC xs y z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons x y (Singl z)) = concat3OC x y z
+concatOC (BiCons x y (BiCons z)) = concat3OC x y z
+
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl x) (Singl y) z = BiCons x y z
+concat3OC x (BiCons y1 y2 ys) z = concat3OC x (Singl y1) (concat3OC (Singl y2) ys z)
+concat3OC (BiCons x1 x2 xs) y z = BiCons x1 x2 (concat3OC xs y z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons x y (Singl z)) = concat3OC x y z
+concatOC (BiCons x y (BiCons z1 z2 zs)) = concat3OC x y (concat3OC z1 z2 zs)
+
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl x) (Singl y) z = BiCons x y z
+concat3OC x (BiCons y1 y2 ys) z = concat3OC x (Singl y1) (concat3OC (Singl y2) ys z)
+concat3OC (BiCons x1 x2 xs) y z = BiCons x1 x2 (concat3OC xs y z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons x y z) = concat3OC x y (concatOC z)
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl x) (Singl y) z = BiCons x y z
+concat3OC x (BiCons y1 y2 ys) z = concat3OC x (Singl y1) (concat3OC (Singl y2) ys z)
+concat3OC (BiCons x1 x2 xs) y z = BiCons x1 x2 (concat3OC xs y z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">180410</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC Singl (Singl a) = Singl a
+concatOC BiCons (a b c) = Singl (concatOC a) Singl (concatOC a) BiCons(concatOC c)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC Singl (Singl a) = Singl a
+concatOC BiCons (a b c) = Singl (concatOC a) Singl (concatOC b) BiCons(concatOC c)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC Singl (Singl a) = concat Singl a
+concatOC BiCons (a b c) = Singl (concatOC a) Singl (concatOC b) BiCons(concatOC c)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC Singl (Singl a) = Singl(a)
+concatOC BiCons (a b c) = Singl (concatOC a) Singl (concatOC b) BiCons(concatOC c)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC Singl (Singl a) = Singl(a)
+concatOC BiCons (a b c) = concatOC a $ concatOC b $ BiCons(concatOC c)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC Singl (Singl a) = (Singl a)
+concatOC BiCons (a b c) = concatOC a $ concatOC b $ BiCons(concatOC c)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC Singl (Singl x) = (Singl x)
+concatOC BiCons (x y z) = concatOC x $ concatOC y $ BiCons(concatOC z)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC Singl (Singl x) = x
+concatOC BiCons (x y z) = concatOC x $ concatOC y $ BiCons(concatOC z)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC Singl (Singl x) = concatOC (Singl x)
+concatOC BiCons (x y z) = concatOC x $ concatOC y $ BiCons(concatOC z)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC Singl (Singl x) = concatOC (Singl x)
+concatOC (BiCons x y z) = concatOC (Singl x) $ concatOC (Singl y) $ BiCons(concatOC z)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC Singl (Singl x) = (Singl x)
+concatOC (BiCons x y z) = concatOC (Singl x) $ concatOC (Singl y) $ BiCons(concatOC z)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC Singl (Singl x) = Singl (x)
+concatOC (Singl a b)     = Singl(concat a b)
+concatOC (BiCons x y z) = concatOC (Singl x y) $ concatOC (BiCons z)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC Singl(Singl x) = Singl(x)
+concatOC (Singl a)(Singl b)     = Singl(concat a b)
+concatOC (BiCons x y z) = concatOC (x y) $ concatOC (BiCons z)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC Singl(Singl x)     = Singl(x)
+concatOC (Singl a)(Singl b) = Singl(concat a b)
+concatOC (BiCons x y z)     = concatOC x y $ concatOC z
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl(Singl x))   = Singl(x)
+concatOC (Singl x)          = Singl(x)
+concatOC (Singl a)(Singl b) = Singl(concat a b)
+concatOC (BiCons x y z)     = concatOC x y $ concatOC z
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl(Singl x))   = concatOC (Singl x)
+concatOC (Singl x)          = Singl(x)
+concatOC (Singl a)(Singl b) = Singl(concat a b)
+concatOC (BiCons x y z)     = concatOC (concatOC x y $ concatOC z)
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1375306</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons ax bx cx) y z = BiCons ax bx (concat3OC cx y z)
+concat3OC (Singl a) (BiCons ax bx cx) y = BiCons a ax (concat2OC bx cx y)
+concat3OC (Singl a) (Singl b) y = BiCons a b y
+
+concat2OC :: a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat2OC bx (Singl a) y = BiCons bx a y
+concat2OC dx (BiCons ax bx cx) y = BiCons dx ax (concat2OC bx cx y)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a
+concatOC (BiCons ax bx cx) = concat3OC ax bx (concatOC cx)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2340233</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl a) (Singl b) (Singl c) = BiCons a b (Singl c)
+concat3OC (BiCons a b c) (Singl d) (Singl e) = BiCons a b (concat3OC c (Singl d) (Singl e))
+concat3OC (Singl a) (BiCons b c d) (Singl e) = BiCons a b (concat3OC (Singl c) d (Singl e))
+concat3OC (Singl a) (Singl b) (BiCons c d e) = BiCons a b (concat3OC (Singl c) (Singl d) e)
+concat3OC (BiCons a b c) (BiCons d e f) (Singl g) = BiCons a b (concat3OC c (BiCons d e f) (Singl g))
+concat3OC (BiCons a b c) (Singl d) (BiCons e f g) = BiCons a b (concat3OC c (Singl d) (BiCons e f g))
+concat3OC (Singl a) (BiCons b c d) (BiCons e f g) = BiCons a b (concat3OC (Singl c) d (BiCons e f g))
+concat3OC (BiCons a b c) (BiCons d e f) (BiCons g h k) = BiCons a b (concat3OC c (BiCons d e f) (BiCons g h k))
+
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl tst1) = tst1
+concatOC (BiCons tst1 tst2 tst3) = concat3OC tst1 tst2 (concatOC tst3)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl tst1) = tst1
+concatOC (BiCons (Singl a) (Singl b) (Singl (Singl c))) = BiCons a b (Singl c)
+concatOC (BiCons (BiCons a b c) (Singl d) (Singl (Singl e))) = BiCons a b (concatOC (BiCons c (Singl d) (Singl (Singl e))))
+concatOC (BiCons (Singl a) (BiCons b c d) (Singl (Singl e))) = BiCons a b (concatOC (BiCons (Singl c) d (Singl (Singl e))))
+concatOC (BiCons (Singl a) (Singl b) (Singl (BiCons c d e))) = BiCons a b (concatOC (BiCons (Singl c) (Singl d) (Singl e)))
+concatOC (BiCons (BiCons a b c) (BiCons d e f) (Singl (Singl g))) = BiCons a b (concatOC (BiCons c (BiCons d e f) (Singl (Singl g))))
+concatOC (BiCons (BiCons a b c) (Singl d) (Singl (BiCons e f g))) = BiCons a b (concatOC (BiCons c (Singl d) (Singl (BiCons e f g))))
+concatOC (BiCons (Singl a) (BiCons b c d) (Singl (BiCons e f g))) = BiCons a b (concatOC (BiCons (Singl c) d (Singl (BiCons e f g))))
+concatOC (BiCons (BiCons a b c) (BiCons d e f) (Singl (BiCons g h k))) = BiCons a b (concatOC (BiCons c (BiCons d e f) (Singl (BiCons g h k))))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl tst1) = tst1
+concatOC (BiCons (Singl a) (Singl b) (Singl (Singl c))) = BiCons a b (Singl c)
+concatOC (BiCons (BiCons a b c) (Singl d) (Singl (Singl e))) = BiCons a b (concatOC (BiCons c (Singl d) (Singl (Singl e))))
+concatOC (BiCons (Singl a) (BiCons b c d) (Singl (Singl e))) = BiCons a b (concatOC (BiCons (Singl c) d (Singl (Singl e))))
+concatOC (BiCons (Singl a) (Singl b) (Singl (BiCons c d e))) = BiCons a b (concatOC (BiCons (Singl c) (Singl d) (Singl e)))
+concatOC (BiCons (BiCons a b c) (BiCons d e f) (Singl (Singl g))) = BiCons a b (concatOC (BiCons c (BiCons d e f) (Singl (Singl g))))
+concatOC (BiCons (BiCons a b c) (Singl d) (Singl (BiCons e f g))) = BiCons a b (concatOC (BiCons c (Singl d) (Singl (BiCons e f g))))
+concatOC (BiCons (Singl a) (BiCons b c d) (Singl (BiCons e f g))) = BiCons a b (concatOC (BiCons (Singl c) d (Singl (BiCons e f g))))
+concatOC (BiCons (BiCons a b c) (BiCons d e f) (Singl (BiCons g h k))) = BiCons a b (concatOC (BiCons c (BiCons d e f) (Singl (BiCons g h k))))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl tst1) = tst1
+concatOC (BiCons (Singl a) (Singl b) (Singl (Singl c))) = BiCons a b (Singl c)
+concatOC (BiCons (BiCons a b c) (Singl d) (Singl (Singl e))) = BiCons a b (concatOC (BiCons c (Singl d) (Singl (Singl e))))
+concatOC (BiCons (Singl a) (BiCons b c d) (Singl (Singl e))) = BiCons a b (concatOC (BiCons (Singl c) d (Singl (Singl e))))
+concatOC (BiCons (Singl a) (Singl b) (Singl (BiCons c d e))) = BiCons a b (concatOC (BiCons (Singl c) (Singl d) (Singl (Singl e)))
+concatOC (BiCons (BiCons a b c) (BiCons d e f) (Singl (Singl g))) = BiCons a b (concatOC (BiCons c (BiCons d e f) (Singl (Singl g))))
+concatOC (BiCons (BiCons a b c) (Singl d) (Singl (BiCons e f g))) = BiCons a b (concatOC (BiCons c (Singl d) (Singl (BiCons e f g))))
+concatOC (BiCons (Singl a) (BiCons b c d) (Singl (BiCons e f g))) = BiCons a b (concatOC (BiCons (Singl c) d (Singl (BiCons e f g))))
+concatOC (BiCons (BiCons a b c) (BiCons d e f) (Singl (BiCons g h k))) = BiCons a b (concatOC (BiCons c (BiCons d e f) (Singl (BiCons g h k))))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl tst1) = tst1
+concatOC (BiCons (Singl a) (Singl b) (Singl c)) = BiCons a b c
+concatOC (BiCons (BiCons a b c) (Singl d) (Singl e)) = BiCons a b (concatOC (BiCons c (Singl d) (Singl e)))
+concatOC (BiCons (Singl a) (BiCons b c d) (Singl e)) = BiCons a b (concatOC (BiCons (Singl c) d (Singl e)))
+concatOC (BiCons (BiCons a b c) (BiCons d e f) (Singl g)) = BiCons a b (concatOC (BiCons c (BiCons d e f) (Singl g)))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl tst1) = tst1
+concatOC (BiCons (Singl a) (Singl b) c) = BiCons a b (concatOC (c))
+concatOC (BiCons (BiCons a b c) (Singl d) e) = BiCons a b (concatOC (BiCons c (Singl d) (concatOC (Singl e))))
+concatOC (BiCons (Singl a) (BiCons b c d) e) = BiCons a b (concatOC (BiCons (Singl c) d (concatOC (Singl e))))
+concatOC (BiCons (BiCons a b c) (BiCons d e f) g) = BiCons a b (concatOC (BiCons c (BiCons d e f) (concatOC (Singl g))))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2081985</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a
+concatOC (BiCons x y others) =
+	toOddCont $ (toLst x) +++ (toLst y) +++ (toLst (concatOC others))
+
+data LstLike a = One a | Lst a (LstLike a) deriving (Eq,Show)
+toLst (Singl a) = One a
+toLst (BiCons a1 a2 others) = Lst a1 ( Lst a2 ( toLst others ) )
+toOddCont (One a) = Singl a
+toOddCont (Lst a1 ( Lst a2 others )) = BiCons a1 a2 (toOddCont others)
+(One a) +++ b = Lst a b
+(Lst a others) +++ b = Lst a (others +++ b)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">165956</div>
+<ul class="submissions">
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+toList :: OddCont a -&gt; [a]
+toList (Singl a) = [a]
+toList (BiCons x y z) = x:y:(toList z)
+
+fromList :: [a] -&gt; OddCont a
+fromList [x] = Singl x
+fromList (x:y:xs) = BiCons x y (fromList xs)
+
+helperToList :: OddCont (OddCont a) -&gt; [a]
+helperToList (BiCons x y z) = concat ((toList x):(toList y):[(helperToList z)])
+helperToList (Singl x) = toList x
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl (Singl x)) = Singl x
+concatOC (BiCons x y z) = fromList (helperToList (BiCons x y z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+toList :: OddCont a -&gt; [a]
+toList (Singl a) = [a]
+toList (BiCons x y z) = x:y:(toList z)
+
+fromList :: [a] -&gt; OddCont a
+fromList [x] = Singl x
+fromList (x:y:xs) = BiCons x y (fromList xs)
+
+helperToList :: OddCont (OddCont a) -&gt; [a]
+helperToList (BiCons x y z) = concat ((toList x):(toList y):[(helperToList z)])
+helperToList (Singl x) = toList x
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons x y z) = fromList (helperToList (BiCons x y z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl x) (Singl y) (Singl z) = (BiCons x y (Singl z))
+concat3OC (Singl x) (Singl y) (BiCons a b c) = (BiCons x y (BiCons a b c))
+concat3OC (Singl x) (BiCons a b c) z = (BiCons x a (concat3OC (Singl b) c z))
+concat3OC (BiCons a b c) x y = BiCons a b (concat3OC c x y)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons x y (Singl z)) = concat3OC x y z</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl x) (Singl y) (Singl z) = (BiCons x y (Singl z))
+concat3OC (Singl x) (Singl y) (BiCons a b c) = (BiCons x y (BiCons a b c))
+concat3OC (Singl x) (BiCons a b c) z = (BiCons x a (concat3OC (Singl b) c z))
+concat3OC (BiCons a b c) x y = BiCons a b (concat3OC c x y)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons x y (Singl z)) = concat3OC x y z
+concatOC (BiCons x y (BiCons a b z)) = concat3OC x y (concatOC (BiCons a b z))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">152261</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons x y (Singl z)) = concat3OC x y z</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC x y z = fromList $ concat [toList x, toList y, toList z] where
+    toList (Singl x&#x27;) = [x&#x27;]
+    toList (BiCons x&#x27; y&#x27; z&#x27;) = x&#x27; : y&#x27; : toList z&#x27;
+    fromList [x&#x27;] = Singl x&#x27;
+    fromList (x&#x27;:y&#x27;:z&#x27;) = BiCons x&#x27; y&#x27; $ fromList z&#x27;
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons x y (Singl z)) = concat3OC x y z</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+concatOC x = fromList $ toList x where
+    toList (Singl x&#x27;) = [x&#x27;]
+    toList (BiCons x&#x27; y&#x27; z&#x27;) = x&#x27; : y&#x27; : toList z&#x27;
+    fromList [x&#x27;] = Singl x&#x27;
+    fromList (x&#x27;:y&#x27;:z&#x27;) = BiCons x&#x27; y&#x27; $ fromList z&#x27;</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = fromList $ toList x where
+    toList (Singl x&#x27;) = [x&#x27;]
+    toList (BiCons x&#x27; y&#x27; z&#x27;) = x&#x27; : y&#x27; : toList z&#x27;
+    fromList [x&#x27;] = Singl x&#x27;
+    fromList (x&#x27;:y&#x27;:z&#x27;) = BiCons x&#x27; y&#x27; $ fromList z&#x27;
+concatOC (BiCons a b (Singl c)) = fromList $ concat [toList a, toList b, toList c] where
+    toList (Singl x&#x27;) = [x&#x27;]
+    toList (BiCons x&#x27; y&#x27; z&#x27;) = x&#x27; : y&#x27; : toList z&#x27;
+    fromList [x&#x27;] = Singl x&#x27;
+    fromList (x&#x27;:y&#x27;:z&#x27;) = BiCons x&#x27; y&#x27; $ fromList z&#x27;
+concatOC (BiCons a b (BiCons c d (Singl e))) = fromList $ concat [toList a, toList b, toList c, toList e] where
+    toList (Singl x&#x27;) = [x&#x27;]
+    toList (BiCons x&#x27; y&#x27; z&#x27;) = x&#x27; : y&#x27; : toList z&#x27;
+    fromList [x&#x27;] = Singl x&#x27;
+    fromList (x&#x27;:y&#x27;:z&#x27;) = BiCons x&#x27; y&#x27; $ fromList z&#x27;&#x27;</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = fromList $ toList x where
+    toList (Singl x&#x27;) = [x&#x27;]
+    toList (BiCons x&#x27; y&#x27; z&#x27;) = x&#x27; : y&#x27; : toList z&#x27;
+    fromList [x&#x27;] = Singl x&#x27;
+    fromList (x&#x27;:y&#x27;:z&#x27;) = BiCons x&#x27; y&#x27; $ fromList z&#x27;
+concatOC (BiCons a b (Singl c)) = fromList $ concat [toList a, toList b, toList c] where
+    toList (Singl x&#x27;) = [x&#x27;]
+    toList (BiCons x&#x27; y&#x27; z&#x27;) = x&#x27; : y&#x27; : toList z&#x27;
+    fromList [x&#x27;] = Singl x&#x27;
+    fromList (x&#x27;:y&#x27;:z&#x27;) = BiCons x&#x27; y&#x27; $ fromList z&#x27;
+concatOC (BiCons a b (BiCons c d (Singl e))) = fromList $ concat [toList a, toList b, toList c, toList e] where
+    toList (Singl x&#x27;) = [x&#x27;]
+    toList (BiCons x&#x27; y&#x27; z&#x27;) = x&#x27; : y&#x27; : toList z&#x27;
+    fromList [x&#x27;] = Singl x&#x27;
+    fromList (x&#x27;:y&#x27;:z&#x27;) = BiCons x&#x27; y&#x27; $ fromList z&#x27;</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct warn bad" title="<code><pre>fff :: OddCont (OddCont a) -&gt; OddCont a
+fff (Singl x) = x
+fff (BiCons a b (Singl c)) =  c
+
+    
+
+tst1 = BiCons &#x27;a&#x27; &#x27;b&#x27; (Singl &#x27;c&#x27;)
+tst2 = BiCons &#x27;d&#x27; &#x27;e&#x27; (BiCons &#x27;f&#x27; &#x27;g&#x27; (Singl &#x27;h&#x27;))
+tst3 = BiCons &#x27;i&#x27; &#x27;j&#x27; (Singl &#x27;k&#x27;)
+t = BiCons tst1 tst2 (Singl tst3)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = fromList $ toList x where
+    toList (Singl x&#x27;) = [x&#x27;]
+    toList (BiCons x&#x27; y&#x27; z&#x27;) = x&#x27; : y&#x27; : toList z&#x27;
+    fromList [x&#x27;] = Singl x&#x27;
+    fromList (x&#x27;:y&#x27;:z&#x27;) = BiCons x&#x27; y&#x27; $ fromList z&#x27;
+concatOC (BiCons a b c) = fromList $ concat [toList a, toList b, recurr c] where
+    toList (Singl x&#x27;) = [x&#x27;]
+    toList (BiCons x&#x27; y&#x27; z&#x27;) = x&#x27; : y&#x27; : toList z&#x27;
+    fromList [x&#x27;] = Singl x&#x27;
+    fromList (x&#x27;:y&#x27;:z&#x27;) = BiCons x&#x27; y&#x27; $ fromList z&#x27;
+    recurr (Singl x) = toList x
+    recurr (BiCons x y z) = concat [toList x, toList y, recurr z]</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">115973</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl a) (Singl b) c      = BiCons a b c
+concat3OC (Singl a) (BiCons b c d) e = BiCons a b (concat3OC (Singl c) d e)
+concat3OC (BiCons a b c) d e         = BiCons a b (concat3OC c d e)   
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a)      = a
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2061255</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons x y z) = concat3OC x y $ concatOC z</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl x) (Singl y) c = BiCons x y c
+concat3OC (Singl x) (BiCons y z c) d = BiCons x y $ app z c d
+  where app a (Singl x) c = BiCons a x c
+        app a (BiCons x y c) d = BiCons a x $ app y c d
+concat3OC (BiCons x y z) c d = BiCons x y $ concat3OC z c d
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons x y z) = concat3OC x y $ concatOC z</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">320330</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl (w)) = w
+concatOC (BiCons (w1)(w2) (w3)) = concat3OC w1 w2 (concatOC w3)
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a1 b1 c1)(BiCons a2 b2 c2) w3 = 
+    BiCons a1 b1 (concat3OC c1 (BiCons a2 b2 c2) w3)
+concat3OC (Singl a1)(BiCons a2 b2 c2) w3 = 
+    BiCons a1 a2 (concat3OC (Singl b2) c2 w3)
+concat3OC (Singl a1)(Singl a2)(BiCons a3 b3 c3) = 
+    BiCons a1 a2 (concat3OC (Singl a3) (Singl b3) c3)
+concat3OC (Singl a1)(Singl a2)(Singl a3) = 
+    BiCons a1 a2 (Singl a3 ) 
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl (w)) = w
+concatOC (BiCons (w1)(w2) (w3)) = concat3OC w1 w2 (concatOC w3) where
+
+	concat3OC (BiCons a1 b1 c1) w2 w3 = 
+	    BiCons a1 b1 (concat3OC c1 w2 w3)
+	concat3OC (Singl a1)(BiCons a2 b2 c2) w3 = 
+	    BiCons a1 a2 (concat3OC (Singl b2) c2 w3)
+	concat3OC (Singl a1)(Singl a2)(BiCons a3 b3 c3) = 
+	    BiCons a1 a2 (concat3OC (Singl a3) (Singl b3) c3)
+	concat3OC (Singl a1)(Singl a2)(Singl a3) = 
+	    BiCons a1 a2 (Singl a3 ) 
+	</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">766411</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (BiCons x y (Singl z)) = concat3OC x y z
+concatOC (Singl (Singl x)) = Singl x
+concatOC (Singl (BiCons x y z)) = BiCons x y z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl a) (Singl b) c = BiCons a b c
+concat3OC (Singl a) (BiCons b c d) e = BiCons a b (concat3OC (Singl c) d e)
+concat3OC (BiCons a b (Singl c)) (Singl d) y = BiCons a b (BiCons c d y)
+concat3OC (BiCons a b (BiCons c d e)) f g = BiCons a b (BiCons c d (concat3OC e f g))
+concat3OC (BiCons a b (Singl c)) (BiCons d e f) g = BiCons a b (BiCons c d (concat3OC (Singl e) f g))
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (BiCons x y (Singl z)) = concat3OC x y z
+concatOC (Singl (Singl x)) = Singl x
+concatOC (Singl (BiCons x y z)) = BiCons x y z</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl a) (Singl b) c = BiCons a b c
+concat3OC (Singl a) (BiCons b c d) e = BiCons a b (concat3OC (Singl c) d e)
+concat3OC (BiCons a b (Singl c)) (Singl d) y = BiCons a b (BiCons c d y)
+concat3OC (BiCons a b (BiCons c d e)) f g = BiCons a b (BiCons c d (concat3OC e f g))
+concat3OC (BiCons a b (Singl c)) (BiCons d e f) g = BiCons a b (BiCons c d (concat3OC (Singl e) f g))
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (BiCons x y (Singl z)) = concat3OC x y z
+concatOC (Singl (Singl x)) = Singl x
+concatOC (Singl (BiCons x y z)) = BiCons x y z
+concatOC (BiCons a b (BiCons c d e)) = concat3OC (concat3OC a b c) d (concatOC e)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1848652</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b c) (BiCons d e f) (BiCons x y z)  =
+  concat3OC (Singl a) (Singl b) (concat3OC c (Singl d) (concat3OC (Singl e) f (concat3OC (Singl x) (Singl y) z)))
+concat3OC (Singl x) (Singl y) (Singl z) = BiCons x y (Singl z)
+concat3OC (Singl x) (Singl y) (BiCons a b c) = BiCons x y (concat3OC (Singl a) (Singl b) c)
+concat3OC (Singl x) (BiCons a b c) (Singl y) = BiCons x a (concat3OC (Singl b) c (Singl y))
+concat3OC (BiCons a b c) (Singl x) (Singl y) = BiCons a b (concat3OC c (Singl x) (Singl y))
+concat3OC (Singl x) (BiCons a b c) (BiCons d e f) =
+    BiCons x a (concat3OC (Singl b) c (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (Singl x) (BiCons d e f) =
+  BiCons a b (concat3OC c (Singl x) (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (BiCons d e f) (Singl x) =
+  BiCons a b (concat3OC c (Singl d) (concat3OC (Singl e) f (Singl x)))
+--
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)
+concatOC (Singl (Singl x)) = (Singl x)
+concatOC (Singl (BiCons a b c)) = concat3OC (Singl a) (Singl b) c</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b c) (BiCons d e f) (BiCons x y z)  =
+  concat3OC (Singl a) (Singl b) (concat3OC c (Singl d) (concat3OC (Singl e) f (concat3OC (Singl x) (Singl y) z)))
+concat3OC (Singl x) (Singl y) (Singl z) = BiCons x y (Singl z)
+concat3OC (Singl x) (Singl y) (BiCons a b c) = BiCons x y (concat3OC (Singl a) (Singl b) c)
+concat3OC (Singl x) (BiCons a b c) (Singl y) = BiCons x a (concat3OC (Singl b) c (Singl y))
+concat3OC (BiCons a b c) (Singl x) (Singl y) = BiCons a b (concat3OC c (Singl x) (Singl y))
+concat3OC (Singl x) (BiCons a b c) (BiCons d e f) =
+    BiCons x a (concat3OC (Singl b) c (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (Singl x) (BiCons d e f) =
+  BiCons a b (concat3OC c (Singl x) (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (BiCons d e f) (Singl x) =
+  BiCons a b (concat3OC c (Singl d) (concat3OC (Singl e) f (Singl x)))
+--
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)
+concatOC (Singl (Singl x)) = (Singl x)
+concatOC (Singl (BiCons a b c)) = concat3OC (Singl a) (Singl b) c</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b c) (BiCons d e f) (BiCons x y z)  =
+  concat3OC (Singl a) (Singl b) (concat3OC c (Singl d) (concat3OC (Singl e) f (concat3OC (Singl x) (Singl y) z)))
+concat3OC (Singl x) (Singl y) (Singl z) = BiCons x y (Singl z)
+concat3OC (Singl x) (Singl y) (BiCons a b c) = BiCons x y (concat3OC (Singl a) (Singl b) c)
+concat3OC (Singl x) (BiCons a b c) (Singl y) = BiCons x a (concat3OC (Singl b) c (Singl y))
+concat3OC (BiCons a b c) (Singl x) (Singl y) = BiCons a b (concat3OC c (Singl x) (Singl y))
+concat3OC (Singl x) (BiCons a b c) (BiCons d e f) =
+    BiCons x a (concat3OC (Singl b) c (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (Singl x) (BiCons d e f) =
+  BiCons a b (concat3OC c (Singl x) (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (BiCons d e f) (Singl x) =
+  BiCons a b (concat3OC c (Singl d) (concat3OC (Singl e) f (Singl x)))
+--
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)
+concatOC (Singl x) = x
+concatOC (Singl (BiCons a b c)) = concat3OC (Singl a) (Singl b) c</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b c) (BiCons d e f) (BiCons x y z)  =
+  concat3OC (Singl a) (Singl b) (concat3OC c (Singl d) (concat3OC (Singl e) f (concat3OC (Singl x) (Singl y) z)))
+concat3OC (Singl x) (Singl y) (Singl z) = BiCons x y (Singl z)
+concat3OC (Singl x) (Singl y) (BiCons a b c) = BiCons x y (concat3OC (Singl a) (Singl b) c)
+concat3OC (Singl x) (BiCons a b c) (Singl y) = BiCons x a (concat3OC (Singl b) c (Singl y))
+concat3OC (BiCons a b c) (Singl x) (Singl y) = BiCons a b (concat3OC c (Singl x) (Singl y))
+concat3OC (Singl x) (BiCons a b c) (BiCons d e f) =
+    BiCons x a (concat3OC (Singl b) c (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (Singl x) (BiCons d e f) =
+  BiCons a b (concat3OC c (Singl x) (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (BiCons d e f) (Singl x) =
+  BiCons a b (concat3OC c (Singl d) (concat3OC (Singl e) f (Singl x)))
+--
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)
+-- concatOC (Singl (BiCons a b c)) = concat3OC (Singl a) (Singl b) c
+concatOC (Singl x) = x</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b c) (BiCons d e f) (BiCons x y z)  =
+  concat3OC (Singl a) (Singl b) (concat3OC c (Singl d) (concat3OC (Singl e) f (concat3OC (Singl x) (Singl y) z)))
+concat3OC (Singl x) (Singl y) (Singl z) = BiCons x y (Singl z)
+concat3OC (Singl x) (Singl y) (BiCons a b c) = BiCons x y (concat3OC (Singl a) (Singl b) c)
+concat3OC (Singl x) (BiCons a b c) (Singl y) = BiCons x a (concat3OC (Singl b) c (Singl y))
+concat3OC (BiCons a b c) (Singl x) (Singl y) = BiCons a b (concat3OC c (Singl x) (Singl y))
+concat3OC (Singl x) (BiCons a b c) (BiCons d e f) =
+    BiCons x a (concat3OC (Singl b) c (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (Singl x) (BiCons d e f) =
+  BiCons a b (concat3OC c (Singl x) (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (BiCons d e f) (Singl x) =
+  BiCons a b (concat3OC c (Singl d) (concat3OC (Singl e) f (Singl x)))
+--
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (BiCons a b c) = concat3OC a b $ (concatOC c)
+-- concatOC (Singl (BiCons a b c)) = concat3OC (Singl a) (Singl b) c
+concatOC (Singl x) = x</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b c) (BiCons d e f) (BiCons x y z)  =
+  concat3OC (Singl a) (Singl b) (concat3OC c (Singl d) (concat3OC (Singl e) f (concat3OC (Singl x) (Singl y) z)))
+concat3OC (Singl x) (Singl y) t@(Singl z) = BiCons x y t
+concat3OC (Singl x) (Singl y) (BiCons a b c) = BiCons x y (concat3OC (Singl a) (Singl b) c)
+concat3OC (Singl x) (BiCons a b c) t@(Singl y) = BiCons x a (concat3OC (Singl b) c t)
+concat3OC (BiCons a b c) t@(Singl x) t2@(Singl y) = BiCons a b (concat3OC c t t2)
+concat3OC (Singl x) (BiCons a b c) (BiCons d e f) =
+    BiCons x a (concat3OC (Singl b) c (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) t@(Singl x) (BiCons d e f) =
+  BiCons a b (concat3OC c t (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (BiCons d e f) t@(Singl x) =
+  BiCons a b (concat3OC c (Singl d) (concat3OC (Singl e) f t))
+--
+-- concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl (BiCons a b c)) = concat3OC (Singl a) (Singl b) c
+concatOC (Singl x) = x
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b c) (BiCons d e f) (BiCons x y z)  =
+  concat3OC (Singl a) (Singl b) (concat3OC c (Singl d) (concat3OC (Singl e) f (concat3OC (Singl x) (Singl y) z)))
+concat3OC (Singl x) (Singl y) t@(Singl z) = BiCons x y t
+concat3OC (Singl x) (Singl y) (BiCons a b c) = BiCons x y (concat3OC (Singl a) (Singl b) c)
+concat3OC (Singl x) (BiCons a b c) t@(Singl y) = BiCons x a (concat3OC (Singl b) c t)
+concat3OC (BiCons a b c) t@(Singl x) t2@(Singl y) = BiCons a b (concat3OC c t t2)
+concat3OC (Singl x) (BiCons a b c) (BiCons d e f) =
+    BiCons x a (concat3OC (Singl b) c (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) t@(Singl x) (BiCons d e f) =
+  BiCons a b (concat3OC c t (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (BiCons d e f) t@(Singl x) =
+  BiCons a b (concat3OC c (Singl d) (concat3OC (Singl e) f t))
+--
+concatOC :: (Show a) =&gt; OddCont (OddCont a) -&gt; OddCont a
+concatOC x = traceShow x undefined
+
+concatOC_ (Singl (BiCons a b c)) = concat3OC (Singl a) (Singl b) c
+concatOC_ (Singl x) = x
+concatOC_ (BiCons a b c) = concat3OC a b (concatOC_ c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>import Debug.Trace
+
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b c) (BiCons d e f) (BiCons x y z)  =
+  concat3OC (Singl a) (Singl b) (concat3OC c (Singl d) (concat3OC (Singl e) f (concat3OC (Singl x) (Singl y) z)))
+concat3OC (Singl x) (Singl y) t@(Singl z) = BiCons x y t
+concat3OC (Singl x) (Singl y) (BiCons a b c) = BiCons x y (concat3OC (Singl a) (Singl b) c)
+concat3OC (Singl x) (BiCons a b c) t@(Singl y) = BiCons x a (concat3OC (Singl b) c t)
+concat3OC (BiCons a b c) t@(Singl x) t2@(Singl y) = BiCons a b (concat3OC c t t2)
+concat3OC (Singl x) (BiCons a b c) (BiCons d e f) =
+    BiCons x a (concat3OC (Singl b) c (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) t@(Singl x) (BiCons d e f) =
+  BiCons a b (concat3OC c t (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (BiCons d e f) t@(Singl x) =
+  BiCons a b (concat3OC c (Singl d) (concat3OC (Singl e) f t))
+--
+concatOC :: (Show a) =&gt; OddCont (OddCont a) -&gt; OddCont a
+concatOC x = traceShow x undefined
+
+concatOC_ (Singl (BiCons a b c)) = concat3OC (Singl a) (Singl b) c
+concatOC_ (Singl x) = x
+concatOC_ (BiCons a b c) = concat3OC a b (concatOC_ c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>
+concatOC (Singl (BiCons a b c)) = concat3OC (Singl a) (Singl b) c
+concatOC (Singl x) = x
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>concat3OC (Singl x) (Singl y) z = BiCons x y z
+concat3OC (BiCons x y z) q w = BiCons x y (concat3OC z q w)
+concat3OC (Singl x) (BiCons y z q) w = BiCons x y (concat3OC (Singl z) q w)
+
+concatOC (Singl (BiCons a b c)) = concat3OC (Singl a) (Singl b) c
+concatOC (Singl x) = x
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1933517</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = Singl x
+concatOC (BiCons x y z) = BiCons  x  y ++ concatOC (z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = Singl x
+concatOC (BiCons x y z) =  x ++ y ++ concatOC (z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = Singl x
+concatOC (BiCons x y z) =  x &#x27;++&#x27; y &#x27;++&#x27; concatOC (z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = Singl x
+concatOC (BiCons x y z) =  x (++) y (++) concatOC (z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1869137</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl s) = s
+concatOC (BiCons a b oc) = concat3OC a b (concatOC oc)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl s) = s
+concatOC (BiCons a b oc) = concatOC a b (concatOC oc)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl a1) (Singl a2) oc3 = BiCons a1 a2 oc3
+concat3OC (Singl a1) (BiCons a2 b2 oc2) oc3 = BiCons a1 a2 (concat3OC (Singl b2) oc2 oc3)
+concat3OC (BiCons a1 b1 oc1) oc2 oc3 = BiCons a1 b1 (concat3OC oc1 oc2 oc3)
+
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl s) = s
+concatOC (BiCons a b oc) = concat3OC a b (concatOC oc)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2127186</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons a b x) = concat3OC a b (concatOC x)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC x y z = helper (Just x) Nothing y z where
+	helper Nothing (Just a) (Singl b) c = BiCons a b c
+	helper Nothing (Just a) (BiCons b c d) e = BiCons a b (helper Nothing (Just c) d e)
+	helper (Just (Singl a)) _ b c = helper Nothing (Just a) b c
+	helper (Just (BiCons a b c)) _ d e = BiCons a b (helper (Just c) Nothing d e)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC (BiCons a b x) = concat3OC a b (concatOC x)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">513875</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC = undefined</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl c) = c
+concatOC (BiCons a b (Singl c)) = concat3OC a b c
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl c) = c
+concatOC (BiCons a b (Singl c)) = concat3OC a b c
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+
+headOC :: OddCont a -&gt; a
+headOC (Singl a) = a
+headOC (BiCons a _ _) = a
+
+secondOC :: OddCont a -&gt; a
+secondOC (Singl a) = undefined
+secondOC (BiCons _ a _) = a
+
+hasTwo :: OddCont a -&gt; Bool
+hasTwo (Singl _) = False
+hasTwo (BiCons _ _ _) = True
+
+unpackOne :: OddCont a -&gt; OddCont a
+unpackOne (Singl _) = undefined
+unpackOne (BiCons a b c) = c
+
+lastOC :: OddCont a -&gt; a
+lastOC (Singl a) = a
+lastOC (BiCons _ _ b) = lastOC b
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC a b c = packer a (helper (lastOC a) b c) where
+	helper last b c | hasTwo b = BiCons last (headOC b) (helper (secondOC b) (unpackOne b) c)
+					| otherwise = BiCons last (headOC b) c
+	packer (Singl _) inner = inner
+	packer (BiCons a b c) inner | hasTwo c = BiCons a b (packer c inner)
+								| otherwise = BiCons a b inner
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl c) = c
+concatOC (BiCons a b (Singl c)) = concat3OC a b c
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1288149</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+conca :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+conca (Singl az1) (Singl bu1) ve1 = BiCons az1 bu1 ve1
+conca (Singl az1) (BiCons bu1 bu2 bu3) ve1 = conca (Singl az1) (Singl bu1) (conca (Singl bu2) bu3 ve1) 
+conca (BiCons az1 az2 az3) bu1 ve1 = BiCons az1 az2 (conca az3 bu1 ve1)
+
+concatOC :: OddCont (OddCont az) -&gt; OddCont az
+concatOC (Singl az) = az
+concatOC (BiCons az1 az2 az3) = conca az1 az2 (conca az3)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+con3 :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+con3 (Singl az) (Singl bu) ve = BiCons az bu ve
+con3 (Singl az) (BiCons bu bu2 bu3) ve = con3 (Singl az) (Singl bu) (con3 (Singl bu2) bu3 ve) 
+con3 (BiCons az az2 az3) bu ve = BiCons az az2 (con3 az3 bu ve)
+
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a
+concatOC (BiCons az az2 az3) = con3 az az2 (concatOC az3)
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1820029</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b c) x y = BiCons a b (concat3OC c x y)
+concat3OC (Singl a) (BiCons b c d) x = BiCons a b (concat3OC (Singl c) d x)
+concat3OC (Singl a) (Singl b) x = BiCons a b x
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl c) = c
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1907544</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl a) (Singl b) td = BiCons a b td
+concat3OC (Singl a) (BiCons a2 b2 p) td = BiCons a a2 (helper b2 p td) where
+               helper pr (Singl a) lst = BiCons pr a lst
+               helper pr (BiCons a b p) lst = BiCons pr a (helper b p lst)
+concat3OC (BiCons a1 b1 p1) td1 td2 = BiCons a1 b1 (concat3OC p1 td1 td2)
+
+
+concatOC (Singl (Singl a)) = Singl a
+concatOC (Singl (BiCons a b p)) = BiCons a b p
+concatOC (BiCons a b p) = concat3OC a b (concatOC p)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2137</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl ocs)        = ocs
+concatOC (BiCons (Singl x) (Singl y) (Singl z)) = BiCons x y z
+concatOC (BiCons (Singl x) (BiCons y1 y2 yocs) z) = BiCons x y1 (concatOC (BiCons (Singl y2) yocs z))
+concatOC (BiCons (BiCons x1 x2 xocs) y z) = BiCons x1 x2 (concatOC (BiCons xocs y z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl ocs) = ocs
+concatOC (BiCons (Singl x) (Singl y) z) = BiCons x y (concatOC z)
+concatOC (BiCons (Singl x) (BiCons y1 y2 yocs) z) = BiCons x y1 (concatOC (BiCons (Singl y2) yocs z))
+concatOC (BiCons (BiCons x1 x2 xocs) y z) = BiCons x1 x2 (concatOC (BiCons xocs y z))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">155226</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl (Single x))     = concatOC (Single x)
+concatOC (Singl (BiCons x y z)) = concatOC (BiCons x y z)
+concatOC (Singl x)              = Singl x
+concatOC (BiCons x y z)         = concat3OC (concatOC x) (concatOC y) (concatOC z) where
+    concat3OC (Singl a) (Singl b) c         = BiCons a b (c)
+    concat3OC (Singl a) (BiCons b c (d)) e  = concat3OC (Singl a) (Singl b) (concat3OC (Singl c) d e) 
+    concat3OC (BiCons a b (c)) d e          = BiCons a b (concat3OC c d e)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl (Singl x))      = concatOC (Singl x)
+concatOC (Singl (BiCons x y z)) = concatOC (BiCons x y z)
+concatOC (Singl x)              = Singl x
+concatOC (BiCons x y z)         = concat3OC (concatOC x) (concatOC y) (concatOC z) where
+    concat3OC (Singl a) (Singl b) c         = BiCons a b (c)
+    concat3OC (Singl a) (BiCons b c (d)) e  = concat3OC (Singl a) (Singl b) (concat3OC (Singl c) d e) 
+    concat3OC (BiCons a b (c)) d e          = BiCons a b (concat3OC c d e)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">37083</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl a) (Singl b) c = BiCons a b c
+concat3OC (Singl a) (BiCons a1 b1 c1) a2 = concat3OC (Singl a) (Singl a1) (concat3OC (Singl b1) c1 a2) 
+concat3OC (BiCons a b c) a1 a2 = BiCons a b (concat3OC c a1 a2)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2131932</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl l) = l
+concatOC (BiCons a b l) = concat3OC a b (concatOC l)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a1 a2 l1) b c = BiCons a1 a2 (concat3OC l1 b c)
+concat3OC (Singl a) (BiCons b1 b2 l2) c =
+	BiCons a b1 (concat3OC (Singl b2) l2 c)
+concat3OC (Singl a) (Singl b) c = BiCons a b c
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl l) = l
+concatOC (BiCons a b l) = concat3OC a b (concatOC l)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">313658</div>
+<ul class="submissions">
+<li class="submission tooltip correct warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+{-1-}
+startL :: OddCont a -&gt; [a]
+startL (Singl x) = [x]
+startL (BiCons a b c) = a:b: startL c 
+{-2-} 
+endL :: [a] -&gt; OddCont a 
+endL [x] = Singl x
+endL [] = error &quot;Пустой лист!&quot;
+endL [_,_] = error &quot;Не та длина!&quot;
+endL (a:b:c) = BiCons a b $ endL c
+{-fin-}
+concatOC  :: OddCont (OddCont a) -&gt; OddCont a
+concatOC  = endL . go
+  where go (Singl x) = startL x
+        go (BiCons a b c) = concat [startL a, startL b, go c] 
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2069343</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl el) = el
+concatOC (BiCons el1 el2 oc) = concat3OC el1 el2 (concatOC oc)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl el1) (Singl el2) oc= BiCons el1 el2 oc
+concat3OC (Singl el1) (BiCons el2 el3 oc1) oc2 = BiCons el1 el2 (concat3OC (Singl el3) oc1 oc2) 
+concat3OC (BiCons el1 el2 oc1) oc2 oc3 = BiCons el1 el2 (concat3OC oc1 oc2 oc3) 
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl el) = el
+concatOC (BiCons el1 el2 oc) = concat3OC el1 el2 (concatOC oc)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">495216</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">723421</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+concat3OC (Singl a) (Singl b) c = BiCons a b c
+concat3OC (Singl a) (BiCons x y z) c = BiCons a x (concat3OC (Singl y) z c)
+concat3OC (BiCons k l m) b c = BiCons k l (concat3OC m b c)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2176870</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl a) (Singl b) c = BiCons a b c
+concat3OC (Singl a) (BiCons b c d) e = BiCons a b (concat3OC (Singl c) d e)
+concat3OC (BiCons a b c) d e = BiCons  a b (concat3OC c d e)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl (Singl a)) = Singl a
+concatOC (BiCons a b (Singl c)) = concat3OC a b c
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl a) (Singl b) c = BiCons a b c
+concat3OC (Singl a) (BiCons b c d) e = BiCons a b (concat3OC (Singl c) d e)
+concat3OC (BiCons a b c) d e = BiCons  a b (concat3OC c d e)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl (Singl a)) = Singl a
+concatOC (Singl a) = a
+concatOC (BiCons a b (Singl c)) = concat3OC a b c
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl a) (Singl b) c = BiCons a b c
+concat3OC (Singl a) (BiCons b c d) e = BiCons a b (concat3OC (Singl c) d e)
+concat3OC (BiCons a b c) d e = BiCons  a b (concat3OC c d e)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1844327</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC a b c = helper2 a (helper1 (lastOC a) b c)
+
+helper1 last1 b c	| ifsin b = BiCons last1 (headOC b) c
+					| otherwise = BiCons last1 (headOC b) (helper1 (sndB b)(unpack b) c)
+
+ifsin (Singl a) = True
+ifsin (BiCons _ _ _) = False
+
+sndB (BiCons a b c) = b
+sndB (Singl a) = undefined
+
+unpack (BiCons a b c) = c
+unpack (Singl a) = undefined
+
+helper2 (Singl a) d = d
+helper2 (BiCons a b c) d = BiCons a b (helper2 c d)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)
+
+
+headOC :: OddCont a -&gt; a
+headOC (BiCons a _ _) = a
+headOC (Singl a) = a
+
+lastOC :: OddCont a -&gt; a
+lastOC (Singl a) = a
+lastOC (BiCons _ _ c) = lastOC c
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">152428</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a
+concatOC (BiCons (Singl a) (Singl b) oc) = (BiCons a b (concatOC oc))
+concatOC (BiCons (Singl a) (BiCons b1 b2 oc1) oc2) = (BiCons a b1 (concat3OC (Singl b2) oc1 (concatOC oc2)))
+concatOC (BiCons (BiCons a b oc) oc2 oc3) = (BiCons a b (concat3OC oc oc2 (concatOC oc3)))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a
+concatOC (BiCons (Singl a) (Singl b) oc) = (BiCons a b (concatOC oc))
+concatOC (BiCons (Singl a) (BiCons b1 b2 oc1) oc2) = (BiCons a b1 (internalConcat (Singl b2) oc1 (concatOC oc2))) where
+    internalConcat (Singl a) (Singl b) oc = (BiCons a b oc)
+    internalConcat (Singl a) (BiCons b c oc1) oc2 = (BiCons a b (internalConcat (Singl c) oc1 oc2))
+    internalConcat (BiCons a b oc1) oc2 oc3 = (BiCons a b (internalConcat oc1 oc2 oc3))
+concatOC (BiCons (BiCons a b oc) oc2 oc3) = (BiCons a b (internalConcat oc oc2 (concatOC oc3))) where
+    internalConcat (Singl a) (Singl b) oc = (BiCons a b oc)
+    internalConcat (Singl a) (BiCons b c oc1) oc2 = (BiCons a b (internalConcat (Singl c) oc1 oc2))
+    internalConcat (BiCons a b oc1) oc2 oc3 = (BiCons a b (internalConcat oc1 oc2 oc3))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a
+concatOC (BiCons (Singl a) (Singl b) oc) = (BiCons a b (concatOC oc))
+concatOC (BiCons oc1 oc2 oc3) = internalConcat oc1 oc2 (concatOC oc3) where
+    internalConcat (Singl a) (Singl b) oc = (BiCons a b oc)
+    internalConcat (Singl a) (BiCons b c oc1) oc2 = (BiCons a b (internalConcat (Singl c) oc1 oc2))
+    internalConcat (BiCons a b oc1) oc2 oc3 = (BiCons a b (internalConcat oc1 oc2 oc3))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1908334</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x 
+concatOC (BiCons x y z) = concat3OC x y (concatOC z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x 
+concatOC (BiCons x y z) = concatOC x y (concatOC z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x 
+concatOC (BiCons x y z) = concatOC x y (concatOC z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x 
+concatOC (BiCons x y z) = concat3OC x y (concatOC z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x 
+concatOC (BiCons x y z) = concat3OC x y (concatOC z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x 
+concatOC (BiCons x y z) = concat3OC x y (concatOC z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl x) (Singl y) z = BiCons x y z 
+concat3OC (BiCons a b c) d e = BiCons a b (concat3OC c d e) 
+concat3OC (Singl a) (BiCons b c d) e = BiCons a b (concat3OC (Singl c) d e)
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x 
+concatOC (BiCons x y z) = concat3OC x y (concatOC z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1910767</div>
+<ul class="submissions">
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (BiCons a b (Singl c)) = lst2OddCont $ (oddCont2Lst a) ++ (oddCont2Lst b) ++ (oddCont2Lst c)
+
+oddCont2Lst (Singl a) = [a]
+oddCont2Lst (BiCons a b c) = [a] ++ [b] ++ (oddCont2Lst c)
+
+lst2OddCont :: [a] -&gt; OddCont a
+lst2OddCont [x] = Singl x
+lst2OddCont (x:y:lst) = BiCons x y (lst2OddCont lst)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (BiCons a b (Singl c)) = lst2OddCont $ (oddCont2Lst a) 
+ ++ (oddCont2Lst b) 
+ ++ (oddCont2Lst c)
+concatOC (BiCons a b (BiCons c d (Singl e))) = lst2OddCont $ (oddCont2Lst a) 
+ ++ (oddCont2Lst b) 
+ ++ (oddCont2Lst c) 
+ ++ (oddCont2Lst d) 
+ ++ (oddCont2Lst e)
+
+oddCont2Lst (Singl a) = [a]
+oddCont2Lst (BiCons a b c) = [a] ++ [b] ++ (oddCont2Lst c)
+
+lst2OddCont :: [a] -&gt; OddCont a
+lst2OddCont [x] = Singl x
+lst2OddCont (x:y:lst) = BiCons x y (lst2OddCont lst)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = lst2OddCont $ (oddCont2Lst a) 
+concatOC (BiCons a b (Singl c)) = lst2OddCont $ (oddCont2Lst a) 
+ ++ (oddCont2Lst b) 
+ ++ (oddCont2Lst c)
+concatOC (BiCons a b (BiCons c d (Singl e))) = lst2OddCont $ (oddCont2Lst a) 
+ ++ (oddCont2Lst b) 
+ ++ (oddCont2Lst c) 
+ ++ (oddCont2Lst d) 
+ ++ (oddCont2Lst e)
+
+oddCont2Lst (Singl a) = [a]
+oddCont2Lst (BiCons a b c) = [a] ++ [b] ++ (oddCont2Lst c)
+
+lst2OddCont :: [a] -&gt; OddCont a
+lst2OddCont [x] = Singl x
+lst2OddCont (x:y:lst) = BiCons x y (lst2OddCont lst)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC = lst2OddCont . oddCont2Lst&#x27; 
+
+oddCont2Lst&#x27; (Singl a) = oddCont2Lst a
+oddCont2Lst&#x27; (BiCons a b c) = (oddCont2Lst a) ++ (oddCont2Lst b) ++ (oddCont2Lst&#x27; c)
+
+oddCont2Lst (Singl a) = [a]
+oddCont2Lst (BiCons a b c) = [a] ++ [b] ++ (oddCont2Lst c)
+
+lst2OddCont :: [a] -&gt; OddCont a
+lst2OddCont [x] = Singl x
+lst2OddCont (x:y:lst) = BiCons x y (lst2OddCont lst)
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">301936</div>
+<ul class="submissions">
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+fff :: [a] -&gt; OddCont a 
+fff [x] = Single x
+fff (x:y:b) = BiCons x y $ fff b
+ttt :: OddCont a -&gt; [a]
+ttt (Single x) = [x]
+ttt (BiCons x y b) = x:y: ttt b 
+ 
+concatOC  :: OddCont (OddCont a) -&gt; OddCont a
+concatOC  = fff . gg
+  where gg (Single a) = ttt a
+        gg (BiCons x y b) = concat [ttt x, ttt y, gg b] 
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+fff :: [a] -&gt; OddCont a 
+fff [x] = Singl x
+fff (x:y:b) = BiCons x y $ fff b
+ttt :: OddCont a -&gt; [a]
+ttt (Singl x) = [x]
+ttt (BiCons x y b) = x:y: ttt b 
+ 
+concatOC  :: OddCont (OddCont a) -&gt; OddCont a
+concatOC  = fff . gg
+  where gg (Singl a) = ttt a
+        gg (BiCons x y b) = concat [ttt x, ttt y, gg b] 
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+fff :: [a] -&gt; OddCont a 
+fff [x] = Singl x
+fff (x:y:b) = BiCons x y $ fff b
+ttt :: OddCont a -&gt; [a]
+ttt (Singl x) = [x]
+ttt (BiCons x y b) = x:y: ttt b 
+ 
+concatOC  :: OddCont (OddCont a) -&gt; OddCont a
+concatOC  = fff . gg
+  where gg (Singl a) = ttt a
+        gg (BiCons x y b) = concat [ttt x, ttt y, gg b] 
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+fff :: [a] -&gt; OddCont a 
+fff [x] = Singl x
+fff (x:y:z) = BiCons x y $ fff z
+ttt :: OddCont a -&gt; [a]
+ttt (Singl x) = [x]
+ttt (BiCons x y z) = x:y: ttt z
+ 
+concatOC  :: OddCont (OddCont a) -&gt; OddCont a
+concatOC  = fff . gg
+  where gg (Singl a) = ttt a
+        gg (BiCons x y z) = concat [ttt x, ttt y, gg z] 
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2118001</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl a) (Singl b) c=BiCons a b c
+concat3OC (Singl a) (BiCons b c d) e=BiCons a b (concat3OC (Singl c) d e)
+concat3OC (BiCons a b c) d e=BiCons a b (concat3OC c d e)
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a)=a
+concatOC (BiCons a b c)=concat3OC a b (concatOC c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">127197</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a
+concatOC (BiCons a b as) = concat3OC a b $ concatOC as</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b as) item@(BiCons c d bs) cs = BiCons a b (concat3OC as item cs)
+concat3OC (Singl a) (BiCons b c bs) cs = BiCons a b (concat3OC (Singl c) bs cs)
+concat3OC (BiCons a b as) item@(Singl c) cs = BiCons a b (concat3OC as item cs)
+concat3OC (Singl a) (Singl b) cs = BiCons a b cs
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a) = a
+concatOC (BiCons a b as) = concat3OC a b $ concatOC as</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2202323</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a)      = a
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl a)      = a
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)
+    where
+        concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+        concat3OC (Singl a) (Singl b) c           = BiCons a b c
+        concat3OC (BiCons a b c) d e              = BiCons a b (concat3OC c d e)
+        concat3OC (Singl a) (BiCons b c d) e      = BiCons a b (concat3OC (Singl c) d e)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1835895</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+
+concat3OC (Singl a) (Singl b) c = BiCons a b c
+concat3OC (Singl a) (BiCons b c d) r = BiCons a b (concat3OC (Singl c) d r)
+concat3OC (BiCons a b c) r1 r2 = BiCons a b (concat3OC c r1 r2)
+
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+
+concatOC (Singl a) = a
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">40186</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons x1 x2 xs) ys zs        = BiCons x1 x2 (concat3OC xs ys zs)
+concat3OC (Singl x) (BiCons y1 y2 ys) zs = BiCons x y1 (concat3OC (Singl y2) ys zs)
+concat3OC (Singl x) (Singl y) zs         = BiCons x y zs
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x)       = x
+concatOC (BiCons x y zs) = concat3OC x y (concatOC zs)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">170493</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl a) (Singl b) (Singl c) = (BiCons a b (Singl c))
+concat3OC (Singl a) (Singl b) c = (BiCons a b c)
+concat3OC (Singl a) (BiCons x y others) c = (BiCons a x (concat3OC (Singl y) others c))
+concat3OC (BiCons x y others) c1 c2 = (BiCons x y (concat3OC others c1 c2))
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl (Singl a)) = (Singl a)
+concatOC (Singl (BiCons a b others)) = (BiCons a b others)
+concatOC (BiCons c1 c2 cont) = concat3OC c1 c2 (concatOC cont)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+</ul>
+
+
+
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="js/vendor/jquery.tooltipster.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
+

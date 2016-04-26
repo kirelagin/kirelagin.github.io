@@ -1,0 +1,3279 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>×</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/tooltipster.css" />
+        <link rel="stylesheet" href="css/themes/tooltipster-noir.css" />
+
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+
+        <ul id="users">
+<li class="user">
+<div class="uid">1456128</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a b (Singl c)) = 3
+lenOC (BiCons a b c) = 2 + (lenOC c)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons a b (Singl c)) = 2
+countConsOC (BiCons a b c) = 1 + (countConsOC c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a b c) = 2 + (lenOC c)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons a b c) = 1 + (countConsOC c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">60674</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ z) = 2 + lenOC z
+
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ z) = 1 + countConsOC z</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">115973</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC x = helper x 0 where 
+  helper (Singl a)      acc = acc + 1
+  helper (BiCons a b c) acc = acc + 2 + (helper c acc)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC x = helper x 0 where 
+  helper (Singl a)      acc = acc + 1
+  helper (BiCons a b c) acc = acc + 1 + (helper c acc)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1880838</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC x = helper x 0 where
+  helper (BiCons x y z) count = helper z (count+2)
+  helper (Singl x) count = count+1
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC x = helper x 0 where
+  helper (BiCons x y z) count = helper z (count+1)
+  helper (Singl x) count = count+1
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2049282</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOc (BiCons a b (Singl c)) = 3
+lenOc (BiCons a b c) = 2 + lenOc c
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC ((BiCons a b (Singl c))) = 2
+countConsOC (BiCons a b c) = 1 + countConsOC c
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a b (Singl c)) = 3
+lenOC (BiCons a b c) = 2 + lenOC c
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC ((BiCons a b (Singl c))) = 2
+countConsOC (BiCons a b c) = 1 + countConsOC c
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">343822</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC a = hlp a where
+  hlp (Singl a) = 1
+  hlp BiCons a b (OddCont c) = 2 + hlp c
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC a = hlp a where
+  hlp (Singl a) = 0
+  hlp BiCons a b (OddCont c) = 1 + hlp c
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC a = hlp a where
+  hlp (Singl a) = 1
+  hlp BiCons a b c = 2 + hlp c
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC a = hlp a where
+  hlp (Singl a) = 0
+  hlp BiCons a b c = 1 + hlp c
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC a = hlp a where
+  hlp (Singl a) = 1
+  hlp (BiCons a b c) = 2 + hlp c
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC a = hlp a where
+  hlp (Singl a) = 0
+  hlp (BiCons a b c) = 1 + hlp c
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC a = hlp a where
+  hlp (Singl a) = 1
+  hlp (BiCons a b c) = 2 + hlp c
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC a = hlp a where
+  hlp (Singl a) = 1
+  hlp (BiCons a b c) = 1 + hlp c
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">125712</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl x) = 1
+lenOC (BiCons x y z) = 2 + lenOC z
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x) = 1
+countConsOC (BiCons x y z) = 1 + countConsOC z</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">439058</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a b c) = 2 + (lenOC c)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons a b c) = 1 + (countConsOC c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1217043</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>lenOC :: OddCont a -&gt; Int
+lenOC obj = helperLenOc 0 obj where
+    helperLenOc count (Singl a) = count + 1
+    helperLenOc count (BiCons a b c) = helperLenOc (count + 2) c
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC obj = helperConsOC 0 obj where
+    helperConsOC count (Singl a) = count + 1
+    helperConsOC count (BiCons a b c) = helperConsOC (count + 1) c
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1164564</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>lenOC :: OddCont a -&gt; Int
+lenOC = \a -&gt; helper a 0
+    where
+        helper (Singl _) n = n + 1
+        helper (BiCons a b c) n = helper c (n + 2)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC = \a -&gt; helper a 0
+    where
+        helper (Singl _) n = n + 1
+        helper (BiCons a b c) n = helper c (n + 1)
+
+
+
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">127769</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ cont) = 2 + (lenOC cont)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ cont) = 1 + (countConsOC cont)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2076187</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+data OddCont a = Singl a | BiCons a a (OddCont a) deriving (Eq,Show)
+
+getLenOC acc lenBi (BiCons a b c) = getLenOC (acc+lenBi) lenBi c
+getLenOC acc lenBi (Singl a) = (acc+1)
+
+lenOC :: OddCont a -&gt; Int
+lenOC = getLenOC 0 2
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC = getLenOC 0 1</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+getLenOC acc lenBi (BiCons a b c) = getLenOC (acc+lenBi) lenBi c
+getLenOC acc lenBi (Singl a) = (acc+1)
+
+lenOC :: OddCont a -&gt; Int
+lenOC = getLenOC 0 2
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC = getLenOC 0 1</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2161692</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC  (Singl a) = 1 
+lenOC  (BiCons a b c) = 2 + (lenOC   c)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1 
+countConsOC (BiCons a b c) = 1 + (countConsOC  c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">150149</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC _ = 3
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC = undefined</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ x) = 2 + lenOC x
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC = undefined</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ x) = 2 + lenOC x
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ x) = 1 + countConsOC x</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">131873</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons x y z) = 2 + lenOC z
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons x y z) = 1 + countConsOC z</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1941538</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (BiCons x y z)= 2 + (lenOC z)
+lenOC (Singl x) = 1
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (BiCons x y z) = 1 + (countConsOC z)
+countConsOC (Singl x) = 1</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">152819</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons (a)) = 2 + lenOC (a)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons (a)) = 1 + countConsOC (a)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons _ _ a) = 2 + lenOC a
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons _ _ a) = 1 + countConsOC a</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">436316</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC = helper 0 where
+    helper i (Singl _) = i + 1
+    helper i (BiCons _ _ oc) = helper (i + 2) oc
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC = helper 0 where
+    helper i (Singl _) = i + 1
+    helper i (BiCons _ _ oc) = helper (i + 1) oc</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1948204</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ x) = 2 + lenOC x
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ x) = 1 + countConsOC x</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">127197</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ (xs)) = 2 + lenOC xs
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ (xs)) = 1 + countConsOC xs</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1914933</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl x) = 1
+lenOC (BiCons x y z) = 2 + lenOC z
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x) = 1
+countConsOC (BiCons x y z) = 1 + countConsOC z</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1984823</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int                  
+lenOC (Singl a) = 1
+lenOC (BiCons a b c) = 2 + lenOC c
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC(BiCons a b c) = 1 + countConsOC c</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">313658</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+{-черновой вариант, первая попытка-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Single _) = 1
+lenOC (BiCons _ _ b) = 2 + lenOC b
+ 
+{-1?-}
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Single _) = 1
+countConsOC (BiCons _ _ b) = 1 + countConsOC b</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+{-черновой вариант, первая попытка-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ b) = 2 + lenOC b
+ 
+{-1?-}
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ b) = 1 + countConsOC b</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">165956</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons x y z) = 2 + lenOC z
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons x y z) = 1 + countConsOC z
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">320330</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC w = helper 0 w where
+   helper n (BiCons a b c) = helper (n+2) c
+   helper n (Singl a) = n + 1
+countConsOC :: OddCont a -&gt; Int
+countConsOC w = helper 0 w where
+   helper n (BiCons a b c) = helper (n+1) c
+   helper n (Singl a) = n + 1</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1013067</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC Single a = 1
+lenOC (BiCons _ _ c) = 2 + lenOC c 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC Single a = 1
+countConsOC (BiCons _ _ c) = 1 + countConsOC c</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC Singl a = 1
+lenOC (BiCons _ _ c) = 2 + lenOC c 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC Singl a = 1
+countConsOC (BiCons _ _ c) = 1 + countConsOC c</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC Singl a = 1
+lenOC (BiCons _ _ a) = 2 + lenOC a 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC Singl a = 1
+countConsOC (BiCons _ _ a) = 1 + countConsOC a</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC Singl _ = 1
+lenOC (BiCons _ _ a) = 2 + lenOC a 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC Singl _ = 1
+countConsOC (BiCons _ _ a) = 1 + countConsOC a</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC Singl _ = 1
+lenOC (BiCons (_ _ a)) = 2 + lenOC a 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC Singl _ = 1
+countConsOC (BiCons (_ _ a)) = 1 + countConsOC a</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC Singl _ = 1
+lenOC (BiCons (_ _) a) = 2 + lenOC a 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC Singl _ = 1
+countConsOC (BiCons (_ _) a) = 1 + countConsOC a</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC Singl _ = 1
+lenOC (BiCons (a b c)) = 2 + lenOC c 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC Singl _ = 1
+countConsOC (BiCons (a b c)) = 1 + countConsOC c</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC Singl a = 1
+lenOC (BiCons (a b c)) = 2 + lenOC c 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC Singl a = 1
+countConsOC (BiCons (a b c)) = 1 + countConsOC c</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC Singl a = 1
+lenOC (BiCons a b c) = 2 + lenOC c 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC Singl a = 1
+countConsOC (BiCons a b c) = 1 + countConsOC c</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC Singl a = 1
+lenOC (BiCons a b (c)) = 2 + lenOC c 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC Singl a = 1
+countConsOC (BiCons a b (c)) = 1 + countConsOC c</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC Singl _ = 1
+lenOC (BiCons (_ _ c)) = 2 + lenOC c 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC Singl _ = 1
+countConsOC (BiCons (_ _ c)) = 1 + countConsOC c</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC Singl _ = 1
+lenOC BiCons (_ _ c) = 2 + lenOC c 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC Singl _ = 1
+countConsOC BiCons (_ _ c) = 1 + countConsOC c</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC Singl _ = 1
+lenOC BiCons (_ _ c) = 2 + (lenOC c) 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC Singl _ = 1
+countConsOC BiCons (_ _ c) = 1 + (countConsOC c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC Singl _ = 1
+lenOC BiCons (_ _ (c)) = 2 + (lenOC c) 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC Singl _ = 1
+countConsOC BiCons (_ _ (c)) = 1 + (countConsOC c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC Singl a = 1
+lenOC BiCons (_ _ (c)) = 2 + (lenOC c) 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC Singl a = 1
+countConsOC BiCons (_ _ (c)) = 1 + (countConsOC c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC Singl a = 1
+lenOC BiCons (a a c) = 2 + (lenOC c) 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC Singl a = 1
+countConsOC BiCons (a a c) = 1 + (countConsOC c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons _ _ c) = 2 + (lenOC c) 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons _ _ c) = 1 + (countConsOC c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1848652</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons x y z) = countOC (BiCons x y z) 0 where
+  countOC (BiCons x y z) len = countOC z (len+1)
+  countOC (Singl _) len = (len+1)
+
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons x y z) = lOC (BiCons x y z) 0 where
+  lOC (BiCons x y z) len = lOC z (len+2)
+  lOC (Singl _) len = (len+1)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1408781</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a b c) = 2 + lenOC c
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons a b c) = 1 + countConsOC c</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1261649</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl q) = 1
+lenOC (BiCons q y z) = 2 + lenOC z
+
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl q) = 1
+countConsOC(BiCons q  z) = 1 + countConsOC z
+
+
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl q) = 1
+lenOC (BiCons q y z) = 2 + lenOC z
+
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl q) = 1
+countConsOC(BiCons q y z) = 1 + countConsOC z
+
+
+
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2127186</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC Singl _ = 1
+lenOC BiCons _ _ x = 2 + lenOC x
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC Singl _ = 1
+countConsOC BiCons _ _ x = 1 + countConsOC x</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ x) = 2 + lenOC x
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ x) = 1 + countConsOC x</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">513875</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ b) = 2 + lenOC b
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ b) = 1 + countConsOC b</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1885527</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a b (Singl c )) = 3
+lenOC (BiCons a b c) = 2 + lenOC c
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons a b (Singl c )) = 2
+countConsOC (BiCons a b c) = 1 + countConsOC c</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1907544</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl n) = 1
+lenOC (BiCons a b p) = (lenOC p) + 2
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl n) = 1
+countConsOC (BiCons a b p) = (countConsOC p) + 1
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2137</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl x) = 1
+lenOC (BiCons x y ocs) = 2 + lenOC(ocs)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x) = 1
+countConsOC (BiCons x y ocs) = 1 + countConsOC(ocs)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">155226</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a)        = 1
+lenOC (BiCons b c (d)) = 2 + lenOC d
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a)        = 1
+countConsOC (BiCons b c (d)) = 1 + countConsOC d</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1508700</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl x) = 1
+lenOC (BiCons x y z) = 2 + lenOC(z)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x) = 1
+countConsOC (BiCons x y z) = 1 + countConsOC(z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2069343</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ oc) = 2 + lenOC oc
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ oc) = 1 + countConsOC oc</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2176870</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (OddCont a) = handler1 a 0
+
+handler1 (Singl _) len = len+1
+handler1 (BiCons a b (OddCont c)) len = handler1 (OddCont c) (len+2)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (OddCont a) = 1 + ((lenOC a) - 1)/2
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons a b (OddCont c)) = handler1 (BiCons a b (OddCont c)) 0
+
+handler1 (Singl _) len = len+1
+handler1 (BiCons a b (OddCont c)) len = handler1 (OddCont c) (len+2)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons a b (OddCont c)) = 1 + ((lenOC (BiCons a b (OddCont c))) - 1)/2
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons a b c) = handler1 (BiCons a b c) 0
+
+handler1 (Singl _) len = len+1
+handler1 (BiCons a b c) len = handler1 c (len+2)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons a b c) = 1 + ((lenOC (BiCons a b c)) - 1)/2
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons a b c) = handler1 (BiCons a b c) 0
+
+handler1 (Singl _) len = len+1
+handler1 (BiCons a b c) len = handler1 c (len+2)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons a b c) = handler2 (BiCons a b c) 0
+
+handler2 (Singl _) len = len+1
+handler2 (BiCons a b c) len = handler2 c (len+1)
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons a b c) = (lenOC c) + 2
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons a b c) = (countConsOC c) + 1
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1998183</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a b x) = 2 + (lenOC x)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons a b x) = 1 + (countConsOC x)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1844327</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons _ _ c) = 2 + lenOC c
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons _ _ c) = 1 + countConsOC c</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">152428</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ oc) = 2 + lenOC oc
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _ ) = 1
+countConsOC (BiCons _ _ oc) = 1 + countConsOC oc</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2115346</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ (a)) = 2 + lenOC (a)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ (a)) = 1 + countConsOC (a)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1908334</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOc :: OddCont a-&gt;Int 
+lenOc (Singl _) = 1 
+lenOc (BiCons _ _ z) = 2 + (lenOc z) 
+ 
+countConsOC:: OddCont a-&gt;Int 
+countConsOC (Singl _) = 1 
+countConsOC(BiCons _ _ z) = 1 + (countConsOC z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOc (Singl _) = 1 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1 </pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOc :: OddCont a-&gt;Int 
+lenOc (Singl _) = 1 
+lenOc (BiCons _ _ z) = 2 + (lenOc z) 
+ 
+countConsOC:: OddCont a-&gt;Int 
+countConsOC (Singl _) = 1 
+countConsOC(BiCons _ _ z) = 1 + (countConsOC z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOc :: OddCont a-&gt;Int 
+lenOc (Singl _) = 1 
+lenOc (BiCons _ _ z) = 2 + (lenOc z) 
+ 
+countConsOC:: OddCont a-&gt;Int 
+countConsOC (Singl _) = 1 
+countConsOC(BiCons _ _ z) = 1 + (countConsOC z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOc :: OddCont a-&gt;Int 
+lenOc (Singl _) = 1 
+lenOc (BiCons _ _ z) = 2 + (lenOc z) 
+ 
+countConsOC:: OddCont a-&gt;Int 
+countConsOC (Singl _) = 1 
+countConsOC(BiCons _ _ z) = 1 + (countConsOC z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a-&gt;Int 
+lenOC (Singl _) = 1 
+lenOC (BiCons _ _ z) = 2 + (lenOC z) 
+ 
+countConsOC:: OddCont a-&gt;Int 
+countConsOC (Singl _) = 1 
+countConsOC(BiCons _ _ z) = 1 + (countConsOC z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">495216</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC = undefined
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC = undefined</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Single _) = 1
+lenOC (BiCons _ _ b) = 1 + lenMy b
+
+countConsOC :: OddCont a -&gt; Int
+countCons (Single _) = 1
+countCons (BiCons _ _ b) = 1 + countCons b</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Single _) = 1
+lenOC (BiCons _ _ b) = 1 + lenMy b
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Single _) = 1
+countConsOC (BiCons _ _ b) = 1 + countCons b</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Single _) = 1
+lenOC (BiCons _ _ b) = 1 + 1 + lenMy b
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Single _) = 1
+countConsOC (BiCons _ _ b) = 1 + countCons b</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Single _) = 1
+lenOC (BiCons _ _ b) = 1 + lenOC b
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Single _) = 1
+countConsOC (BiCons _ _ b) = 1 + countConsOC b</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Single _) = 1
+lenOC (BiCons _ _ b) = 1 + 1 + lenOC b
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Single _) = 1
+countConsOC (BiCons _ _ b) = 1 + countConsOC b</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Single _) = 1
+lenOC (BiCons _ _ b) = 2 + lenOC b
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Single _) = 1
+countConsOC (BiCons _ _ b) = 1 + countConsOC b</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+let testCont = BiCons &#x27;a&#x27; &#x27;b&#x27; (BiCons &#x27;c&#x27; &#x27;d&#x27; (Singl &#x27;e&#x27;))
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Single _) = 1
+lenOC (BiCons _ _ b) = lenOC b + 2
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Single _) = 1
+countConsOC (BiCons _ _ b) = 1 + countConsOC b</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+let testCont = BiCons &#x27;a&#x27; &#x27;b&#x27; (BiCons &#x27;c&#x27; &#x27;d&#x27; (Singl &#x27;e&#x27;))
+lenOC testCont
+lenOC :: OddCont a -&gt; Int
+lenOC (Single _) = 1
+lenOC (BiCons _ _ b) = lenOC b + 2
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Single _) = 1
+countConsOC (BiCons _ _ b) = 1 + countConsOC b</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+let testCont = BiCons &#x27;a&#x27; &#x27;b&#x27; (BiCons &#x27;c&#x27; &#x27;d&#x27; (Singl &#x27;e&#x27;))
+lenOC testCont
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Single _) = 1
+lenOC (BiCons _ _ b) = lenOC b + 2
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Single _) = 1
+countConsOC (BiCons _ _ b) = 1 + countConsOC b</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Single _) = 1
+lenOC (BiCons _ _ b) = (lenOC b) + 2
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Single _) = 1
+countConsOC (BiCons _ _ b) = (countConsOC b) + 1</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ b) = (lenOC b) + 2
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ b) = (countConsOC b) + 1</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2118001</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a)=1
+lenOC (BiCons a b c)=2+lenOC c
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a)=1
+countConsOC (BiCons a b c)=1+countConsOC c</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">402290</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC as = helper 0 as where
+  helper n (Singl _) = n + 1
+  helper n (BiCons _ _ a) = helper (n+2) a
+  
+countConsOC :: OddCont a -&gt; Int
+countConsOC as = helper 0 as where
+  helper n (Singl _) = n+1
+  helper n (BiCons _ _ a) = helper (n+1) a
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">142454</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl x) = 1
+lenOC (BiCons y z oc) = 2 + lenOC oc
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x) = 1
+countConsOC (BiCons y z oc) = 1 + countConsOC oc</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1835895</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>lenOC :: OddCont a -&gt; Int
+
+lenOC (Singl a) = 1
+lenOC (BiCons a b (Singl c)) = 3
+lenOC (BiCons a b c) = 2 + lenOC c
+
+countConsOC :: OddCont a -&gt; Int
+
+countConsOC (Singl a) = 1
+countConsOC (BiCons a b (Singl c)) = 2
+countConsOC (BiCons a b c) = 1 + countConsOC c
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1820029</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ x) = 2 + (lenOC x)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ x) = 1 + (countConsOC x)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2062976</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC cont =
+  case cont of
+    Singl a         -&gt; 1
+    BiCons a b (xs) -&gt; 2 + lenOC xs
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC cont =
+  case cont of
+  	Singl a         -&gt; 1
+  	BiCons a b (xs) -&gt; 1 + countConsOC xs</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1863811</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (BiCons _ _ x) = 2 + lenOC x
+lenOC _ = 1
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (BiCons _ _ x) = 1 + lenOC x
+countConsOC _ = 1</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (BiCons _ _ x) = 2 + lenOC x
+lenOC _ = 1
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (BiCons _ _ x) = 1 + countConsOC x
+countConsOC _ = 1</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">155780</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a b OddCont c) = 2 + lenOC c
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (OddCont a)= lenOC a / 2 + 1</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a b (OddCont c)) = 2 + lenOC c
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC a= lenOC a / 2 + 1</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a b  c) = 2 + lenOC c
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC a= lenOC a / 2 + 1</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a b  c) = 2 + lenOC c
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC a= (lenOC a )/ 2 + 1</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a b c) = 2 + lenOC c
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons a b c) = 1 + countConsOC c</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">748165</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl x) = 1
+lenOC (BiCons x y z) = 2 + lenOC z
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x) = 1
+countConsOC (BiCons x y z) = 1 + countConsOC z</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">150406</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a b c) = 2 + lenOC c
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons a b c) = 1 + countConsOC c</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2081985</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ (xs)) = 2 + lenOC(xs)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ (xs)) = 1 + countConsOC(xs)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">147849</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a b c) = 2 + lenOC c
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x) = 1
+countConsOC (BiCons a b c) = 1 + countConsOC c</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2030730</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl x) = 1
+lenOC (BiCons x y z) = 2 + (lenOC z)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x) = 1
+countConsOC (BiCons x y z) = 1 + (countConsOC z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1945481</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC a = helper1 a 0
+helper1 (Singl a) len = len+1
+helper1 (BiCons a1 a2 a3) len = helper1 a3 (len+2)
+
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC a = helper2 a 0
+helper2 (Singl a) len = len+1
+helper2 (BiCons a1 a2 a3) len = helper2 a3 (len+1)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">142490</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC Singl a = 1
+lenOC BiCons a1 a2 a3 = 1 + lenOC a3 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC Singl a = 1
+countConsOC BiCons a1 a2 a3 = 1 + countConsOC a3</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a1 a2 a3) = 1 + lenOC a3 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons a1 a2 a3) = 1 + countConsOC a3</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a1 a2) = 1 + lenOC a2 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons a1 a2 a3) = 1 + countConsOC a3</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a1 a2 a3) = 2 + lenOC a3 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons a1 a2 a3) = 1 + countConsOC a3</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1914351</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a b (c)) = 2 + lenOC c
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons a b (c)) = 1+ countConsOC c</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">301936</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC = lenght(OddCont)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC = undefined</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+imported from Prelude
+lenOC :: OddCont a -&gt; Int
+lenOC = lenght(OddCont)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC = undefined</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+imported from Prelude
+lenOC = lenght(OddCont)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC = undefined</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC = lenght(a)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC = undefined</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+imported from Prelude
+lenOC :: OddCont a -&gt; Int
+lenOC = lenght(a)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC = undefined</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ b) = 2 + lenMy b
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ b) = 1 + countCons b</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ b) = 2 + lenOC b
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ b) = 1 + countConsOC b</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1355682</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int 
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ oc) = 2 + lenOC oc
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ oc) = 1 + countConsOC oc
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">125468</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl x) = 1
+lenOC (BiCons x y oc) = 2 + lenOC oc
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x) = 1
+countConsOC (BiCons x y oc) = 1 + countConsOC oc</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1825452</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl x) = 1
+lenOC (BiCons x y z) = 2 + lenOC z
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x) = 1
+countConsOC (BiCons x y z) = 1 + countConsOC z</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">761006</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC a = hlpLen a
+
+hlpLen (Singl a)      = 1
+hlpLen (BiCons a b c) = 2 + (hlpLen c)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC a = hlpCnt a
+
+hlpCnt (Singl a)      = 1
+hlpCnt (BiCons a b c) = 1 + hlpCnt c</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">152495</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC l (BiCons a a) b = l+2+lenOC b
+
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC = undefined</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC l (BiCons _ _) b = l+2+lenOC b
+
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC  l (BiCons _ _) b =1+l+countConsOC b</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC l (BiCons _ _) b = l+2+lenOC b
+
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC  l (BiCons _ _) b =1+l+countConsOC b</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ b) = 2+lenOC b
+
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ b) =1+countConsOC b</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1823921</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a)= 1
+lenOC (BiCons a b oc)=2+lenOC oc
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons a b oc) = 2 + countConsOC oc</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a)= 1
+lenOC (BiCons a b oc)=2+lenOC oc
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons a b oc) = 1 + countConsOC oc</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">34739</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ b) = 2 + lenOC b
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ b) = 1 + countConsOC b
+
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1055156</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ bicons) = 2 + lenOC cons
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ bicons) = 1 + countConsOC bicons </pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ bicons) = 2 + lenOC bicons
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ bicons) = 1 + countConsOC bicons </pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2070199</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a b c) = 2 + lenOC c
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC a = (lenOC a) `div` 2 + 1</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>lenOC (Singl a) = 1
+lenOC (BiCons a b c) = 2 + lenOC c
+
+countConsOC a = (lenOC a) `div` 2 + 1</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2155448</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ tail) = 2 + lenOC tail
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ tail) = 1 + countConsOC tail</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2178233</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC a = vasyOC a 0 where
+    vasyOC (Singl a) n = n + 1
+    vasyOC (a b (BiCons c)) n = vasyOC c (n + 2)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC a = countNasOC a 0 where
+    countNasOC (Singl a) n = n + 1
+    countNasOC (a b (BiCons c)) n = vasyOC c (n + 1)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>lenOC :: OddCont a -&gt; Int
+lenOC a = vasyOC a 0 where
+    vasyOC (Singl a) n = n + 1
+    vasyOC (BiCons a b (OddCont c)) n = vasyOC c (n + 2)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC a = countNasOC a 0 where
+    countNasOC (Singl a) n = n + 1
+    countNasOC (BiCons a b (OddCont c)) n = countNasOC c (n + 1)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>lenOC :: OddCont a -&gt; Int
+lenOC a = vasyOC a 0 where
+    vasyOC (Singl a) n = n + 1
+    vasyOC (BiCons a b c) n = vasyOC c (n + 2)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC a = countNasOC a 0 where
+    countNasOC (Singl a) n = n + 1
+    countNasOC (BiCons a b c) n = countNasOC c (n + 1)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">180410</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _)      = 1
+lenOC (BiCons _ _ c) = 2 + lenOC c
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _)     = 1
+countConsOC (BiCons _ _ c) = 1 + countConsOC c</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _)      = 1
+lenOC (BiCons _ _ c) = 2 + lenOC c
+ 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Single _)     = 1
+countConsOC (BiCons _ _ c) = 1 + countConsOC c</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _)      = 1
+lenOC (BiCons _ _ c) = 2 + lenOC c
+ 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _)      = 1
+countConsOC (BiCons _ _ c) = 1 + countConsOC c</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">348603</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl x) = 1
+lenOC (BiCons x y z) = 2 + lenOC z
+
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x) = 1
+countConsOC (BiCons x y z) = 1 + countConsOC z</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1375306</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons _ _ x) = (lenOC x) + 2 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons _ _ x) = (countConsOC x) + 1</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">166335</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a b (c)) = 2 + lenOC c
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons a b (c)) = 1 + countConsOC c
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2340233</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a b c) = 2 + lenOC c 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons a b c) = 1 + countConsOC c </pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1826753</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC x = foldl (\ acc y -&gt; acc + 1) 0 x
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC x = if lenOC x == 1 then 1 else lenOC x - 2</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC = foldl (\ acc y -&gt; acc + 1) 0
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC x = if lenOC x == 1 then 1 else lenOC x - 2</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC x = foldl (\acc y -&gt; acc + 1) 0 x
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC x = if lenOC x == 1 then 1 else lenOC x - 2</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC Singl = 1
+lenOC BiCons(_, _, x) = 2 + lenOC x
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC x = if lenOC x == 1 then 1 else lenOC x - 2</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC Singl = 1
+lenOC BiCons = 3
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC x = if lenOC x == 1 then 1 else lenOC x - 2</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC Singl x = 1
+lenOC BiCons x = 3
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC x = if lenOC x == 1 then 1 else lenOC x - 2</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl x) = 1
+lenOC (BiCons _ _ x) = 2 + lenOC x
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC x = if lenOC x == 1 then 1 else lenOC x - 2</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl x) = 1
+lenOC (BiCons _ _ x) = 2 + lenOC x
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x) = 1
+countConsOC (BiCons _ _ x) = 1 + countConsOC x</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">152261</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ z) = (lenOC z) + 2
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ z) = (countConsOC z) + 1</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1851334</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl x) = 1
+lenOC (BiCons _ _ x) = 2 + lenOC x
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x) = 1
+countConsOC (BiCons _ _ x) = 1 + countConsOC x</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2061255</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ rest) = 2 + lenOC rest
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ rest) = 1 + countConsOC rest</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">766411</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ x)= 2 + lenOC x
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ x) = 1 + countConsOC x</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1933517</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC(Singl _) = 1
+lenOC(BiCons x) = 2 + lenOC x
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC(Singl _) = 1
+countConsOC(BiCons x) = 1 + countConsOC x</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC(Singl _) = 1
+lenOC(_BiCons _ (x)) = 2 + lenOC(x)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC(Singl _) = 1
+countConsOC(BiCons x) = 1 + countConsOC x</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC(Singl _) = 1
+lenOC(BiCons _ _ (x)) = 2 + lenOC(x)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC(Singl _) = 1
+countConsOC(BiCons x) = 1 + countConsOC x</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC(Singl _) = 1
+lenOC(BiCons _ _ (x)) = 2 + lenOC(x)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC(Singl _) = 1
+countConsOC(BiCons _ _x) = 1 + countConsOC x</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC(Singl _) = 1
+lenOC(BiCons _ _ (x)) = 2 + lenOC(x)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC(Singl _) = 1
+countConsOC(BiCons _ _ (x)) = 1 + countConsOC (x)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1885134</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC a 
+    | a == Singl _ = 1
+    | a == BiCons x y (OddCont z) = 2 + lenOC(OddCont z)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC a 
+    | a == Singl _ = 1
+    | a == BiCons x y (OddCont z) = 1 + lenOC(OddCont z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC a 
+    | a == Singl _ = 1
+    | a == BiCons _ _ (OddCont z) = 2 + lenOC(OddCont z)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC a 
+    | a == Singl _ = 1
+    | a == BiCons _ _ (OddCont z) = 1 + lenOC(OddCont z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC a 
+    | a == Singl = 1
+    | a == BiCons (OddCont ) = 2 + lenOC(OddCont )
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC a 
+    | a == Singl = 1
+    | a == BiCons  (OddCont ) = 1 + lenOC(OddCont )</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC a 
+    | a == Singl _ = 1
+    | a == BiCons _ _ (OddCont) = 2 + lenOC(OddCont)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC a 
+    | a == Singl _ = 1
+    | a == BiCons _ _  (OddCont) = 1 + lenOC(OddCont)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC = Singl _ = 1
+lenOC (BiCons   (a)) = 2 + lenOC (a)
+
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC a 
+    | a == Singl _ = 1
+    | a == BiCons _ _  (OddCont) = 1 + countConsOC(OddCont)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC = Singl _ = 1
+lenOC (BiCons a) = 2 + lenOC (a)
+
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC Singl _ = 1
+countConsOC (BiCons a) = 1 + countConsOC (a)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC = Singl _ = 1
+lenOC (BiCons (a)) = 2 + lenOC (a)
+
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC Singl _ = 1
+countConsOC (BiCons (a)) = 1 + countConsOC (a)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC Singl _ = 1
+lenOC (BiCons (a)) = 2 + lenOC (a)
+
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC Singl _ = 1
+countConsOC (BiCons (a)) = 1 + countConsOC (a)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons (a)) = 2 + lenOC (a)
+
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons (a)) = 1 + countConsOC (a)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons   (a)) = 2 + lenOC (a)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons   (a)) = 1 + countConsOC (a)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ (a)) = 2 + lenOC (a)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ (a)) = 1 + countConsOC (a)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1373906</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl x) = 1
+lenOC (BiCons x y (Singl z)) = 3
+lenOC (BiCons x y z) = 2 + lenOC z
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x) = 1
+countConsOC (BiCons x y (Singl z)) = 2
+countConsOC (BiCons x y z) = 1 + countConsOC z</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2202323</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a)      = 1
+lenOC (BiCons a b c) = 2 + (lenOC c)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a)      = 1
+countConsOC (BiCons a b c) = 1 + (countConsOC c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2131150</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl x)      = 1
+lenOC (BiCons x y z) = 2 + lenOC z
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x)      = 1
+countConsOC (BiCons x y z) = 1 + countConsOC z</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">37083</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a b c) = 2 + lenOC c 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons a b c) = 1 + countConsOC c</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2131932</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a1 a2 l) = 2 + lenOC l
+
+countConsOC :: OddCont a -&gt; Int
+countOC (Singl a) = 1
+countOC (BiCons a1 a2 l) = 1 + countOC l</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a1 a2 l) = 2 + lenOC l
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons a1 a2 l) = 1 + countConsOC l</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">723421</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a b c) = 2 + (lenOC c)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons a b c) = 1 + (countConsOC c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2007518</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ x) = 2 + lenOC x
+
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ x) = 1 + countConsOC x</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">435937</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Single _) = 1
+lenOC (BiCons _ _ x) = lenOC x + 2
+
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Single _) = 1
+countConsOC (BiCons _ _ x) = countConsOC x + 1</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ x) = lenOC x + 2
+
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ x) = countConsOC x + 1</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1869137</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons _ _ oc) = 2 + lenOC oc
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons _ _ oc) = 1 + countConsOC oc
+
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1910767</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a b c) = 2 + lenOC c
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons a b c) = 1 + countConsOC c</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">151536</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>lenOC :: OddCont a -&gt; Int
+lenOC a = lenOCHelp 0 a
+
+lenOCHelp :: Int -&gt; OddCont a -&gt; Int
+lenOCHelp len (BiCons _ _ x) = lenOCHelp (len+2) x
+lenOCHelp len (Singl _) = len+1
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC a = countConsOCHelp 0 a 
+
+countConsOCHelp :: Int -&gt; OddCont a -&gt; Int
+countConsOCHelp len (Singl _) = len+1
+countConsOCHelp len (BiCons _ _ x) = countConsOCHelp (len+1) x</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">616403</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl x) = 1
+lenOC (BiCons _ _ x) = 2 + lenOC(x)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x) = 1
+countConsOC (BiCons _ _ x) = 1 + countConsOC(x)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1943033</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC Singl _ = 1
+lenOC BiCons _ _ BC = 2 + lonOC BC
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC BC = floor ( (lenOC BC)*0.5 )</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC Singl _ = 1
+lenOC BiCons _ _ BC = 2 + lenOC BC
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC BC = floor ( (lenOC BC)*0.5 )</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC Singl _ = 1
+lenOC (BiCons _ _ BC) = 2 + lenOC BC
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC BC = floor ( (lenOC BC)*0.5 )</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">40186</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl x)       = 1
+lenOC (BiCons x y xs) = 2 + lenOC xs
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x)       = 1
+countConsOC (BiCons x y xs) = 1 + countConsOC xs</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">170493</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ cont) = 2 + lenOC cont
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ cont) = 1 + countConsOC cont</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2070014</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl x) = 1
+lenOC (BiCons y z oc) = 2 + lenOC oc
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x) = 1
+countConsOC (BiCons y z oc) = 1 + countConsOC oc</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1288149</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a aa aaa) = 2 + lenOC aaa 
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons a aa aaa) = 1 + countConsOC aaa</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+</ul>
+
+
+
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="js/vendor/jquery.tooltipster.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
+

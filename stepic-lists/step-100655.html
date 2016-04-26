@@ -1,0 +1,2126 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>×</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/tooltipster.css" />
+        <link rel="stylesheet" href="css/themes/tooltipster-noir.css" />
+
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+
+        <ul id="users">
+<li class="user">
+<div class="uid">1456128</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Singl f (a)
+  fmap f (BiCons a b (Singl c)) = BiCons f (a) f (b) (Singl f (c))
+  fmap f (BiCons a b c) = BiCons f (a) f (b) fmap f c
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Singl (f a)
+  fmap f (BiCons a b (Singl c)) = BiCons (f a) (f b) (Singl (f c))
+  fmap f (BiCons a b c) = BiCons f (a) f (b) fmap f c
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Singl (f a)
+  fmap f (BiCons a b (Singl c)) = BiCons (f a) (f b) (Singl (f c))
+  fmap f (BiCons a b c) = BiCons (f a) (f b) (fmap f c)
+
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">60674</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Single x) = Single (f x)
+  fmap f (BiCons x y z) = BiCons (f x) (f y) (fmap f z)
+  </pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = Single (f x)
+  fmap f (BiCons x y z) = BiCons (f x) (f y) (fmap f z)
+  </pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f (BiCons x y z) = BiCons (f x) (f y) (fmap f z)
+  </pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">115973</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a)      = Singl (f a)
+  fmap f (BiCons a b c) = BiCons (f a) (f b) (fmap f c) </pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1880838</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f (BiCons x y z) = BiCons (f x) (f y) (fmap f z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2049282</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Singl (f a)
+  fmap f (BiCons a b (Singl c)) = BiCons (f a) (f b) (Singl (f c))
+  fmap f (BiCons a b c) = BiCons (f a) (f b)(fmap f c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">343822</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f a = hlp f a where
+    hlp f (Singl a) = (Singl (f a))
+    hlp f (BiCons a b c) = (BiCons (f a) (f b) (hlp f c))
+
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">125712</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f (BiCons x y z) = BiCons (f x) (f y) (fmap f z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2115346</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a)= Singl (f a)
+  fmap f (BiCons x y (b)) = BiCons (f x) (f y) (fmap f b)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1217043</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+instance Functor OddCont where
+    fmap f (BiCons a b c) = BiCons (f a) (f b) (f c)
+    fmap f (Singl a) = Singl (f a)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>instance Functor OddCont where
+    fmap f (BiCons a b c) = BiCons (f a) (f b) (fmap f c)
+    fmap f (Singl a) = Singl (f a)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1164564</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>-- 5th task
+instance Functor OddCont where
+    fmap f (Singl a) = Singl (f a)
+    fmap f (BiCons a b c) = BiCons (f a) (f b) (fmap f c)
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">127769</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f (BiCons x y cont) = BiCons (f x) (f y) (fmap f cont)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2076187</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+    fmap f (BiCons a b c) = BiCons (f a) (f b) (fmap f c)
+    fmap f (Singl a) = Singl (f a)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2161692</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = (Singl (f a))
+  fmap f (BiCons a b c) = (BiCons (f a) (f b) (f c))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = (Singl (f a))
+  fmap f (BiCons a b c) = (BiCons (f a) (f b) (fmap f c))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">150149</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f (BiCons x y z) = BiCons ((f x) (f y) (fmap f z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f (BiCons x y z) = BiCons (f x) (f y) (fmap f z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">131873</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f (BiCons x y z) = Bicons (f x) (f y) (fmap f z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f (BiCons x y z) = BiCons (f x) (f y) (fmap f z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1941538</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (BiCons x y z) = (BiCons (f x) (f y) (fmap f z))
+  fmap f (Singl x) = (Singl (f x))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">152819</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>instance Functor OddCont where
+    fmap p (Singl a) = Singl (p a)
+    fmap p (BiCons a b c) = BiCons (p a) (p b) $ (fmap p c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1508700</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = (Singl (f x))
+  fmap f (BiCons x y z) = BiCons (f x) (f y) (fmap f z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1948204</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f (BiCons x y z) = BiCons (f x) (f y) (f z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f (BiCons x y z) = BiCons (f x) (f y) (fmap f z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">127197</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Singl $ f a
+  fmap f (BiCons a b xs) = BiCons (f a) (f b) (fmap f xs)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1914933</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f (BiCons x y z) = BiCons (f x) (f y) (fmap f z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1984823</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = (Singl (f a))
+  fmap f (BiCons a b c)  = (BiCons (f a) (f b) (fmap f c))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">313658</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+ 
+instance Functor OddCont where
+  fmap f (Singl a)  = Singl $ f a
+  fmap f (BiCons a b c) = BiCons (f a) (f b) $ fmap f c  </pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">165956</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f (BiCons x y z) = BiCons (f x) (f y) (fmap f z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">320330</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+instance Functor OddCont where
+  fmap f (BiCons a b c) = BiCons (f a)(f b) (fmap f c)
+  fmap f (Singl a)  = Singl (f a)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1013067</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Singl $ f a
+  fmap f (BiCons a b c) = BiCons (f a) (f b) $ fmap f c</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1848652</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f a = f_map f a where
+    f_map f (Singl x) = Singl (f x)
+    f_map f (BiCons x y z) = (BiCons (f x) (f y) (f_map f z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap = undefined</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f (BiCons x y z) = (BiCons (f x) (f y) (fmap f z))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1408781</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl r) = Singl (f r)
+  fmap f (BiCons a d (Singl r)) = BiCons (f a) (f d) (Singl (f r))
+  fmap f (BiCons a d c) = BiCons (f a) (f d) (fmap c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl r) = Singl (f r)
+  fmap f (BiCons a d (Singl r)) = BiCons (f a) (f d) (Singl (f r))
+  fmap f (BiCons a d c) = BiCons (f a) (f d) (fmap f c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1261649</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+fmap f (Singl x) = (Singl (f x))
+fmap f (BiCons x y z)  = (BiCons (f x) (f y) (fmap f z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+    fmap f (Singl x) = (Singl (f x))
+    fmap f (BiCons x y z)  = (BiCons (f x) (f y) (fmap f z))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2127186</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+	fmap f (Singl x) = Singl $ f x
+	fmap f (BiCons a b x) = BiCons (f a) (f b) (fmap f x)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">513875</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+	fmap f (Singl a) = Singl (f a)
+	fmap f (BiCons a b c) = BiCons (f a) (f b) (fmap f c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1885527</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Singl (f a) 
+  fmap f (BiCons a b (Singl c )) = BiCons (f a) (f b) (Singl (f c))
+  fmap f (BiCons a b c) = BiCons (f a) (f b) (fmap f (c))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1907544</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor (OddCont) where
+    fmap g (Singl a) = (Singl (g a))
+    fmap g (BiCons a b p) = (BiCons (g a) (g b) (fmap g p))
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2137</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f (BiCons x y ocstail) = BiCons (f x) (f y) (fmap f ocstail)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">155226</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap cond (Singl a)        = Singl (cond a)
+  fmap cond (BiCons a b (c)) = BiCons (cond a) (cond b) (fmap cond c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">436316</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+    fmap f (Singl a) = Singl (f a)
+    fmap f (BiCons a b oc) = BiCons (f a) (f b) (fmap f oc)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2069343</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl el) = Singl (f el)
+  fmap f (BiCons el1 el2 oc) = BiCons (f el1) (f el2) (fmap f oc)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2176870</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Singl (f a)
+  fmap f (BiCons a b c) = (BiCons (f a) (f b) (fmap f c))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1998183</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Singl (f a)
+  fmap f (BiCons a b x) = (BiCons (f a) (f b) (fmap f x))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1844327</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+	fmap f (Singl a) = Singl (f a)
+	fmap f (BiCons a b c) = BiCons (f a) (f b) (fmap f c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">152428</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Singl (f a)
+  fmap f (BiCons a b oc) = BiCons (f a) (f b) (fmap f oc)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">439058</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = (Singl (f a))
+  fmap f (BiCons a b c) = (BiCons (f a) (f b) (fmap f c))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1908334</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+    fmap f (Singl x) = Singl (f x) 
+    fmap f (BiCons x y z) = BiCons (f x) (f y) (fmap f z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">495216</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap = undefined</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x)  = Singl (f x)
+  fmap f (BiCons x y a) = BiCons (f x) (f y) fmap f a</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x)  = Singl (f x)
+  fmap f (BiCons x y a) = BiCons (f x) (f y) (fmap f a)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2118001</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+ fmap f (Singl a)=Singl (f a)
+ fmap f (BiCons a b c)=BiCons (f a) (f b) (fmap f c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">402290</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f (BiCons x y s) = BiCons (f x) (f y) (fmap s) </pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f (BiCons x y s) = BiCons (f x) (f y) (fmap f s)  </pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">142454</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Singl (f a)
+  fmap f (BiCons x y z) = BiCons (f x) (f y) (fmap f z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1835895</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>instance Functor OddCont where
+	fmap f (Singl a) = Singl (f a)
+	fmap f (BiCons a b c) = BiCons (f a) (f b) (fmap f c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1820029</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+	fmap f (Singl x)= Singl (f x)
+	fmap f (BiCons x y z)= BiCons (f x) (f y) (fmap f z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2062976</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f cont =
+    case cont of
+  	  Singl a         -&gt; Singl (f a)
+  	  BiCons a b (xs) -&gt; BiCons (f a) (f b) (fmap f xs)	</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1863811</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a)= Singl $ f a
+  fmap f (BiCons x y z) = BiCons (f x) (f y) (fmap z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a)= Singl $ f a
+  fmap f (BiCons x y z) = BiCons (f x) (f y) (fmap f z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">155780</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a)= Singl $ f a
+  fmap f (BiCons a b c) = BiCons (f a) (f b) (fmap f c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">748165</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+	fmap f (Singl x) = Singl (f x)
+	fmap f (BiCons x y z) = BiCons (f x) (f y) (fmap f z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">150406</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+instance Functor OddCont where
+	fmap func (Singl a) = (Singl (func a))
+	fmap func (BiCons a b c) = (BiCons (func a) (func b) (fmap func c))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2081985</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+	fmap f (Singl x) = Singl (f x)
+	fmap f (BiCons x y zs) = BiCons (f x) (f y) (fmap f zs)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">147849</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+    fmap goo (Singl a) = Singl (goo a)
+  	fmap goo (BiCons a b c) = BiCons (goo a) (goo b) (fmap goo c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap goo (Singl a) = Singl (goo a)
+  fmap goo (BiCons a b c) = BiCons (goo a) (goo b) (fmap goo c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2030730</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Single x) = Single (f x)
+  fmap f (BiCons x y z) = BiCons (f x) (f y) (fmap f z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f (BiCons x y z) = BiCons (f x) (f y) (fmap f z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1945481</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Singl (f a)
+  fmap f (BiCons a1 a2 a3) = BiCons (f a1) (f a2) (fmap f a3)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">142490</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = f a
+  fmap f (BiCons a1 a2 Singl a3) = BiConis (f a1 f a2 fmap f a3)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Singl f a
+  fmap f (BiCons a1 a2 a3) = BiCons (f a1) (f a2) (fmap f a3)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Singl (f a)
+  fmap f (BiCons a1 a2 a3) = BiCons (f a1) (f a2) (fmap f a3)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1910767</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap foo (Singl a) = Singl (foo a)
+  fmap foo (BiCons a b c) = BiCons (foo a) (foo b) (fmap foo c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">301936</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap = (a -&gt; b) -&gt; f a -&gt; f b</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap :: (a -&gt; b) -&gt; f a -&gt; f b</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap :: (a -&gt; b) -&gt; OddCont a -&gt; OddCont b</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x)  = Singl $ f x
+  fmap f (BiCons x y a) = BiCons (f x) (f y) $ fmap f a</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1355682</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = (Singl $ f a)
+  fmap f (BiCons a b oc) = (BiCons (f a) (f b) (fmap f oc))
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">125468</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f (BiCons x y oc) = BiCons (f x) (f y) (fmap f oc)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1825452</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f (BiCons x y z) = BiCons (f x) (f y) (fmap f z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">761006</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a)      = Singl (f a)
+  fmap f (BiCons a b c) = BiCons ((f a) (f b) (fmap f c))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a)      = Singl (f a)
+  fmap f (BiCons a b c) = BiCons (f a) (f b) (fmap f c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">152495</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = (Singl (f x))
+  fmap f (BiCons x y z) = BiCons (f x) (f y) fmap f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = (Singl (f x))
+  fmap f (BiCons x y z) = BiCons (f x) (f y) (fmap f z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1823921</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap g (Singl a) = Singl (g a)
+  fmap g (BiCons a b oc) = BiCons (g a) (g b) (fmap g oc)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">34739</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x)  = Singl $ f x
+  fmap f (BiCons x y b) = BiCons (f x) (f y) $ fmap f b  
+
+  </pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1055156</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Single a) = f a
+  fmap f (BiCons a b bicons) = BiCons (f a) (f b) (fmap bicons)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = f a
+  fmap f (BiCons a b bicons) = BiCons (f a) (f b) (fmap bicons)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = f a
+  fmap f (BiCons a b bicons) = BiCons (f a) (f b) (fmap f bicons)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Singl (f a)
+  fmap f (BiCons a b bicons) = BiCons (f a) (f b) (fmap f bicons)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2070199</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Singl (f a)
+  fmap f (BiCons a b c) = BiCons (f a) (f b) (fmap f c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2155448</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Singl (f a)
+  fmap f (BiCons a b tail) = BiCons (f a) (f b) (fmap f tail)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2178233</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap func ocs = BiCons (func a) (func b) (fmap func c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap func (Singl a) = Singl (func a)
+  fmap func (BiCons a b c) = BiCons (func a) (func b) (fmap func c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">180410</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap _ Singl a = Singl a
+  fmap f BiCons a a a = BiCons (f a f a f a)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap _ Singl a = Singl a
+  fmap f BiCons x y z = BiCons (f x f y f z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap _ Singl a = Singl a
+  fmap f BiCons x y z = BiCons (f x $ f y $ f z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap f Singl a = f a
+  fmap f BiCons x y z = BiCons (f x $ f y $ f z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap f a = f a
+  fmap f x y z = (f x $ f y $ f z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap f Singl = f Singl
+  fmap f x y z = (f x $ f y $ f z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap f Singl  = f Singl
+  fmap f BiCons = (f Singl $ f Singl $ f OddCont)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap f Singl  = f Singl
+  fmap f BiCons = (f Singl $ f Singl $ f BiCons)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap f Singl a = f a
+  fmap f BiCons = (f Singl $ f Singl $ f BiCons)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap f Singl a = f Singl a
+  fmap f BiCons = (f Singl $ f Singl $ f BiCons)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap f Singl a = f Singl a
+  fmap f BiCons a b c = (f Singl a $ f Singl b $ f BiCons c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap f Singl a = f a
+  fmap f BiCons a b c = (fmap f a $ fmap f b $ fmap f c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap f a = f a
+  fmap f a b c = (fmap f a $ fmap f b $ fmap f c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap f a = f a
+  fmap f a b c = fmap f a $ fmap f b $ fmap f c</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap f (Single a)     = Single (f a)
+  fmap f (BiCons a b c) = BiCons (f a) (f a) (fmap f c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap f (Singl a)     = Singl (f a)
+  fmap f (BiCons a b c) = BiCons (f a) (f a) (fmap f c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap f (Singl a)      = Singl (f a)
+  fmap f (BiCons a b c) = BiCons (f a) (f b) (fmap f c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">348603</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+		fmap f (Singl x) = Singl (f x)
+		fmap f (BiCons x y z) = BiCons (f x) (f y) (fmap f z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1375306</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+	fmap f (Singl a)= (Singl (f a))
+	fmap f (BiCons a b x) = (BiCons (f a) (f b) (fmap f x))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">166335</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+   fmap f (Singl a) = Singl (f a)
+   fmap f (BiCons a b c) = BiCons (f a) (f b) (fmap f c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2340233</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Singl (f a)
+  fmap f (BiCons a b c) = (BiCons (f a) (f b) (fmap f c))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1826753</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap func (Singl x) = Singl (func x)
+  fmap func (BiCons x y z) = BiCons (func x) (func y) (fmap func z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">152261</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+    fmap f (Singl x)  = Singl (f x)
+    fmap f (BiCons x y z) = BiCons (f x) (f y) (fmap f z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1851334</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (BiCons x y rest) = BiCons (f x) (f y) $ fmap f rest
+  fmap f (Singl x) = Singl (f x)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2061255</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>instance Functor OddCont where
+  fmap f (Singl x) = Singl $ f x
+  fmap f (BiCons x y rest) = BiCons (f x) (f y) $ fmap f rest</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">766411</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f (BiCons x y z) = BiCons (f x) (f y) (fmap f z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1933517</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = (Singl(f x))
+  fmap f (BiCons x y z) = (BiCons (f x) (f y) (f z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = (Singl(f x))
+--  fmap f (BiCons x y z) = (BiCons (f x) (f y) (f z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = (Singl(f x))
+  fmap f (BiCons x y z) = BiCons (fmap f x) (fmap f y) (fmap f z)
+ </pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = (Singl(f x))
+  fmap f (BiCons x y z) = BiCons (f x) (f y) (f z)
+ </pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = (Singl(f x))
+  fmap f (BiCons x y z) = (f x) (f y)  BiCons (f z)
+ </pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = (Singl(f x))
+  fmap f (BiCons x y z) = (BiCons (f x) (f y) (f z))
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = (Singl(f x))
+  fmap f (BiCons x y z) = (BiCons (f x) (f y) (OddCont (f z)))
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = (Singl(f x))
+  fmap f (BiCons x y z) = (BiCons (f x) (f y) (BiCons (f z)))
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = (Singl(f x))
+  fmap f (BiCons x y z) = (f x) (f y) (BiCons (f z))
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = (Singl(f x))
+  fmap f (BiCons x y z) = (BiCons (f x) (f y) (fmap f z))
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1885134</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Single (f a)
+  fmap f (BiCons a b (c)) = (BiCons (f a) (f b)) fmap(c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Singl (f a)
+  fmap f (BiCons a b (c)) = (BiCons (f a) (f b)) fmap(c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Singl (f a)
+  fmap f (BiCons a b (c)) = (BiCons (f a) (f b)) fmap f (c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Singl (f a)
+  fmap f (BiCons a b (c)) = (BiCons (f a) (f b)) (fmap (f (c)))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Singl (f a)
+  fmap f (BiCons a b (c)) = (BiCons (f a) (f b)) (fmap f (c))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1373906</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f (BiCons x y (Singl z)) = BiCons (f x) (f y) (Singl (f z))
+  fmap f (BiCons x y z) = BiCons (f x) (f y) (fmap f z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2202323</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a)      = Singl (f a)
+  fmap f (BiCons a b c) = BiCons (f a) (f b) (fmap f c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2131150</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f (BiCons x y z) = BiCons (f x) (f y) (f z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f (BiCons x y z) = BiCons (f x) (f y) (fmap f z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">37083</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Singl (f a)
+  fmap f (BiCons a b c) = BiCons (f a) (f b) (fmap f c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2131932</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap func (Just (Singl a)) = Just (func (Singl a))
+  fmap func (Just (BiCons a1 a2 l)) = Just (func (BiCons a1 a2)) ++ fmap func l 
+  fmap func Nothing = Nothing</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Singl (f a)
+  fmap f (BiCons a1 a2 l) = BiCons (f a1) (f a2) (fmap f l)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">723421</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap g (Singl a)      = Singl (g a)
+  fmap g (BiCons a b c) = BiCons (g a) (g b) (fmap g c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2007518</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f (BiCons x y z) = BiCons (f x) (f y) (fmap f z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">435937</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x)  = Singl $ f x
+  fmap f (BiCons x y z) = BiCons (f x) (f y) $ fmap f z</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1914351</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Singl (f a)
+  fmap f (BiCons a b (c)) = BiCons (f a) (f b) (fmap f c)
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">151536</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>instance Functor OddCont where
+	fmap f (BiCons a b x)= BiCons (f a) (f b) (fmap f x)
+	fmap f (Singl a)= Singl (f a)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">616403</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = f x
+  fmap f (BiCons x1 x2 y) = BiCons (f x1) (f x2) (fmap f y)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f (BiCons x1 x2 y) = BiCons (f x1) (f x2) (fmap f y)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">40186</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+	fmap f (Singl x) = Singl (f x)
+	fmap f (BiCons x y xs) = BiCons (f x) (f y) (fmap f xs)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">170493</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = (Singl (f a))
+  fmap f (BiCons a b cont) = (BiCons (f a) (f b)) (fmap f cont)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2070014</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Singl (f a)
+  fmap f (BiCons a a) = BiCons (f a) (f a)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Singl (f a)
+  fmap f (BiCons a b c) = BiCons (f a) (f b) (fmap f c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1288149</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap ff (Singl aa) = Singl (ff aa)
+  fmap ff (BiCons b1 b2 b3) = BiCons (ff b1) (ff b2) (fmap ff b3)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+</ul>
+
+
+
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="js/vendor/jquery.tooltipster.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
+

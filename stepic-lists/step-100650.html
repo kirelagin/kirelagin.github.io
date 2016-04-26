@@ -1,0 +1,3443 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>×</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/tooltipster.css" />
+        <link rel="stylesheet" href="css/themes/tooltipster-noir.css" />
+
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+
+        <ul id="users">
+<li class="user">
+<div class="uid">1456128</div>
+<ul class="submissions">
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+listOC :: OddCont a -&gt; [Int]
+listOC (Singl a) = [a]
+listOC (BiCons a b (Singl c)) = [a,b,c]
+listOC (BiCons a b c) = [a,b] ++ (listOC c)
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC = foldr</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+listOC :: OddCont a -&gt; [Int]
+listOC (Singl a) = [a]
+listOC (BiCons a b (Singl c)) = [a,b,c]
+listOC (BiCons a b c) = [a,b] ++ (listOC c)
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC a b c = foldr a b c</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+listOC :: OddCont a -&gt; [a]
+listOC (Singl a) = [a]
+listOC (BiCons a b (Singl c)) = [a,b,c]
+listOC (BiCons a b c) = [a,b] ++ (listOC c)
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC a b c = foldr a b c</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+listOC :: OddCont a -&gt; [a]
+listOC (Singl a) = [a]
+listOC (BiCons a b (Singl c)) = [a,b,c]
+listOC (BiCons a b c) = [a,b] ++ (listOC c)
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC a b = foldr a b</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+listOC :: OddCont a -&gt; [a]
+listOC (Singl a) = [a]
+listOC (BiCons a b (Singl c)) = [a,b,c]
+listOC (BiCons a b c) = [a,b] ++ (listOC c)
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC = foldr</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+listOC :: OddCont a -&gt; [a]
+listOC (Singl a) = [a]
+listOC (BiCons a b (Singl c)) = [a,b,c]
+listOC (BiCons a b c) = [a,b] ++ (listOC c)
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC x y = foldr x y</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+listOC :: OddCont a -&gt; [a]
+listOC (Singl a) = [a]
+listOC (BiCons a b (Singl c)) = [a,b,c]
+listOC (BiCons a b c) = [a,b] ++ (listOC c)
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC x y = foldr x (listOC y)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f x (Singl a) = f x a
+foldrOC f x (BiCons a b c) = f (f (f x a) b) (foldr f x c)
+ </pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f x (Singl a) = f x a
+foldrOC f x (BiCons a b c) = f (f (f x a) b) (foldrOC f x c)
+ </pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f x (Singl a) = f x a
+foldrOC f x (BiCons a b c) = f (f a b) (foldrOC f x c)
+ 
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f x (Singl a) = f x a
+foldrOC f x (BiCons a b c) = f (f (f x a) b) (foldrOC f x c)
+ 
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f x (Singl a) = f x a
+
+ 
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a) = f a
+
+ 
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f x (Singl a) = f x a
+--foldrOC f x (BiCons a b c) = f (f (f x a) b) (foldrOC f x c)
+ 
+--foldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b
+--foldr _ z [] = z
+--foldr f z (x:xs) = f x (foldr f z xs)</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f x (Singl a) = a
+foldrOC f x (BiCons a b c) = f (f (f x a) b) (foldrOC f x c)
+ 
+--foldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b
+--foldr _ z [] = z
+--foldr f z (x:xs) = f x (foldr f z xs)</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a) x = a
+foldrOC f (BiCons a b c) x = f (f (f x a) b) (foldrOC f x c)
+ 
+--foldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b
+--foldr _ z [] = z
+--foldr f z (x:xs) = f x (foldr f z xs)</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a) x = a
+--foldrOC f (BiCons a b c) x = f (f (f x a) b) (foldrOC f x c)
+ 
+--foldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b
+--foldr _ z [] = z
+--foldr f z (x:xs) = f x (foldr f z xs)</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f x (Singl a) = x `f` a
+--foldrOC f x (BiCons a b c) = f (f (f x a) b) (foldrOC f x c)
+ 
+--foldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b
+--foldr _ z [] = z
+--foldr f z (x:xs) = f x (foldr f z xs)</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f x (Singl a) = f a x
+--foldrOC f x (BiCons a b c) = f (f (f x a) b) (foldrOC f x c)
+ 
+--foldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b
+--foldr _ z [] = z
+--foldr f z (x:xs) = f x (foldr f z xs)</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f x (Singl a) = f a x
+foldrOC f x (BiCons a b c) = f (f b (f a x)) (foldrOC f x c)
+ 
+--foldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b
+--foldr _ z [] = z
+--foldr f z (x:xs) = f x (foldr f z xs)</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f x (Singl a) = f a x
+foldrOC f x (BiCons a b c) = f (foldrOC f x c) (f b (f a x))
+ 
+--foldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b
+--foldr _ z [] = z
+--foldr f z (x:xs) = f x (foldr f z xs)</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f x (Singl a) = f a x
+foldrOC f x (BiCons a b c) =  (f b (f a x))
+ 
+--foldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b
+--foldr _ z [] = z
+--foldr f z (x:xs) = f x (foldr f z xs)</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f x (Singl a) = f a x
+foldrOC f x (BiCons a b c) = f (foldrOC f x c) x
+
+--(f b (f a x))
+ 
+--foldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b
+--foldr _ z [] = z
+--foldr f z (x:xs) = f x (foldr f z xs)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f x (Singl a) = f a x
+foldrOC f x (BiCons a b c) = f a (f b (foldrOC f x c)) 
+
+--(f b (f a x))
+ 
+--foldr :: (a -&gt; b -&gt; b) -&gt; b -&gt; [a] -&gt; b
+--foldr _ z [] = z
+--foldr f z (x:xs) = f x (foldr f z xs)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">60674</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f init (Single x) = f (x init)
+foldrOC f init (BiCons x y z) = f (f x y) (foldrOC f init z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f init (Singl x) = f (x init)
+foldrOC f init (BiCons x y z) = f (f x y) (foldrOC f init z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f init (Singl x) = f x init
+foldrOC f init (BiCons x y z) = f (f x y) (foldrOC f init z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f init (Singl x) = f x init
+foldrOC f init (BiCons x y z) = f (f y x) (foldrOC f init z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f init (Singl x) = f x init
+foldrOC f init (BiCons x y z) = f x (f y (foldrOC f init z))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">115973</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a)      = f a ini
+foldrOC f ini (BiCons a b c) = f a (f b (foldrOC f ini c))  </pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1880838</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+-- foldrOC f ini x = undefined
+foldrOC f ini (Singl x) = f x ini
+foldrOC f ini (BiCons x y z) = f x (f y (foldrOC f ini z))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2049282</div>
+<ul class="submissions">
+<li class="submission tooltip correct warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b  
+foldrOC f b o = foldr f b (helper o [])
+
+helper :: OddCont a -&gt;[a]-&gt;[a]
+helper (Singl a) xs = a:xs
+helper (BiCons a b (Singl c)) xs = a:b:c:xs
+helper (BiCons a b c) xs = (a:b:xs)++(helper c [])</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">343822</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini a = hlp f ini a where
+  hlp f ini (Singl a) = f a ini
+  hlp f ini (BiCons a b c) = a `f` (b `f` (hlp f ini c))
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">125712</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = x `f` ini
+foldrOC f ini (BiCons x y z) = x `f` (y `f` foldrOC f ini z)
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2115346</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f z (Singl a) = f a z
+foldrOC f z (BiCons x y (b)) = f x (f y (foldrOC f z b))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1217043</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b 
+foldrOC f b (Singl a) = f a b
+foldrOC f d (BiCons a b c) = f a (f b (foldrOC f d c))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1164564</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>-- 6th task
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = f a ini
+foldrOC f ini (BiCons a b c) = foldrOC f (f b (f a ini)) c</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>-- 6th task
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = f a ini
+foldrOC f ini (BiCons a b c) = foldrOC f (f a (f b ini)) c</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>-- 6th task
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = f a ini
+foldrOC f ini (BiCons a b c) = f a (f b (foldrOC f ini c)) 
+
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">127769</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = f x ini
+foldrOC f ini (BiCons x y cont) = f x (f y (foldrOC f ini cont))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2076187</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f s (BiCons a b c) = f a (f b (foldrOC f s c))
+foldrOC f s (Singl a) = f a s</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2161692</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = a `f` ini
+foldrOC f ini (BiCons a b c) = a `f` (b `f` foldrOC f ini c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">150149</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = f x ini
+foldrOC f ini (BiCons x y z) = foldrOC z `f` y `f` x</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = f x ini
+foldrOC f ini (BiCons x y z) = (foldrOC z) `f` y `f` x</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = f x ini
+foldrOC f ini (BiCons x y z) = x `f` y `f` (foldrOC z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = f ini x
+foldrOC f ini (BiCons x y z) = x `f` y `f` (foldrOC z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = f x ini
+foldrOC f ini (BiCons x y z) = x `f` y `f` (foldrOC f ini z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = f x ini
+foldrOC f ini (BiCons x y z) = f x (f y (foldrOC f ini z))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">131873</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC b i (Singl x) = b i x
+foldrOC b i (BiCons x y z) = b x (b y (foldrOC b i z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC op i (Singl x) = op i x
+foldrOC op i (BiCons x y z) = op x (op y (foldrOC op i z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC op i (Singl x) = op x i
+foldrOC op i (BiCons x y z) = op x (op y (foldrOC op i z))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1941538</div>
+<ul class="submissions">
+<li class="submission tooltip correct warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f x y= foldr f x (toList y) 
+
+toList :: OddCont a -&gt; [a]
+toList (BiCons x y z) = x:y:(toList z)
+toList (Singl x) = x:[]</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (BiCons x y z) = x `f` (y `f` (foldrOC f ini z))
+foldrOC f ini (Singl x) = x `f` ini</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">152819</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f n (Singl a)  = f a n
+foldrOC f n (BiCons a b c) = f a (f b (foldrOC f n (c)))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1508700</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = x `f` ini 
+foldrOC f ini (BiCons x y z) = x `f` (y `f` foldrOC f ini z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1948204</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = f x ini
+foldrOC f ini (BiCons x y z) = f x (f y (f ini z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = f x ini
+foldrOC f ini (BiCons x y z) = f x (f y (f z ini))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = f x ini
+foldrOC f ini (BiCons x y z) = f x (f y (foldrOC f ini z))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">127197</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f z (Singl a) = f a z
+foldrOC f z (BiCons a b xs) = f a (f b (foldrOC f z xs))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1914933</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = x `f` ini
+foldrOC f ini (BiCons x y z) = x `f` (y `f` (foldrOC f ini z))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1984823</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC func init (Singl a) = func a init
+foldrOC func init (BiCons a b c) = func b (func a (foldrOC func init c))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC func init (Singl a) = func a init
+foldrOC func init (BiCons a b c) = func a (func b (foldrOC func init c))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">313658</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f b (BiCons x y z) = f x $ f y $ foldrOC f b z
+foldrOC f b (Singl a) = f a b </pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">165956</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f start_value (Singl x) = f x start_value
+-- foldrOC f start_value (BiCons x y z) = foldrOC f (f y (f x start_value)) z
+foldrOC f start_value (BiCons x y z) = foldrOC f (f y (foldrOC f start_value z)) (Singl x)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">320330</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (BiCons a b c) = f a (foldrOC f (f b ini) c)
+foldrOC f ini (Singl a) = f a ini</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (BiCons a b c) = f a (foldrOC f (f b ini) c)
+foldrOC f ini (Singl a) = f a ini
+foldrOC f ini otherwise = ini</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (BiCons a b c) = f a (foldrOC f (f b ini) c)
+foldrOC f ini (Singl a) = f a ini
+foldrOC f ini _ = ini</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (BiCons a b c) = f a (foldrOC f (f b ini) c)
+foldrOC f ini (Singl a) = f a ini</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = f a ini
+foldrOC f ini (BiCons a b c) = f a (foldrOC f (f b ini) c)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (BiCons a b c) = f a $ f b (foldrOC f ini c)
+foldrOC f ini (Singl a) = f a ini
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1013067</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f b (Singl a) = f a b
+foldrOC f b (BiCons c d e) = f c $ f d $ foldrOC f b e</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1848652</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = x `f` ini
+foldrOC f ini a = foldr_OC f ini a where
+  foldr_OC f ini (Singl x) = x `f` ini
+  foldr_OC f ini (BiCons x y z) = x `f` (y `f` (foldr_OC f ini z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC f ini a = foldr_OC f ini a where
+  foldr_OC f ini (Singl x) = x `f` ini
+  foldr_OC f ini (BiCons x y z) = x `f` (y `f` (foldr_OC f ini z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>foldrOC f ini (Singl x) = x `f` ini
+foldrOC f ini (BiCons x y z) = x `f` (y `f` (foldrOC f ini z))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1408781</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f x0 (Singl r) = f r x0
+foldrOC f x0 (BiCons a d c) = f a d + foldr f x0 c
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f x0 (Singl r) = f r x0
+foldrOC f x0 (BiCons a d c) = f a d + foldrOC f x0 c
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f x0 (Singl r) = f r x0
+foldrOC f x0 (BiCons a d c) = (f a d) + (foldrOC f x0 c)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f x0 (Singl r) = f r x0
+--foldrOC f x0 (BiCons a d c) = (f a d) + (foldrOC f x0 c)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f x0 (Singl r) = f r x0
+foldrOC f x0 (BiCons a d c) = (f a d) + (foldrOC f x0 c)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f x0 (Singl r) = f r x0
+foldrOC f x0 (BiCons a d c) = f (f a d) (foldrOC f x0 c)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f x0 (Singl r) = f r x0
+foldrOC f x0 (BiCons a d c) = f (foldrOC f x0 c) (f a d)
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f x0 (Singl r) = f r x0
+foldrOC f x0 (BiCons a d c) = f a (f d (foldrOC f x0 c))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1869137</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f x (Singl y) = f y x
+foldrOC f x (BiCons y z oc) = f y (f z (foldrOC f x oc))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2127186</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = f x ini
+foldrOC f ini (BiCons a b x) = a `f` (b `f` (foldrOC f ini x))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">513875</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f start (Singl a) = f a start
+foldrOC f start (BiCons a b c) = foldrOC f (f b (f a start)) c</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f start (Singl a) = f a start
+foldrOC f start (BiCons a b c) = f a (f b (foldrOC f start c))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1885527</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f a (Singl b) = f b a
+foldrOC f a (BiCons b c d) = f b (f c (foldrOC f a d)) </pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1907544</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = f a ini
+foldrOC f ini (BiCons a b p) = a `f` (b `f` foldrOC f ini p)
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2137</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x)            = x `f` ini
+foldrOC f ini (BiCons x y ocstail) = x `f` (y `f` (foldrOC f ini ocstail))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">155226</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC foo ini (Singl a)      = foo a ini
+foldrOC foo _ (BiCons a b (c)) = foo (foo a b) (foldr foo ini c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC foo ini (Singl a)        = foo a ini
+foldrOC foo ini (BiCons a b (c)) = foo (foo a b) (foldr foo ini c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC foo ini (Singl a)        = foo a ini
+foldrOC foo ini (BiCons a b (c)) = foo (foo a b) (foldrOC foo ini c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x)        = f x ini
+foldrOC f ini (BiCons x y (z)) = f x $ f y $ foldrOC f ini z</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">436316</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f acc (Singl v) = f v acc
+foldrOC f acc (BiCons a b oc) = f a (f b (foldrOC f acc oc))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2069343</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl el) = el `f` ini
+foldrOC f ini (BiCons el1 el2 oc) = el1 `f` (el2 `f` foldrOC f ini oc)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2176870</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = f a ini
+foldrOC f ini ( BiCons a b c) = a &#x27;f&#x27; b &#x27;f&#x27; foldrOC f ini c</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = f a ini
+foldrOC f ini ( BiCons a b c) = a `f` b `f` foldrOC f ini c</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = f a ini
+foldrOC f ini ( BiCons a b c) = a `f` (b `f` foldrOC f ini c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1844327</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f num (Singl a) = f a num
+foldrOC f num (BiCons a b c) = f a (f b (foldrOC f num c))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1998183</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = f a ini
+foldrOC f ini (BiCons a b x) = f a (f b (foldrOC f ini x))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">152428</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f init (Singl a) = f a init
+foldrOC f init (BiCons a b oc) = f a (f b (foldrOC f init oc))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">439058</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = f a ini 
+foldrOC f ini (BiCons a b c) = f a (f b (foldrOC f ini c))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1908334</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = f x ini 
+foldrOC f ini (BiCons x y z) = f x (f y (foldrOC f ini z))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">495216</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+
+foldrOC f b (Singl a) = f a b 
+foldrOC f b (BiCons x y a) = f x  f y (foldrOC f b a)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+
+foldrOC f b (Singl a) = f a b 
+
+foldrOC f b (BiCons x y a) = f x $ f y (foldrOC f b a)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2118001</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f a (Singl b)=f b a
+foldrOC f a (BiCons b c d)=f b (f c (foldrOC f a d))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">402290</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = f x ini 
+foldrOC f ini (BiCons x y s) = f x (f y (foldrOC f ini s))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">142454</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = x `f` ini
+foldrOC f ini (BiCons b c oc) =  foldrOC f ((b `f` ini) `f` c) oc
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = a `f` ini
+foldrOC f ini (BiCons b c oc) =  foldrOC f ((b `f` ini) `f` c) oc
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = a `f` ini
+foldrOC f ini (BiCons b c oc) =  foldrOC f ((b `f` ini) `f` c) oc
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = a `f` ini
+foldrOC f ini (BiCons b c oc) = b `f` foldrOC f (c `f` ini) oc
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = a `f` ini
+foldrOC f ini (BiCons b c oc) = b `f` foldrOC f (c `f` ini) oc
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = a `f` ini
+--foldrOC f ini (BiCons b c oc) = b `f` foldrOC f (c `f` ini) oc
+foldrOC f ini (BiCons b c oc) = f b (foldrOC f (f (c ini)) oc)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = a `f` ini
+--foldrOC f ini (BiCons b c oc) = b `f` foldrOC f (c `f` ini) oc
+foldrOC f ini (BiCons b c oc) = f b (foldrOC f (f c ini) oc)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = a `f` ini
+foldrOC f ini (BiCons b c oc) = b `f` (c `f` foldrOC f (c `f` ini) oc) 
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = a `f` ini
+foldrOC f ini (BiCons b c oc) = b `f` (c `f` foldrOC f ini oc) 
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1835895</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+
+foldrOC f acc (Singl a) = f a acc
+foldrOC f acc (BiCons a b c) = f a (f b (foldrOC f acc c))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1820029</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f init (Singl x)     = f x init
+foldrOC f init (BiCons x y z) = f x $ f y $ foldrOC f init z</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2062976</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini cont =
+  case cont of 
+    Singl x1          -&gt; x1 `f` ini
+    BiCons x1 x2 (xs) -&gt; x1 `f` (x2 `f` foldrOC f ini xs)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1863811</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl e) = f e ini
+foldrOC f ini (BiCons x y z) = f x (f y (foldrOC z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl e) = f e ini
+foldrOC f ini (BiCons x y z) = f x (f y (foldrOC f ini z))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">155780</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC  f x (Singl a)= f a x
+foldrOC f x (BiCons a b c) = foldrOC f (f b (f a x)) c </pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (b -&gt; a -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC  f x (Singl a)= f x a
+foldrOC f x (BiCons a b c) = foldrOC f (f (f x a) b) c </pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f x (Singl a)= f a x
+foldrOC f x (BiCons a b c) = f a (f b (foldrOC f x c))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">748165</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x)      = f x ini
+foldrOC f ini (BiCons x y z) = f x $ f y $ foldrOC f ini z</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">150406</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC op res (Singl a) = (op a res)
+foldrOC op res (BiCons a b c) = (op a (op b (foldrOC op res c)))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2081985</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f b (Singl a) = a `f` b
+foldrOC f b (BiCons a1 a2 others) = a1 `f` ( a2 `f` (foldrOC f b others) )</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1945481</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = f a ini
+foldrOC f ini (BiCons a1 a2 a3) =  f a1 (f a2 (foldrOC f ini a3))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2030730</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+headOC :: OddCont a -&gt; a
+headOC (BiCons x y z) = x
+headOC (Singl x) = x
+
+lastOC :: OddCont a -&gt; a
+lastOC (BiCons x y z) = lastOC z
+lastOC (Singl x) = x
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl x) = 1
+lenOC (BiCons x y z) = 2 + (lenOC z)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x) = 1
+countConsOC (BiCons x y z) = 1 + (countConsOC z)
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n _ | n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+takeNCons num (BiCons x y z) | (countConsOC (BiCons x y z))&lt;=num = BiCons x y z
+    		                 | (countConsOC (BiCons x y z))&gt;num = takeNCons num z
+takeNCons num (Singl x) = Singl x
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl u) = u `f` ini
+foldrOC f ini (BiCons x y (Singl z)) = f x (y `f` foldrOC f ini (Singl z))
+foldrOC f ini (BiCons x y z) = f y (x `f` foldrOC f ini (takeNCons (countConsOC (BiCons x y z) - 1) (BiCons x y z)))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x) = 1
+countConsOC (BiCons x y z) = 1 + (countConsOC z)
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n _ | n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+takeNCons num (BiCons x y z) | (countConsOC (BiCons x y z))&lt;=num = BiCons x y z
+    		                 | (countConsOC (BiCons x y z))&gt;num = takeNCons num z
+takeNCons num (Singl x) = Singl x
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl u) = u `f` ini
+
+foldrOC f ini (BiCons x y z) = f x (y `f` foldrOC f ini (takeNCons (countConsOC (BiCons x y z) - 1) (BiCons x y z)))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+headOC :: OddCont a -&gt; a
+headOC (BiCons x y z) = x
+headOC (Singl x) = x
+
+lastOC :: OddCont a -&gt; a
+lastOC (BiCons x y z) = lastOC z
+lastOC (Singl x) = x
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl x) = 1
+lenOC (BiCons x y z) = 2 + (lenOC z)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x) = 1
+countConsOC (BiCons x y z) = 1 + (countConsOC z)
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n _ | n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+takeNCons num (BiCons x y z) | (countConsOC (BiCons x y z))&lt;=num = BiCons x y z
+    		                 | (countConsOC (BiCons x y z))&gt;num = takeNCons num z
+takeNCons num (Singl x) = Singl x
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl u) = u `f` ini
+
+foldrOC f ini (BiCons x y z) = f x (y `f` foldrOC f ini (takeNCons (countConsOC (BiCons x y z) - 1) (BiCons x y z)))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x) = 1
+countConsOC (BiCons x y z) = 1 + (countConsOC z)
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n _ | n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+takeNCons num (BiCons x y z) | (countConsOC (BiCons x y z))&lt;=num = BiCons x y z
+    		                 | (countConsOC (BiCons x y z))&gt;num = takeNCons num z
+takeNCons num (Singl x) = Singl x
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl u) = u `f` ini
+foldrOC f ini (BiCons x y (Singl u)) = f x (y `f` (foldrOC f ini (Singl u))
+foldrOC f ini (BiCons x y z) = f x (y `f` foldrOC f ini (takeNCons (countConsOC (BiCons x y z) - 1) (BiCons x y z)))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x) = 1
+countConsOC (BiCons x y z) = 1 + (countConsOC z)
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n _ | n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+takeNCons num (BiCons x y z) | (countConsOC (BiCons x y z))&lt;=num = BiCons x y z
+    		                 | (countConsOC (BiCons x y z))&gt;num = takeNCons num z
+takeNCons num (Singl x) = Singl x
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl u) = u `f` ini
+foldrOC f ini (BiCons x y (Singl u)) = f x (y `f` (foldrOC f ini (Singl u)))
+foldrOC f ini (BiCons x y z) = f x (y `f` foldrOC f ini (takeNCons (countConsOC (BiCons x y z) - 1) (BiCons x y z)))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC = undefined</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x) = 1
+countConsOC (BiCons x y z) = 1 + (countConsOC z)
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n _ | n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+takeNCons num (BiCons x y z) | (countConsOC (BiCons x y z))&lt;=num = BiCons x y z
+    		                 | (countConsOC (BiCons x y z))&gt;num = takeNCons num z
+takeNCons num (Singl x) = Singl x
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl u) = u `f` ini
+
+foldrOC f ini (BiCons x y z) = f z foldrOC f ini (takeNCons (countConsOC (BiCons x y z) - 1) (BiCons x y z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x) = 1
+countConsOC (BiCons x y z) = 1 + (countConsOC z)
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n _ | n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+takeNCons num (BiCons x y z) | (countConsOC (BiCons x y z))&lt;=num = BiCons x y z
+    		                 | (countConsOC (BiCons x y z))&gt;num = takeNCons num z
+takeNCons num (Singl x) = Singl x
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl u) = u `f` ini
+
+foldrOC f ini (BiCons x y z) = f x (y `f` foldrOC f ini (takeNCons (countConsOC (BiCons x y z) - 1) (BiCons x y z)))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x) = 1
+countConsOC (BiCons x y z) = 1 + (countConsOC z)
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n _ | n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+takeNCons num (BiCons x y z) | (countConsOC (BiCons x y z))&lt;num = BiCons x y z
+    		                 | (countConsOC (BiCons x y z))&gt;=num = takeNCons num z
+takeNCons num (Singl x) = Singl x
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl u) = u `f` ini
+foldrOC f ini (BiCons x y z) = f x (y `f` foldrOC f ini (takeNCons (countConsOC (BiCons x y z) - 1) (BiCons x y z)))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x) = 1
+countConsOC (BiCons x y z) = 1 + (countConsOC z)
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n _ | n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+takeNCons num (BiCons x y z) | (countConsOC (BiCons x y z))&lt;=num = BiCons x y z
+    		                 | (countConsOC (BiCons x y z))&gt;num = takeNCons num z
+takeNCons num (Singl x) = Singl x
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl u) = u `f` ini
+foldrOC f ini (BiCons x y z) = f x (y `f` foldrOC f ini (takeNCons (countConsOC (BiCons x y z) - 1) (BiCons x y z)))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl z) = z `f` ini
+
+foldrOC f ini (BiCons x y z) = f x (y `f` foldrOC f ini z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">142490</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC fun beg (Singl a) = fun beg a
+foldrOC fun beg (BiCons a1 a2 a3) = fun (fun (fun beg a3) a2) a1</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC fun beg (Singl a) = fun a beg
+foldrOC fun beg (BiCons a1 a2 a3) = fun a1 (fun a2 (fun a3 beg))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC fun beg (Singl a) = fun beg a
+foldrOC fun beg (BiCons a1 a2 a3) = fun beg a3</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC fun beg (Singl a) = fun a beg
+foldrOC fun beg (BiCons a1 a2 a3) = fun a3 beg</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC fun beg (Singl a) = fun a beg
+foldrOC fun beg (BiCons a1 a2 a3) = foldOC fun beg a3</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC fun beg (Singl a) = fun a beg
+foldrOC fun beg (BiCons a1 a2 a3) = foldrOC fun beg a3</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC fun beg (Singl a) = fun a beg
+foldrOC fun beg (BiCons a1 a2 a3) = fun (fun (fun (foldrOC fun beg a3) a2) a1) beg</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC fun beg (Singl a) = fun a beg
+foldrOC fun beg (BiCons a1 a2 a3) = fun (foldrOC fun beg a3) a2</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC fun beg (Singl a) = fun a beg
+foldrOC fun beg (BiCons a1 a2 a3) = fun (foldrOC fun beg a3) beg</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC fun beg (Singl a) = fun a beg
+foldrOC fun beg (BiCons a1 a2 a3) = fun a2 foldrOC fun beg a3</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC fun beg (Singl a) = fun a beg
+foldrOC fun beg (BiCons a1 a2 a3) = fun a2 (foldrOC fun beg a3)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC fun beg (Singl a) = fun a beg
+foldrOC fun beg (BiCons a1 a2 a3) = fun a1 (fun a2 (foldrOC fun beg a3))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1914351</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f acc (Singl x) = f x acc
+foldrOC f acc (BiCons x y (z)) = f x (f y folded) where folded = (foldrOC f acc z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">301936</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f b (Singl a) = f a b 
+foldrOC f b (BiCons x y z) = f x $ f y $ foldrOC f b z</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1355682</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini oc@(Singl a) = f a ini
+foldrOC f ini (BiCons a b oc) = x
+  where
+    x = f a y
+    y = f b z
+    z = foldrOC f ini oc
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">125468</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f init (Singl x) = f x init
+foldrOC f init (BiCons x y oc) = f x (f y (foldrOC f init oc))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1825452</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f firstEl (Singl x) = f x firstEl
+foldrOC f firstEl (BiCons x y z) = f x (f y (foldrOC f firstEl z))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">761006</div>
+<ul class="submissions">
+<li class="submission tooltip correct warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+toList (Singl a)      = [a]
+toList (BiCons a b c) = [a, b] ++ toList c
+
+fromList ([x])  = Singl x
+fromList (x:y:xs) = BiCons x y (fromList xs) 
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC a b c = fromList ((toList a) ++ (toList b) ++ (toList c))
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f arg oc = foldr f arg (toList oc)
+
+testCont = BiCons 5 6 (BiCons 7 8 (Singl 9))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">152495</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f a (Singl x) = f x a
+foldrOC f a (BiCons x y z) = f x (f y (foldrOC f a z))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1823921</div>
+<ul class="submissions">
+<li class="submission tooltip correct warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+oc2lst (Singl a)=[a]
+oc2lst (BiCons a b oc)=[a,b] ++ oc2lst oc
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f b oc = foldr f b $ oc2lst oc</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+--foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f n (Singl a)= f a n
+foldrOC f n (BiCons a b oc)= f (f a b) (foldrOC f n oc)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+--foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f n (Singl a)= f a n
+foldrOC f n (BiCons a b oc)=  (f a (f b (foldrOC f n oc)))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">34739</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f b (Singl a) = f a b
+foldrOC f b (BiCons x y z) = f x $ f y $ foldrOC f b z
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1055156</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Single a) = a `f` ini
+foldrOC f ini (BiCons a b bicons)  = a `f` b `f` foldrOC f ini bicons</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = a `f` ini
+foldrOC f ini (BiCons a b bicons)  = a `f` b `f` foldrOC f ini bicons</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = a `f` ini
+foldrOC f ini (BiCons a b bicons)  = a `f` b `f` (foldrOC f ini bicons)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = a `f` ini
+foldrOC f ini (BiCons a b bicons)  = a `f` (b `f` foldrOC f ini bicons)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2070199</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f seed (Singl a) = f seed a
+foldrOC f seed (BiCons a b c) = f (f (foldrOC f seed c) b) a</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f seed (Singl a) = f a seed
+foldrOC f seed (BiCons a b c) = f a (f b (foldrOC f seed c))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2155448</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = f a ini
+foldrOC f ini (BiCons a b tail) = f a (f b $ foldrOC f ini tail)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2178233</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC func ini (Singl a) = func a ini
+foldrOC func ini (BiCons a b c) = func a (func b (foldrOC func ini c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC func ini (Singl a) = func a ini
+foldrOC func ini (BiCons a b c) = func a (func b (foldrOC func ini c))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">180410</div>
+<ul class="submissions">
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+{-
+foldr :: (a -&gt; a -&gt; a) -&gt; [a] -&gt; a
+foldr f [x]     =  x
+foldr f (x:xs)  =  f x (foldr f xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+--foldrOC = undefined
+foldrOC f a       =  f a
+foldrOC f (a a b) =  f a (foldrOC f a (foldrOC f b) )
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+{-
+foldr :: (a -&gt; a -&gt; a) -&gt; [a] -&gt; a
+foldr f [x]     =  x
+foldr f (x:xs)  =  f x (foldr f xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+--foldrOC = undefined
+foldrOC f a       =  a
+foldrOC f (a a b) =  f a (foldrOC f a (foldrOC f b) )
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+{-
+foldr :: (a -&gt; a -&gt; a) -&gt; [a] -&gt; a
+foldr f [x]     =  x
+foldr f (x:xs)  =  f x (foldr f xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+--foldrOC = undefined
+foldrOC f x       =  x
+foldrOC f (x x x) =  f x (f x (foldrOC f x) )
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+{-
+foldr :: (a -&gt; a -&gt; a) -&gt; [a] -&gt; a
+foldr f [x]     =  x
+foldr f (x:xs)  =  f x (foldr f xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+--foldrOC = undefined
+foldrOC f x       =  f x
+foldrOC f (x x x) =  f x (f x (foldrOC f x) )
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+{-
+foldr :: (a -&gt; a -&gt; a) -&gt; [a] -&gt; a
+foldr f [x]     =  x
+foldr f (x:xs)  =  f x (foldr f xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+--foldrOC = undefined
+foldrOC f (Singl x) =  Singl(f x)
+foldrOC f (BiCons a b c) =  BiCons (f a (f b (foldrOC f c) ) )
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+{-
+foldr :: (a -&gt; a -&gt; a) -&gt; [a] -&gt; a
+foldr f [x]     =  x
+foldr f (x:xs)  =  f x (foldr f xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+--foldrOC = undefined
+foldrOC f (Singl x) =  Singl(f x)
+foldrOC f (BiCons a b c) =  BiCons ( (f a (f b (foldrOC f c) ) ) )
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+{-
+foldr :: (a -&gt; a -&gt; a) -&gt; [a] -&gt; a
+foldr f [x]     =  x
+foldr f (x:xs)  =  f x (foldr f xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+--foldrOC = undefined
+foldrOC f (Singl a)      =  f a
+foldrOC f (BiCons a b c) =  f a $ f b $ foldrOC f c 
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)      =  f a
+foldrOC f (BiCons a b c) =  (f a) (f b) (foldrOC f c) 
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)      =  Singl (f a)
+foldrOC f (BiCons a b c) =  Singl (f a) Singl (f b) (foldrOC f BiCons ( c ) ) -- бля, ну что не так то 
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)      =  Singl (f a)
+foldrOC f (BiCons a b c) =  f Singl(a) $ f Singl(b) $ foldrOC f (BiCons c ) -- бля, ну что не так то 
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)      =  f a
+foldrOC f (BiCons a b c) =  f Singl(a) $ f Singl(b) $ foldrOC f (BiCons c ) -- бля, ну что не так то 
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)      =  f a
+foldrOC f (BiCons a b c) =  f a $ f b $ foldrOC f c -- бля, ну что не так то 
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)      =  f a
+foldrOC f (BiCons a b c) =  (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то 
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)      =  Singl (f a)
+foldrOC f (BiCons a b c) =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то 
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)      =  Singl (f a)
+--foldrOC f (BiCons a b c) =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a b c) = BiCons a b ( foldrOC f c )
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)      =  Singl (f a)
+--foldrOC f (BiCons a b c) =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a b c) = f a $ f b $ BiCons ( foldrOC f c )
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)      =  f a -- Singl (f a)
+--foldrOC f (BiCons a b c) =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a b c) = Singl(f a) $ Singl(f b) $ BiCons ( foldrOC f c )
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)      =  Singl (f a)
+--foldrOC f (BiCons a b c) =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a b c) = f (Singl a) $ f (Singl b) $ BiCons ( foldrOC f c )
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)      =  return f a --Singl (f a)
+--foldrOC f (BiCons a b c) =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a b c) = f (Singl a) $ f (Singl b) $ BiCons ( foldrOC f c )
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)      =  return f a --Singl (f a)
+--foldrOC f (BiCons a b c) =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (Singl  a b )  = Singl (f a) $ ( foldrOC f b )
+foldrOC f (BiCons a b c) = Singl (f a) $ ( foldrOC f b c )</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)          =  return f a --Singl (f a)
+--foldrOC f (BiCons a b c)   =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (Singl a Singl b ) = Singl (f a) $ ( foldrOC f b )
+foldrOC f (BiCons a b c)     = Singl (f a) $ ( foldrOC f b c )</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)          =  return f a --Singl (f a)
+--foldrOC f (BiCons a b c)   =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (Singl a Singl b ) = Singl (f a) $ Singl (f b )
+foldrOC f (BiCons a b c)     = Singl (f a) $ ( foldrOC f b c )</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)          =  return f a --Singl (f a)
+--foldrOC f (BiCons a b c)   =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (Singl a Singl b _) = Singl (f a) $ Singl (f b )
+foldrOC f (BiCons a b c)     = Singl (f a) $ ( foldrOC f b c )</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)          =  return f a --Singl (f a)
+--foldrOC f (BiCons a b c)   =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (Singl a Singl b _) = Singl (f a) $ Singl (f b ) $ foldrOC f _
+foldrOC f (BiCons a b c)     = Singl (f a) $ ( foldrOC f b c )</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)          =  return f a --Singl (f a)
+--foldrOC f (BiCons a b c)   =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a _ _)     = Singl (f a) $ foldrOC f _ _
+foldrOC f (a b)              = Singl (f a) $ ( foldrOC f b)</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+foldr f x0 []      =  x0
+foldr f x0 (x:xs)  =  f x (foldr f x0 xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)          =  Singl (f a)
+--foldrOC f (BiCons a b c)   =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a _ _)     = Singl (f a) $ foldrOC f _ _
+foldrOC f (a b)              = Singl (f a) $ ( foldrOC f b)
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+foldr f x0 []      =  x0
+foldr f x0 (x:xs)  =  f x (foldr f x0 xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)          =  Singl (f a)
+--foldrOC f (BiCons a b c)   =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a b c)     = Singl (f a) Singl (f b) foldrOC f c
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+foldr f x0 []      =  x0
+foldr f x0 (x:xs)  =  f x (foldr f x0 xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)          =  return f a --Singl (f a)
+--foldrOC f (BiCons a b c)   =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a b c)     = Singl (f a) Singl (f b) foldrOC f c
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+foldr f x0 []      =  x0
+foldr f x0 (x:xs)  =  f x (foldr f x0 xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)          =  return f a --Singl (f a)
+--foldrOC f (BiCons a b c)   =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a b c)     = Singl (f a) Singl (f b) BiCons(foldrOC f c)
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+foldr f x0 []      =  x0
+foldr f x0 (x:xs)  =  f x (foldr f x0 xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)          = return f a --Singl (f a)
+--foldrOC f (BiCons a b c)   = BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a b c)     = f a f b foldrOC f c
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+foldr f x0 []      =  x0
+foldr f x0 (x:xs)  =  f x (foldr f x0 xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)          = f a --Singl (f a)
+--foldrOC f (BiCons a b c)   = BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a b c)     = f a f b foldrOC f c
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+foldr f x0 []      =  x0
+foldr f x0 (x:xs)  =  f x (foldr f x0 xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)          = f a --Singl (f a)
+--foldrOC f (BiCons a b c)   = BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a b c)     = f a $ f b $ foldrOC f c
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+foldr f x0 []      =  x0
+foldr f x0 (x:xs)  =  f x (foldr f x0 xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)          = f a --Singl (f a)
+--foldrOC f (BiCons a b c)   = BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a b c)     = f a $ f b $ foldrOC f $ c
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip warn bad" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+foldr f x0 []      =  x0
+foldr f x0 (x:xs)  =  f x (foldr f x0 xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)          = f a --Singl (f a)
+--foldrOC f (BiCons a b c)   = BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a b c)     = f a $ f b $ foldrOC $ f c
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)           = f a --Singl (f a)
+--foldrOC f (BiCons a b c)    = BiCons (f a ( f b ( foldrOC f c) ) )
+--foldrOC f (BiCons a b c)     = f a $ f b $ foldrOC $ f c
+foldrOC f a (Singl b)         = f b a 
+foldrOC f a (BiCons a&#x27; b&#x27; c&#x27;) = f a&#x27; $ f b&#x27; $ foldrOC f a c&#x27;</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+--foldrOC f (BiCons a b c)    = BiCons (f a ( f b ( foldrOC f c) ) )
+--foldrOC f (BiCons a b c)     = f a $ f b $ foldrOC $ f c
+foldrOC f a (Singl b)         = f b a 
+--foldrOC f (Singl a)           = f a --Singl (f a)
+foldrOC f a (BiCons a&#x27; b&#x27; c&#x27;) = f a&#x27; $ f b&#x27; $ foldrOC f a c&#x27;</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">348603</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = x `f` ini
+foldrOC f ini (BiCons x y z) = x `f` (y `f` foldrOC f ini z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1375306</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = f a ini
+foldrOC f ini (BiCons a b x) = f a (f b (foldrOC f ini x))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">166335</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = a `f` ini
+foldrOC f ini (BiCons a b c) =  f a (f b (foldrOC f ini c))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2340233</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f y (Singl a) = f a y
+foldrOC f y (BiCons a b c) = f a (foldrOC f (f b y) c)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f y (Singl a) = f a y
+foldrOC f y (BiCons a b c) = f a (f b (foldrOC f y c))
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1826753</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC func ret (Singl x) = ret func x
+foldrOC func ret (BiCons x y z) = ret func x func y func foldrOC func ret z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC func ret (Singl x) = ret func x
+foldrOC func ret (BiCons x y (OddCont z)) = ret func x func y func foldrOC func ret z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC func ret (Singl x) = ret func x
+foldrOC func ret (BiCons x y (OddCont z)) = (((ret func x) func y) func (foldrOC func ret z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC func ret (Singl x) = ret func x
+foldrOC func ret (BiCons x y z) = (((ret func x) func y) func (foldrOC func ret z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC func ret (Singl x) = ret func x
+foldrOC func ret (BiCons x y z) = func (func (func ret x) y) (foldrOC func ret z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC func ret (Singl x) = func ret x
+foldrOC func ret (BiCons x y z) = func (func (func ret x) y) (foldrOC func ret z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC func ret (Singl x) = func ret x
+foldrOC func ret (BiCons x y z) = func (func x y) (foldrOC func ret z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC func ret (Singl x) = func ret x
+foldrOC func ret (BiCons x y z) = func x (func y (foldrOC func ret z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC func ret (Singl x) = func x ret
+foldrOC func ret (BiCons x y z) = func x (func y (foldrOC func ret z))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">152261</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = f x ini 
+foldrOC f ini (BiCons x y z) = f x $ f y $ foldrOC f ini z</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1851334</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = f x ini
+foldrOC f ini (BiCons x y rest) = f x (f y (foldrOC f ini rest))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2061255</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f b (Singl x) = f x b
+foldrOC f b (BiCons x y rest) = f x $ f y $ foldrOC f b rest</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">766411</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f acc (Singl x) =  f x acc
+foldrOC f acc (BiCons x y z) =  foldrOC f (f y (f x acc)) z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f acc (Singl x) =  f x acc
+foldrOC f acc (BiCons x y z) =  foldrOC f (f x (f y acc)) z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f acc (Singl x) =  f x acc
+foldrOC f acc (BiCons x y z) =  foldrOC f (f y (f x acc)) z</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f acc (Singl x) =  f x acc
+foldrOC f acc (BiCons x y z) = f x (f y (foldrOC f acc z))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1933517</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f t (Singl x) = f x t
+foldrOC f t (BiCons x y z) = x &#x27;f&#x27; y &#x27;f&#x27; foldrOC f t z </pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f t (Singl x) = f x t
+foldrOC f t (BiCons x y z) = f x  f y foldrOC f t z </pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f t (Singl x) = f x t
+foldrOC f t (BiCons x y z) = f x  (f y (foldrOC f t z) )</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1885134</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini Single a  = ini
+foldrOC f ini (BiCons a b (c)) = a ´f´ b ´f´ (foldrOC f ini c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini Single a  = ini
+foldrOC f ini (BiCons a b (c)) = a ‘f‘ b ‘f‘ (foldrOC f ini c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini Single a  = ini
+foldrOC f ini (BiCons a b (c)) = f (f a b) (foldrOC f ini c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini Singl a  = ini
+foldrOC f ini (BiCons a b (c)) = f (f a b) (foldrOC f ini c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a)  = ini
+foldrOC f ini (BiCons a b (c)) = f (f a b) (foldrOC f ini c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a)  = f ini a
+foldrOC f ini (BiCons a b (c)) = f a (f b (foldrOC f ini c))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a)  = f a ini
+foldrOC f ini (BiCons a b (c)) = f a (f b (foldrOC f ini c))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1373906</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f x (Singl a) = f a x
+foldrOC f x (BiCons a b c) = f a (f b (foldrOC f x c))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2202323</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f init (Singl a)      = a `f` init
+foldrOC f init (BiCons a b c) = a `f` (b `f` (foldrOC f init c))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2131150</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x)      = f x
+foldrOC f ini (BiCons x y z) = x `f` y `f` foldrOC f ini (Singl z)
+foldrOC f ini _              = ini</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x)      = ini
+foldrOC f ini (BiCons x y z) = x `f` y `f` foldrOC f ini (Singl z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x)      = ini
+foldrOC f ini (BiCons x y z) = x `f` y `f` foldrOC f ini z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x)      = f ini x
+foldrOC f ini (BiCons x y z) = x `f` y `f` foldrOC f ini z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x)      = f x ini
+foldrOC f ini (BiCons x y z) = x `f` y `f` foldrOC f ini z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x)      = f x ini
+foldrOC f ini (BiCons x y z) = f (x y (foldrOC f ini z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x)      = f x ini
+foldrOC f ini (BiCons x y z) = f x (y (foldrOC f ini z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x)      = f x ini
+foldrOC f ini (BiCons x y z) = f x (f y (foldrOC f ini z))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">37083</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC func begin (Singl a) = func a begin
+foldrOC func begin (BiCons a b c) = func a (func b (foldrOC func begin c))
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2131932</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = f a ini
+foldrOC f ini (BiCons a1 a2 l) =
+	f a1 (f a2 (foldrOC f ini l))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">723421</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = f a ini
+foldrOC f ini (BiCons a b c) = f a $ f b $ foldrOC f ini c</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2007518</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = f x ini
+foldrOC f ini (BiCons x y z) = f x  (f y (foldrOC f ini z))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">435937</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f b (Singl x) = f x b
+foldrOC f b (BiCons x y z) = f x $ f y $ foldrOC f b z</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1261649</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f s (Singl x) = f x s
+foldrOC f s (BiCons x y z) = f x (func y (foldrOC func s z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f s (Singl x) = f x s
+foldrOC f s (BiCons x y z) = f x (func y (foldrOC func s z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f s (Singl x) = f x s
+foldrOC f s (BiCons x y z) = f x (f y (foldrOC f s z))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1910767</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = f a ini
+foldrOC f ini (BiCons a b c) = f a (f b (foldrOC f ini c))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">151536</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC = undefined</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (BiCons a b x) = (f a (f b (foldrOC f ini x))) 
+foldrOC f ini (Singl a) = (f a ini)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">616403</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f i (Sungl x) = f x i
+foldrOC f i (BiCons x1 x2 y) = f x1 (f x2 (foldrOC f i y))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f i (Singl x) = f x i
+foldrOC f i (BiCons x1 x2 y) = f x1 (f x2 (foldrOC f i y))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">40186</div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = f x ini
+foldrOC f ini (BiCons x y xs) = f x (f y (foldrOC f ini xs))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">170493</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC f ini (Singl x) = x `f` ini
+foldrOC f ini (BiCons x y cont) = f (f x y) (foldrOC f ini cont)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = x `f` ini
+foldrOC f ini (BiCons x y cont) = x `f` (f y (foldrOC f ini cont))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">2070014</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = ini `f` a
+foldrOC f ini (BiCons a b) = ini `f` a `f` b
+foldrOC f ini (Singl a (OddCont c)) = a `f` (foldrOC f ini (OddCont c))
+foldrOC f ini (BiCons a b (OddCont c)) = (a `f` b ) `f` (foldrOC f ini (OddCont c))
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = ini `f` a
+foldrOC f ini (BiCons a b) = ini `f` a `f` b
+foldrOC f ini (BiCons a b (OddCont c)) = (a `f` b ) `f` (foldrOC f ini (OddCont c))
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = ini `f` a
+foldrOC f ini (BiCons a b) = ini `f` a `f` b
+foldrOC f ini (BiCons a b c) = (a `f` b ) `f` (foldrOC f ini c)
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = ini `f` a
+foldrOC f ini (BiCons a b c) = (a `f` b ) `f` (foldrOC f ini c)
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = ini `f` x
+foldrOC f ini (BiCons x y z) = (x `f` y ) `f` (foldrOC f ini z)
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = x `f` ini
+foldrOC f ini (BiCons x y z) = (x `f` y ) `f` (foldrOC f ini z)
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = x `f` ini
+--foldrOC f ini (BiCons x y z) = (x `f` y ) `f` (foldrOC f ini z)
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = x `f` ini
+--foldrOC f ini (BiCons x y z) = (x `f` y ) `f` (foldrOC f ini z)
+foldrOC f ini (BiCons x y z) = x `f` (foldrOC f ini z)
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = x `f` ini
+--foldrOC f ini (BiCons x y z) = (x `f` y ) `f` (foldrOC f ini z)
+foldrOC f ini (BiCons x y z) = x `f` y `f` (foldrOC f ini z)
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = x `f` ini
+--foldrOC f ini (BiCons x y z) = (x `f` y ) `f` (foldrOC f ini z)
+foldrOC f ini (BiCons x y z) = x `f` (foldrOC f ini (Singl y)) `f` (foldrOC f ini z)
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = x `f` ini
+foldrOC f ini (BiCons x y z) = (x `f` y ) `f` (foldrOC f ini z)
+--foldrOC f ini (BiCons x y z) = x `f` (foldrOC f ini z)
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = x `f` ini
+--foldrOC f ini (BiCons x y z) = (x `f` y ) `f` (foldrOC f ini z)
+foldrOC f ini (BiCons x y z) = x `f` (foldrOC f ini z)
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = x `f` ini
+--foldrOC f ini (BiCons x y z) = (x `f` y ) `f` (foldrOC f ini z)
+--foldrOC f ini (BiCons x y z) = x `f` (foldrOC f ini z)
+foldrOC f ini (BiCons x y z) = x `f` (foldrOC f (y `f` ini) z)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = x `f` ini
+--foldrOC f ini (BiCons x y z) = (x `f` y ) `f` (foldrOC f ini z)
+foldrOC f ini (BiCons x y z) = x `f` (foldrOC f ini z)
+--foldrOC f ini (BiCons x y z) = x `f` (foldrOC f (y `f` ini) z)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = x `f` ini
+--foldrOC f ini (BiCons x y z) = (x `f` y ) `f` (foldrOC f ini z)
+--foldrOC f ini (BiCons x y z) = x `f` (foldrOC f ini z)
+foldrOC f ini (BiCons x y z) = x `f` (foldrOC f (y `f` ini) z)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = x `f` ini
+--foldrOC f ini (BiCons x y z) = (x `f` y ) `f` (foldrOC f ini z)
+--foldrOC f ini (BiCons x y z) = x `f` (foldrOC f ini z)
+foldrOC f ini (BiCons x y z) = y `f` (foldrOC f (x `f` ini) z)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = x `f` ini
+--foldrOC f ini (BiCons x y z) = (x `f` y ) `f` (foldrOC f ini z)
+--foldrOC f ini (BiCons x y z) = x `f` (foldrOC f ini z)
+foldrOC f ini (BiCons x y z) = x `f` (y `f` foldrOC f ini z)
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="user">
+<div class="uid">1288149</div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC fun beg (Singl a) = fun a beg
+foldrOC fun beg $ BiCons aa aaa aaaa = fun aa $ fun aaa (foldrOC fun beg aaaa))
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC fun beg (Singl a) = fun a beg
+foldrOC fun beg (BiCons b1 b2 b3) = fun b1 $ fun b2 $ foldrOC fun beg b3
+
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+</ul>
+
+
+
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="js/vendor/jquery.tooltipster.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
+

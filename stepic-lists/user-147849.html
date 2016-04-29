@@ -1,0 +1,166 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>×</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/tooltipster.css" />
+        <link rel="stylesheet" href="css/themes/tooltipster-noir.css" />
+
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+
+        <ul id="steps">
+<li class="step">
+<div class="step_id"><a href="step-100652.html">s100652</a></div>
+<ul class="submissions">
+<li class="submission tooltip bad warn" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n x 	| n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+				| (n &gt;= (countConsOC x)) = x
+				| (n &lt; (countConsOC x)) = helper (2*n-1) (listOC x)
+	where
+		listOC (Singl x) = x : []
+		listOC (BiCons x y z) = x : y : (listOC z)
+		helper c (x:y:xs)	| c == 1 = Singl x
+							| c &gt;= 1 = BiCons x y (helper (c-2) xs)</pre></code>">&nbsp;</li>
+<li class="submission tooltip bad warn" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x) = 1
+countConsOC (BiCons a b c) = 1 + countConsOC c
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n x 	| n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+				| (n &gt;= (countConsOC x)) = x
+				| (n &lt; (countConsOC x)) = helper (2*n-1) (listOC x)
+	where
+		listOC (Singl x) = x : []
+		listOC (BiCons x y z) = x : y : (listOC z)
+        
+		helper c (x:y:xs)	| c == 1 = Singl x
+							| c &gt;= 1 = BiCons x y (helper (c-2) xs)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+takeNCons n _ | n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+takeNCons n (Singl x) = Singl x
+takeNCons 1 (BiCons x y z) = Singl x
+takeNCons n (BiCons x y z) = BiCons x y (takeNCons (n-1) z)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100654.html">s100654</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a b c) = 2 + lenOC c
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl x) = 1
+countConsOC (BiCons a b c) = 1 + countConsOC c</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100655.html">s100655</a></div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+    fmap goo (Singl a) = Singl (goo a)
+  	fmap goo (BiCons a b c) = BiCons (goo a) (goo b) (fmap goo c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap goo (Singl a) = Singl (goo a)
+  fmap goo (BiCons a b c) = BiCons (goo a) (goo b) (fmap goo c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100656.html">s100656</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)	| (f x) = Just x
+					| otherwise = Nothing
+findOC f (BiCons x y z) | f x = Just x
+						| f y = Just y
+						| otherwise = findOC f z</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100659.html">s100659</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+headOC :: OddCont a -&gt; a
+headOC (Singl x) = x
+headOC (BiCons x y z) = x
+
+lastOC :: OddCont a -&gt; a
+lastOC (Singl x) = x
+lastOC (BiCons x y z) = lastOC z</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+</ul>
+
+
+
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="js/vendor/jquery.tooltipster.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
+

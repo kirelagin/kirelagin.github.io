@@ -1,0 +1,438 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>×</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/tooltipster.css" />
+        <link rel="stylesheet" href="css/themes/tooltipster-noir.css" />
+
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+
+        <ul id="steps">
+<li class="step">
+<div class="step_id"><a href="step-100650.html">s100650</a></div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f y (Singl a) = f a y
+foldrOC f y (BiCons a b c) = f a (foldrOC f (f b y) c)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f y (Singl a) = f a y
+foldrOC f y (BiCons a b c) = f a (f b (foldrOC f y c))
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100651.html">s100651</a></div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl a) (Singl b) (Singl c) = BiCons a b (Singl c)
+concat3OC (BiCons a b c) (Singl d) (Singl e) = BiCons a b (concat3OC c (Singl d) (Singl e))
+concat3OC (Singl a) (BiCons b c d) (Singl e) = BiCons a b (concat3OC (Singl c) d (Singl e))
+concat3OC (Singl a) (Singl b) (BiCons c d e) = BiCons a b (concat3OC (Singl c) (Singl d) e)
+concat3OC (BiCons a b c) (BiCons d e f) (Singl g) = BiCons a b (concat3OC c (BiCons d e f) (Singl g))
+concat3OC (BiCons a b c) (Singl d) (BiCons e f g) = BiCons a b (concat3OC c (Singl d) (BiCons e f g))
+concat3OC (Singl a) (BiCons b c d) (BiCons e f g) = BiCons a b (concat3OC (Singl c) d (BiCons e f g))
+concat3OC (BiCons a b c) (BiCons d e f) (BiCons g h k) = BiCons a b (concat3OC c (BiCons d e f) (BiCons g h k))
+
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl tst1) = tst1
+concatOC (BiCons tst1 tst2 tst3) = concat3OC tst1 tst2 (concatOC tst3)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl tst1) = tst1
+concatOC (BiCons (Singl a) (Singl b) (Singl (Singl c))) = BiCons a b (Singl c)
+concatOC (BiCons (BiCons a b c) (Singl d) (Singl (Singl e))) = BiCons a b (concatOC (BiCons c (Singl d) (Singl (Singl e))))
+concatOC (BiCons (Singl a) (BiCons b c d) (Singl (Singl e))) = BiCons a b (concatOC (BiCons (Singl c) d (Singl (Singl e))))
+concatOC (BiCons (Singl a) (Singl b) (Singl (BiCons c d e))) = BiCons a b (concatOC (BiCons (Singl c) (Singl d) (Singl e)))
+concatOC (BiCons (BiCons a b c) (BiCons d e f) (Singl (Singl g))) = BiCons a b (concatOC (BiCons c (BiCons d e f) (Singl (Singl g))))
+concatOC (BiCons (BiCons a b c) (Singl d) (Singl (BiCons e f g))) = BiCons a b (concatOC (BiCons c (Singl d) (Singl (BiCons e f g))))
+concatOC (BiCons (Singl a) (BiCons b c d) (Singl (BiCons e f g))) = BiCons a b (concatOC (BiCons (Singl c) d (Singl (BiCons e f g))))
+concatOC (BiCons (BiCons a b c) (BiCons d e f) (Singl (BiCons g h k))) = BiCons a b (concatOC (BiCons c (BiCons d e f) (Singl (BiCons g h k))))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl tst1) = tst1
+concatOC (BiCons (Singl a) (Singl b) (Singl (Singl c))) = BiCons a b (Singl c)
+concatOC (BiCons (BiCons a b c) (Singl d) (Singl (Singl e))) = BiCons a b (concatOC (BiCons c (Singl d) (Singl (Singl e))))
+concatOC (BiCons (Singl a) (BiCons b c d) (Singl (Singl e))) = BiCons a b (concatOC (BiCons (Singl c) d (Singl (Singl e))))
+concatOC (BiCons (Singl a) (Singl b) (Singl (BiCons c d e))) = BiCons a b (concatOC (BiCons (Singl c) (Singl d) (Singl e)))
+concatOC (BiCons (BiCons a b c) (BiCons d e f) (Singl (Singl g))) = BiCons a b (concatOC (BiCons c (BiCons d e f) (Singl (Singl g))))
+concatOC (BiCons (BiCons a b c) (Singl d) (Singl (BiCons e f g))) = BiCons a b (concatOC (BiCons c (Singl d) (Singl (BiCons e f g))))
+concatOC (BiCons (Singl a) (BiCons b c d) (Singl (BiCons e f g))) = BiCons a b (concatOC (BiCons (Singl c) d (Singl (BiCons e f g))))
+concatOC (BiCons (BiCons a b c) (BiCons d e f) (Singl (BiCons g h k))) = BiCons a b (concatOC (BiCons c (BiCons d e f) (Singl (BiCons g h k))))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl tst1) = tst1
+concatOC (BiCons (Singl a) (Singl b) (Singl (Singl c))) = BiCons a b (Singl c)
+concatOC (BiCons (BiCons a b c) (Singl d) (Singl (Singl e))) = BiCons a b (concatOC (BiCons c (Singl d) (Singl (Singl e))))
+concatOC (BiCons (Singl a) (BiCons b c d) (Singl (Singl e))) = BiCons a b (concatOC (BiCons (Singl c) d (Singl (Singl e))))
+concatOC (BiCons (Singl a) (Singl b) (Singl (BiCons c d e))) = BiCons a b (concatOC (BiCons (Singl c) (Singl d) (Singl (Singl e)))
+concatOC (BiCons (BiCons a b c) (BiCons d e f) (Singl (Singl g))) = BiCons a b (concatOC (BiCons c (BiCons d e f) (Singl (Singl g))))
+concatOC (BiCons (BiCons a b c) (Singl d) (Singl (BiCons e f g))) = BiCons a b (concatOC (BiCons c (Singl d) (Singl (BiCons e f g))))
+concatOC (BiCons (Singl a) (BiCons b c d) (Singl (BiCons e f g))) = BiCons a b (concatOC (BiCons (Singl c) d (Singl (BiCons e f g))))
+concatOC (BiCons (BiCons a b c) (BiCons d e f) (Singl (BiCons g h k))) = BiCons a b (concatOC (BiCons c (BiCons d e f) (Singl (BiCons g h k))))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl tst1) = tst1
+concatOC (BiCons (Singl a) (Singl b) (Singl c)) = BiCons a b c
+concatOC (BiCons (BiCons a b c) (Singl d) (Singl e)) = BiCons a b (concatOC (BiCons c (Singl d) (Singl e)))
+concatOC (BiCons (Singl a) (BiCons b c d) (Singl e)) = BiCons a b (concatOC (BiCons (Singl c) d (Singl e)))
+concatOC (BiCons (BiCons a b c) (BiCons d e f) (Singl g)) = BiCons a b (concatOC (BiCons c (BiCons d e f) (Singl g)))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl tst1) = tst1
+concatOC (BiCons (Singl a) (Singl b) c) = BiCons a b (concatOC (c))
+concatOC (BiCons (BiCons a b c) (Singl d) e) = BiCons a b (concatOC (BiCons c (Singl d) (concatOC (Singl e))))
+concatOC (BiCons (Singl a) (BiCons b c d) e) = BiCons a b (concatOC (BiCons (Singl c) d (concatOC (Singl e))))
+concatOC (BiCons (BiCons a b c) (BiCons d e f) g) = BiCons a b (concatOC (BiCons c (BiCons d e f) (concatOC (Singl g))))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100652.html">s100652</a></div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n _ | n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+takeNCons n a
+	| countConsOC a &lt;= n = a
+	| otherwise = takeNHelper (2*n-1) a
+
+takeNHelper _ (Singl a) = (Singl a)
+takeNHelper 1 (BiCons a b c) = (Singl a) 
+takeNHelper n (BiCons a b c) 
+	| n &gt; 2 = (BiCons a b (takeNHelper (n-2) c))
+	| otherwise = (Singl a) </pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons a b c) = 1 + countConsOC c 
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n _ | n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+takeNCons n a
+	| countConsOC a &lt;= n = a
+	| otherwise = takeNHelper (2*n-1) a
+
+takeNHelper _ (Singl a) = (Singl a)
+takeNHelper 1 (BiCons a b c) = (Singl a) 
+takeNHelper n (BiCons a b c) 
+	| n &gt; 2 = (BiCons a b (takeNHelper (n-2) c))
+	| otherwise = (Singl a) </pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons a b c) = 1 + countConsOC c 
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n _ | n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+takeNCons n a
+	| countConsOC a &lt;= n = a
+	| otherwise = takeNHelper (2*n-1) a
+
+takeNHelper _ (Singl a) = (Singl a)
+takeNHelper n (BiCons a b c) 
+	| n &gt; 2 = (BiCons a b (takeNHelper (n-2) c))
+	| otherwise = (Singl a) </pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons a b c) = 1 + countConsOC c 
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n _ | n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+takeNCons n a
+	| countConsOC a &lt;= n = a
+	| otherwise = takeNHelper (n) a
+
+takeNHelper _ (Singl a) = (Singl a)
+takeNHelper n (BiCons a b c) 
+	| n &gt; 1 = (BiCons a b (takeNHelper (n-1) c))
+	| otherwise = (Singl a) </pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n _ | n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+takeNCons n a = takeNHelper n a
+
+takeNHelper _ (Singl a) = (Singl a)
+takeNHelper n (BiCons a b c) 
+	| n &gt; 1 = (BiCons a b (takeNHelper (n-1) c))
+	| otherwise = (Singl a) </pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n _ | n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+takeNCons _ (Singl a) = (Singl a)
+takeNCons n (BiCons a b c) 
+	| n &gt; 1 = (BiCons a b (takeNHelper (n-1) c))
+	| otherwise = (Singl a) </pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n _ | n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+takeNCons _ (Singl a) = (Singl a)
+takeNCons n (BiCons a b c) 
+	| n &gt; 1 = (BiCons a b (takeNCons (n-1) c))
+	| otherwise = (Singl a) </pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100653.html">s100653</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl a) (Singl b) (Singl c) = BiCons a b (Singl c)
+concat3OC (BiCons a b c) (Singl d) (Singl e) = BiCons a b (concat3OC c (Singl d) (Singl e))
+concat3OC (Singl a) (BiCons b c d) (Singl e) = BiCons a b (concat3OC (Singl c) d (Singl e))
+concat3OC (Singl a) (Singl b) (BiCons c d e) = BiCons a b (concat3OC (Singl c) (Singl d) e)
+concat3OC (BiCons a b c) (BiCons d e f) (Singl g) = BiCons a b (concat3OC c (BiCons d e f) (Singl g))
+concat3OC (BiCons a b c) (Singl d) (BiCons e f g) = BiCons a b (concat3OC c (Singl d) (BiCons e f g))
+concat3OC (Singl a) (BiCons b c d) (BiCons e f g) = BiCons a b (concat3OC (Singl c) d (BiCons e f g))
+concat3OC (BiCons a b c) (BiCons d e f) (BiCons g h k) = BiCons a b (concat3OC c (BiCons d e f) (BiCons g h k))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100654.html">s100654</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl a) = 1
+lenOC (BiCons a b c) = 2 + lenOC c 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl a) = 1
+countConsOC (BiCons a b c) = 1 + countConsOC c </pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100655.html">s100655</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = Singl (f a)
+  fmap f (BiCons a b c) = (BiCons (f a) (f b) (fmap f c))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100656.html">s100656</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl a) = a
+sumOC (BiCons a b c) = a + b + sumOC c
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC predicat (Singl a) = if (predicat a) then (Just a) else Nothing
+findOC predicat (BiCons a b c)
+	| predicat a = Just a
+	| predicat b = Just b
+	| otherwise = findOC predicat c</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100658.html">s100658</a></div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl a) (Singl b) (Singl c) = BiCons a b (Singl c)
+concat3OC (BiCons a b c) (Singl d) (Singl e) = BiCons a b (concat3OC c (Singl d) (Singl e))
+concat3OC (Singl a) (BiCons b c d) (Singl e) = BiCons a b (concat3OC (Singl c) d (Singl e))
+concat3OC (Singl a) (Singl b) (BiCons c d e) = BiCons a b (concat3OC (Singl c) (Singl d) e)
+concat3OC (BiCons a b c) (BiCons d e f) (Singl g) = BiCons a b (concat3OC c (BiCons d e f) (Singl g))
+concat3OC (BiCons a b c) (Singl d) (BiCons e f g) = BiCons a b (concat3OC c (Singl d) (BiCons e f g))
+concat3OC (Singl a) (BiCons b c d) (BiCons e f g) = BiCons a b (concat3OC (Singl c) d (BiCons e f g))
+concat3OC (BiCons a b c) (BiCons d e f) (BiCons g h k) = BiCons a b (concat3OC c (BiCons d e f) (BiCons g h k))
+
+
+instance Monad OddCont where
+  return a = Singl a
+  (&gt;&gt;=) (Singl tst1) f = f tst1
+  (&gt;&gt;=) (BiCons a b c) f = concat3OC (f a) (f b) ((&gt;&gt;=) c f)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl a) (Singl b) (Singl c) = BiCons a b (Singl c)
+concat3OC (BiCons a b c) (Singl d) (Singl e) = BiCons a b (concat3OC c (Singl d) (Singl e))
+concat3OC (Singl a) (BiCons b c d) (Singl e) = BiCons a b (concat3OC (Singl c) d (Singl e))
+concat3OC (Singl a) (Singl b) (BiCons c d e) = BiCons a b (concat3OC (Singl c) (Singl d) e)
+concat3OC (BiCons a b c) (BiCons d e f) (Singl g) = BiCons a b (concat3OC c (BiCons d e f) (Singl g))
+concat3OC (BiCons a b c) (Singl d) (BiCons e f g) = BiCons a b (concat3OC c (Singl d) (BiCons e f g))
+concat3OC (Singl a) (BiCons b c d) (BiCons e f g) = BiCons a b (concat3OC (Singl c) d (BiCons e f g))
+concat3OC (BiCons a b c) (BiCons d e f) (BiCons g h k) = BiCons a b (concat3OC c (BiCons d e f) (BiCons g h k))
+
+
+instance Monad OddCont where
+  return a = Singl a
+  (&gt;&gt;=) (Singl tst1) f = f tst1
+  (&gt;&gt;=) (BiCons a b c) f = BiCons (f a) (f b) ((&gt;&gt;=) c f)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl a) (Singl b) (Singl c) = BiCons a b (Singl c)
+concat3OC (BiCons a b c) (Singl d) (Singl e) = BiCons a b (concat3OC c (Singl d) (Singl e))
+concat3OC (Singl a) (BiCons b c d) (Singl e) = BiCons a b (concat3OC (Singl c) d (Singl e))
+concat3OC (Singl a) (Singl b) (BiCons c d e) = BiCons a b (concat3OC (Singl c) (Singl d) e)
+concat3OC (BiCons a b c) (BiCons d e f) (Singl g) = BiCons a b (concat3OC c (BiCons d e f) (Singl g))
+concat3OC (BiCons a b c) (Singl d) (BiCons e f g) = BiCons a b (concat3OC c (Singl d) (BiCons e f g))
+concat3OC (Singl a) (BiCons b c d) (BiCons e f g) = BiCons a b (concat3OC (Singl c) d (BiCons e f g))
+concat3OC (BiCons a b c) (BiCons d e f) (BiCons g h k) = BiCons a b (concat3OC c (BiCons d e f) (BiCons g h k))
+
+
+instance Monad OddCont where
+  return a = Singl a
+  (&gt;&gt;=) (Singl tst1) f = f tst1
+  (&gt;&gt;=) (BiCons a b c) f = concat3OC (f a) (f b) ((&gt;&gt;=) c f)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100659.html">s100659</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+headOC :: OddCont a -&gt; a
+headOC (Singl a) = a
+headOC (BiCons a b c) = a
+
+lastOC :: OddCont a -&gt; a
+lastOC (Singl a) = a
+lastOC (BiCons a b c) = lastOC c</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+</ul>
+
+
+
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="js/vendor/jquery.tooltipster.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
+

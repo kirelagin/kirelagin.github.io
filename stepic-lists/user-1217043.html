@@ -1,0 +1,232 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>×</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/tooltipster.css" />
+        <link rel="stylesheet" href="css/themes/tooltipster-noir.css" />
+
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+
+        <ul id="steps">
+<li class="step">
+<div class="step_id"><a href="step-100650.html">s100650</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b 
+foldrOC f b (Singl a) = f a b
+foldrOC f d (BiCons a b c) = f a (f b (foldrOC f d c))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100652.html">s100652</a></div>
+<ul class="submissions">
+<li class="submission tooltip bad warn" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n _ | n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+takeNCons n obj = helperTakeNCons (2*n - 1) obj [] where
+    helperTakeNCons 0 _ res = helperTakeNConsOut res
+    helperTakeNCons k (BiCons a b c) res = if k &gt; 1 then helperTakeNCons (k - 2) c (res ++ [a , b]) else helperTakeNConsOut (res ++ [a])
+    helperTakeNCons k (Singl a) res = helperTakeNConsOut (res ++ [a])
+    helperTakeNConsOut res_list = 
+        if length res_list &gt; 1 
+        then 
+            BiCons 
+            (res_list !! (length res_list - 2)) 
+            (res_list !! (length res_list - 1)) 
+            (helperTakeNConsOut (take (length res_list - 2) (res_list)))
+        else 
+            Singl (res_list !! 0)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip bad warn" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons 0 _ = error &quot;Only positive n allowed!&quot;
+takeNCons n obj = helperTakeNCons (2*n - 1) obj [] where
+    helperTakeNCons 0 _ res = helperTakeNConsOut res
+    helperTakeNCons k (BiCons a b c) res = if k &gt; 1 then helperTakeNCons (k - 2) c (res ++ [a , b]) else helperTakeNConsOut (res ++ [a])
+    helperTakeNCons k (Singl a) res = helperTakeNConsOut (res ++ [a])
+    helperTakeNConsOut res_list = 
+        if length res_list &gt; 1 
+        then 
+            BiCons 
+            (res_list !! (length res_list - 2)) 
+            (res_list !! (length res_list - 1)) 
+            (helperTakeNConsOut (take (length res_list - 2) (res_list)))
+        else 
+            Singl (res_list !! 0)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip bad correct warn" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons 0 _ = error &quot;Only positive n allowed!&quot;
+takeNCons n obj = helperTakeNCons (2*n - 1) obj [] where
+    helperTakeNCons 0 _ res = helperTakeNConsOut res
+    helperTakeNCons k (BiCons a b c) res = if k &gt; 1 then helperTakeNCons (k - 2) c (res ++ [a , b]) else helperTakeNConsOut (res ++ [a])
+    helperTakeNCons k (Singl a) res = helperTakeNConsOut (res ++ [a])
+    helperTakeNConsOut res_list = 
+        if length res_list &gt; 1 
+        then 
+            BiCons 
+            (res_list !! 0) 
+            (res_list !! 1)
+            (helperTakeNConsOut (tail $ tail res_list))
+        else 
+            Singl (res_list !! 0)
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100653.html">s100653</a></div>
+<ul class="submissions">
+<li class="submission tooltip bad warn" title="<code><pre>concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC  a b c = helperTakeNConsOut( (helperTakeNCons a []) ++ (helperTakeNCons b []) ++ (helperTakeNCons c [])) where
+    helperTakeNCons (BiCons a b c) res = helperTakeNCons c (res ++ [a , b])
+    helperTakeNCons (Singl a) res = (res ++ [a])
+    helperTakeNConsOut res_list = 
+        if length res_list &gt; 1 
+        then 
+            BiCons 
+            (res_list !! 0) 
+            (res_list !! 1)
+            (helperTakeNConsOut (tail $ tail res_list))
+        else 
+            Singl (res_list !! 0)</pre></code>">&nbsp;</li>
+<li class="submission tooltip bad warn" title="<code><pre>concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC a b c = helperTakeNConsOut (helperTakeNCons c (helperTakeNCons b (helperTakeNCons a []))) where
+    helperTakeNCons (BiCons a b c) res = helperTakeNCons c (res ++ [a , b])
+    helperTakeNCons (Singl a) res = (res ++ [a])
+    helperTakeNConsOut res_list = 
+        if length res_list &gt; 1 
+        then 
+            BiCons 
+            (res_list !! 0) 
+            (res_list !! 1)
+            (helperTakeNConsOut (tail $ tail res_list))
+        else 
+            Singl (res_list !! 0)</pre></code>">&nbsp;</li>
+<li class="submission tooltip bad warn" title="<code><pre>concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC a b c = helperTakeNConsOut (reverse (helperTakeNCons c (helperTakeNCons b (helperTakeNCons a [])))) where
+    helperTakeNCons (BiCons a b c) res = helperTakeNCons c (b:a:res)
+    helperTakeNCons (Singl a) res = (a:res)
+    helperTakeNConsOut res_list = 
+        if length res_list &gt; 1 
+        then 
+            BiCons 
+            (res_list !! 0) 
+            (res_list !! 1)
+            (helperTakeNConsOut (tail $ tail res_list))
+        else 
+            Singl (res_list !! 0)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC a b c = helperConcat3OC a b c where
+    helperConcat3OC (Singl a) (Singl b) c = BiCons a b c 
+    helperConcat3OC (Singl a) (BiCons b c d) e = BiCons a b (concat3OC (Singl c) d e) 
+    helperConcat3OC (BiCons a b c) d f = BiCons a b (concat3OC c d f)
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100654.html">s100654</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>lenOC :: OddCont a -&gt; Int
+lenOC obj = helperLenOc 0 obj where
+    helperLenOc count (Singl a) = count + 1
+    helperLenOc count (BiCons a b c) = helperLenOc (count + 2) c
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC obj = helperConsOC 0 obj where
+    helperConsOC count (Singl a) = count + 1
+    helperConsOC count (BiCons a b c) = helperConsOC (count + 1) c
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100655.html">s100655</a></div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+instance Functor OddCont where
+    fmap f (BiCons a b c) = BiCons (f a) (f b) (f c)
+    fmap f (Singl a) = Singl (f a)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>instance Functor OddCont where
+    fmap f (BiCons a b c) = BiCons (f a) (f b) (fmap f c)
+    fmap f (Singl a) = Singl (f a)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100656.html">s100656</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC = helpersumOC 0 where
+    helpersumOC count (Singl a) = count + a
+    helpersumOC count (BiCons a b c) = helpersumOC (count + a + b) c
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC p = helperfindOC p where
+    helperfindOC p (Singl a) = if (p a) then Just a else Nothing
+    helperfindOC p (BiCons a b c) = if (p a) then Just a else if (p b) then Just b else helperfindOC p c</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100659.html">s100659</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>headOC :: OddCont a -&gt; a
+headOC (Singl a) = a
+headOC (BiCons a b c) = a
+
+lastOC :: OddCont a -&gt; a
+lastOC (Singl a) = a
+lastOC (BiCons a b c) = lastOC c</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+</ul>
+
+
+
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="js/vendor/jquery.tooltipster.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
+

@@ -1,0 +1,486 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>×</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/tooltipster.css" />
+        <link rel="stylesheet" href="css/themes/tooltipster-noir.css" />
+
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+
+        <ul id="steps">
+<li class="step">
+<div class="step_id"><a href="step-100650.html">s100650</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini cont =
+  case cont of 
+    Singl x1          -&gt; x1 `f` ini
+    BiCons x1 x2 (xs) -&gt; x1 `f` (x2 `f` foldrOC f ini xs)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100652.html">s100652</a></div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC cont =
+  case cont of
+  	Singl a         -&gt; 1
+  	BiCons a b (xs) -&gt; 1 + countConsOC xs
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n cont
+  | n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+  | n == 1          = Singl (headOC cont)
+  | n &lt; cons_count  = case cont of
+  	                    Singl a         -&gt; Singl a
+  	                    BiCons a b (xs) -&gt; BiCons a b (takeNCons (n-1) xs)
+  | n &gt;= cons_count = cont 
+  where
+  	cons_count = countConsOC cont</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC cont =
+  case cont of
+  	Singl a         -&gt; 1
+  	BiCons a b (xs) -&gt; 1 + countConsOC xs
+    
+headOC :: OddCont a -&gt; a
+headOC cont =
+  case cont of
+  	Singl a         -&gt; a
+  	BiCons a b (xs) -&gt; a
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n cont
+  | n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+  | n == 1          = Singl (headOC cont)
+  | n &lt; cons_count  = case cont of
+  	                    Singl a         -&gt; Singl a
+  	                    BiCons a b (xs) -&gt; BiCons a b (takeNCons (n-1) xs)
+  | n &gt;= cons_count = cont 
+  where
+  	cons_count = countConsOC cont</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC cont =
+  case cont of
+  	Singl a         -&gt; 1
+  	BiCons a b (xs) -&gt; 1 + countConsOC xs
+    
+headOC :: OddCont a -&gt; a
+headOC cont =
+  case cont of
+  	Singl a         -&gt; a
+  	BiCons a b (xs) -&gt; a
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n cont
+  | n &lt;= 0          = error &quot;Only positive n allowed!&quot;
+  | n == 1          = Singl (headOC cont)
+  | n &lt; cons_count  = case cont of
+  	                    BiCons a b (xs) -&gt; BiCons a b (takeNCons (n-1) xs)
+  | n &gt;= cons_count = cont 
+  where
+  	cons_count = countConsOC cont</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC cont =
+  case cont of
+  	Singl a         -&gt; 1
+  	BiCons a b (xs) -&gt; 1 + countConsOC xs
+    
+headOC :: OddCont a -&gt; a
+headOC cont =
+  case cont of
+  	Singl a         -&gt; a
+  	BiCons a b (xs) -&gt; a
+
+helper1 :: Int -&gt; OddCont a -&gt; OddCont a
+helper1 n cont 
+	| n == 1 = Singl (headOC cont)
+	| n &gt; 1  = case cont of
+		BiCons a b (xs) -&gt; BiCons a b (helper1 (n-1) xs)
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n cont
+	| n &lt;= 0                  = error &quot;!!!&quot;
+	| n == 1                  = Singl (headOC cont)
+	| n &gt;= (countConsOC cont) = cont
+	| otherwise               = helper1 n cont</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC cont =
+  case cont of
+    Singl a         -&gt; 1
+    BiCons a b (xs) -&gt; 2 + lenOC xs
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC cont =
+  case cont of
+  	Singl a         -&gt; 1
+  	BiCons a b (xs) -&gt; 1 + countConsOC xs
+
+headOC :: OddCont a -&gt; a
+headOC cont =
+  case cont of
+  	Singl a         -&gt; a
+  	BiCons a b (xs) -&gt; a
+
+lastOC :: OddCont a -&gt; a
+lastOC cont =
+  case cont of
+  	Singl a         -&gt; a
+  	BiCons a b (xs) -&gt; lastOC xs
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC cont =
+  case cont of
+  	Singl a         -&gt; a
+  	BiCons a b (xs) -&gt; a + b + sumOC xs
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f cont =
+  case cont of
+  	Singl a         -&gt; if (f a) then (Just a) else Nothing
+  	BiCons a b (xs) -&gt; 
+  	  if (f a) then (Just a) else (if (f b) then (Just b) else (findOC f xs)) 
+
+helper1 :: Int -&gt; OddCont a -&gt; OddCont a
+helper1 n cont 
+	| n == 1 = Singl (headOC cont)
+	| n &gt; 1  = case cont of
+		BiCons a b (xs) -&gt; BiCons a b (helper1 (n-1) xs)
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n cont
+	| n &lt;= 0                  = error &quot;!!!&quot;
+	| n == 1                  = Singl (headOC cont)
+	| n &gt;= (countConsOC cont) = cont
+	| otherwise               = helper1 n cont</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC cont =
+  case cont of
+    Singl a         -&gt; 1
+    BiCons a b (xs) -&gt; 2 + lenOC xs
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC cont =
+  case cont of
+  	Singl a         -&gt; 1
+  	BiCons a b (xs) -&gt; 1 + countConsOC xs
+
+headOC :: OddCont a -&gt; a
+headOC cont =
+  case cont of
+  	Singl a         -&gt; a
+  	BiCons a b (xs) -&gt; a
+
+lastOC :: OddCont a -&gt; a
+lastOC cont =
+  case cont of
+  	Singl a         -&gt; a
+  	BiCons a b (xs) -&gt; lastOC xs
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC cont =
+  case cont of
+  	Singl a         -&gt; a
+  	BiCons a b (xs) -&gt; a + b + sumOC xs
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f cont =
+  case cont of
+  	Singl a         -&gt; if (f a) then (Just a) else Nothing
+  	BiCons a b (xs) -&gt; 
+  	  if (f a) then (Just a) else (if (f b) then (Just b) else (findOC f xs)) 
+
+helper1 :: Int -&gt; OddCont a -&gt; OddCont a
+helper1 n cont 
+	| n == 1 = Singl (headOC cont)
+	| n &gt; 1  = case cont of
+		BiCons a b (xs) -&gt; BiCons a b (helper1 (n-1) xs)
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n cont
+	| n &lt;= 0                  = error &quot;!!!&quot;
+	| n == 1                  = Singl (headOC cont)
+	| n &gt;= (countConsOC cont) = cont
+	| otherwise               = helper1 n cont</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>module Demo where
+
+data OddCont a = Singl a | BiCons a a (OddCont a)
+                 deriving (Eq,Show)
+
+lenOC :: OddCont a -&gt; Int
+lenOC cont =
+  case cont of
+    Singl a         -&gt; 1
+    BiCons a b (xs) -&gt; 2 + lenOC xs
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC cont =
+  case cont of
+  	Singl a         -&gt; 1
+  	BiCons a b (xs) -&gt; 1 + countConsOC xs
+
+headOC :: OddCont a -&gt; a
+headOC cont =
+  case cont of
+  	Singl a         -&gt; a
+  	BiCons a b (xs) -&gt; a
+
+lastOC :: OddCont a -&gt; a
+lastOC cont =
+  case cont of
+  	Singl a         -&gt; a
+  	BiCons a b (xs) -&gt; lastOC xs
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC cont =
+  case cont of
+  	Singl a         -&gt; a
+  	BiCons a b (xs) -&gt; a + b + sumOC xs
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f cont =
+  case cont of
+  	Singl a         -&gt; if (f a) then (Just a) else Nothing
+  	BiCons a b (xs) -&gt; 
+  	  if (f a) then (Just a) else (if (f b) then (Just b) else (findOC f xs)) 
+
+helper1 :: Int -&gt; OddCont a -&gt; OddCont a
+helper1 n cont 
+	| n == 1 = Singl (headOC cont)
+	| n &gt; 1  = case cont of
+		BiCons a b (xs) -&gt; BiCons a b (helper1 (n-1) xs)
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n cont
+	| n &lt;= 0                  = error &quot;!!!&quot;
+	| n == 1                  = Singl (headOC cont)
+	| n &gt;= (countConsOC cont) = cont
+	| otherwise               = helper1 n cont</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>
+lenOC :: OddCont a -&gt; Int
+lenOC cont =
+  case cont of
+    Singl a         -&gt; 1
+    BiCons a b (xs) -&gt; 2 + lenOC xs
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC cont =
+  case cont of
+  	Singl a         -&gt; 1
+  	BiCons a b (xs) -&gt; 1 + countConsOC xs
+
+headOC :: OddCont a -&gt; a
+headOC cont =
+  case cont of
+  	Singl a         -&gt; a
+  	BiCons a b (xs) -&gt; a
+
+lastOC :: OddCont a -&gt; a
+lastOC cont =
+  case cont of
+  	Singl a         -&gt; a
+  	BiCons a b (xs) -&gt; lastOC xs
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC cont =
+  case cont of
+  	Singl a         -&gt; a
+  	BiCons a b (xs) -&gt; a + b + sumOC xs
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f cont =
+  case cont of
+  	Singl a         -&gt; if (f a) then (Just a) else Nothing
+  	BiCons a b (xs) -&gt; 
+  	  if (f a) then (Just a) else (if (f b) then (Just b) else (findOC f xs)) 
+
+helper1 :: Int -&gt; OddCont a -&gt; OddCont a
+helper1 n cont 
+	| n == 1 = Singl (headOC cont)
+	| n &gt; 1  = case cont of
+		BiCons a b (xs) -&gt; BiCons a b (helper1 (n-1) xs)
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n cont
+	| n &lt;= 0                  = error &quot;!!!&quot;
+	| n == 1                  = Singl (headOC cont)
+	| n &gt;= (countConsOC cont) = cont
+	| otherwise               = helper1 n cont</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>
+countConsOC :: OddCont a -&gt; Int
+countConsOC cont =
+  case cont of
+  	Singl a         -&gt; 1
+  	BiCons a b (xs) -&gt; 1 + countConsOC xs
+
+headOC :: OddCont a -&gt; a
+headOC cont =
+  case cont of
+  	Singl a         -&gt; a
+  	BiCons a b (xs) -&gt; a
+
+helper1 :: Int -&gt; OddCont a -&gt; OddCont a
+helper1 n cont 
+	| n == 1 = Singl (headOC cont)
+	| n &gt; 1  = case cont of
+		BiCons a b (xs) -&gt; BiCons a b (helper1 (n-1) xs)
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n cont
+	| n &lt;= 0                  = error &quot;!!!&quot;
+	| n == 1                  = Singl (headOC cont)
+	| n &gt;= (countConsOC cont) = cont
+	| otherwise               = helper1 n cont</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100654.html">s100654</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC cont =
+  case cont of
+    Singl a         -&gt; 1
+    BiCons a b (xs) -&gt; 2 + lenOC xs
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC cont =
+  case cont of
+  	Singl a         -&gt; 1
+  	BiCons a b (xs) -&gt; 1 + countConsOC xs</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100655.html">s100655</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f cont =
+    case cont of
+  	  Singl a         -&gt; Singl (f a)
+  	  BiCons a b (xs) -&gt; BiCons (f a) (f b) (fmap f xs)	</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100656.html">s100656</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC cont =
+  case cont of
+  	Singl a         -&gt; a
+  	BiCons a b (xs) -&gt; a + b + sumOC xs
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f cont =
+  case cont of
+  	Singl a         -&gt; if (f a) then (Just a) else Nothing
+  	BiCons a b (xs) -&gt; 
+  	  if (f a) then (Just a) else (if (f b) then (Just b) else (findOC f xs)) </pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100659.html">s100659</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+headOC :: OddCont a -&gt; a
+headOC cont =
+  case cont of
+  	Singl a         -&gt; a
+  	BiCons a b (xs) -&gt; a
+
+lastOC :: OddCont a -&gt; a
+lastOC cont =
+  case cont of
+  	Singl a         -&gt; a
+  	BiCons a b (xs) -&gt; lastOC xs</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+</ul>
+
+
+
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="js/vendor/jquery.tooltipster.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
+

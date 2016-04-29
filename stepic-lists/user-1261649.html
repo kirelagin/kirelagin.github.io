@@ -1,0 +1,696 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>×</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/tooltipster.css" />
+        <link rel="stylesheet" href="css/themes/tooltipster-noir.css" />
+
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+
+        <ul id="steps">
+<li class="step">
+<div class="step_id"><a href="step-100650.html">s100650</a></div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f s (Singl x) = f x s
+foldrOC f s (BiCons x y z) = f x (func y (foldrOC func s z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f s (Singl x) = f x s
+foldrOC f s (BiCons x y z) = f x (func y (foldrOC func s z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f s (Singl x) = f x s
+foldrOC f s (BiCons x y z) = f x (f y (foldrOC f s z))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100654.html">s100654</a></div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl q) = 1
+lenOC (BiCons q y z) = 2 + lenOC z
+
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl q) = 1
+countConsOC(BiCons q  z) = 1 + countConsOC z
+
+
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl q) = 1
+lenOC (BiCons q y z) = 2 + lenOC z
+
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl q) = 1
+countConsOC(BiCons q y z) = 1 + countConsOC z
+
+
+
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100655.html">s100655</a></div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+fmap f (Singl x) = (Singl (f x))
+fmap f (BiCons x y z)  = (BiCons (f x) (f y) (fmap f z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+    fmap f (Singl x) = (Singl (f x))
+    fmap f (BiCons x y z)  = (BiCons (f x) (f y) (fmap f z))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100656.html">s100656</a></div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+| f x  == True = Just x
+| otherwise = nothing
+findOC f (BiCons x y z) 
+| f x == True = Just x
+| f y == True = Just y
+| otherwise = findOC f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+| f x  == True = Just x
+| otherwise = nothing
+findOC f (BiCons x y z) 
+| f x == True = Just x
+| f y == True = Just y
+| otherwise = findOC f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+| f x  == True = Just x
+| otherwise = nothing
+findOC f (BiCons x y z) 
+| f x == True = Just x
+| f y == True = Just y
+| otherwise = findOC f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+| f x == True = Just x
+| otherwise = nothing
+findOC f (BitCons x y z)
+| f x == True = Just x
+| f y == True = Just y</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+|f x == True = Just x
+|otherwise = nothing
+findOC f (BitCons x y z)
+|f x == True = Just x
+|f y == True = Just y
+|otherwise = findOC f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+|f x == True = Just x
+|otherwise = nothing
+findOC f (BitCons x y z)
+|f x == True = Just x
+|f y == True = Just y
+| otherwise = findOC f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+| f x == True = Just x
+| otherwise = nothing
+findOC f (BitCons x y z)
+| f x == True = Just x
+| f y == True = Just y
+| otherwise = findOC f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+| f x == True = Just x
+| otherwise = nothing
+| findOC f (BitCons x y z)
+| f x == True = Just x
+| f y == True = Just y
+| otherwise = findOC f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+    | f x == True = Just x
+    | otherwise = nothing
+    | findOC f (BitCons x y z)
+    | f x == True = Just x
+    | f y == True = Just y
+    | otherwise = findOC f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+    | f x == True = Just x
+    | otherwise = nothing
+    | findOC f (BitCons x y z)
+    | f x == True = Just x
+    | f y == True = Just y
+    | otherwise = findOC f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+| f x == True = Just x
+| otherwise = nothing
+| findOC f (BitCons x y z)
+| f x == True = Just x
+| f y == True = Just y
+    | otherwise = findOC f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+| f x == True = Just x
+| otherwise = nothing
+| findOC f (BitCons x y z)
+| f x == True = Just x
+| f y == True = Just y
+| otherwise = findOC f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+| f x == True = Just x
+otherwise = nothing
+| findOC f (BitCons x y z)
+| f x == True = Just x
+| f y == True = Just y
+otherwise = findOC f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+f x == True = Just x
+otherwise = nothing
+findOC f (BitCons x y z)
+f x == True = Just x
+f y == True = Just y
+otherwise = findOC f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+|f x == True = Just x
+otherwise = nothing
+findOC f (BitCons x y z)
+f x == True = Just x
+f y == True = Just y
+otherwise = findOC f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+    |f x == True = Just x
+otherwise = nothing
+findOC f (BitCons x y z)
+f x == True = Just x
+f y == True = Just y
+otherwise = findOC f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+| f x == True = Just x
+| otherwise = nothing
+| findOC f (BitCons x y z)
+| f x == True = Just x
+| f y == True = Just y
+| otherwise = findOC f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+ | f x == True = Just x
+ | otherwise = nothing
+ | findOC f (BitCons x y z)
+ | f x == True = Just x
+ | f y == True = Just y
+ | otherwise = findOC f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+| f x == True = Just x
+| otherwise = nothing
+| findOC f (BitCons x y z)
+| f x == True = Just x
+| f y == True = Just y
+| otherwise = findOC f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+| f x == True = Just x
+| otherwise = nothing
+| findOC f (BiCons x y z)
+| f x == True = Just x
+| f y == True = Just y
+| otherwise = findOC f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+| f x  == True = Just x
+| otherwise = nothing
+findOC f (BiCons x y z) 
+| f x == True = Just x
+| f y == True = Just y
+| otherwise = findOC f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+| f x == True = Just x
+| otherwise = nothing
+findOC f (BiCons x y z) 
+| f x == True = Just x
+| f y == True = Just y
+| otherwise = findOC f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+| f x == True = Just x
+| otherwise = nothing
+findOC f (BiCons x y z) 
+| f x == True = Just x
+| f y == True = Just y
+| otherwise = findOC f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+ | f x == True = Just x
+ | otherwise = nothing
+findOC f (BiCons x y z) 
+ | f x == True = Just x
+ | f y == True = Just y
+ | otherwise = findOC f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+ | f x == True = Just x
+ | otherwise = nothing
+ findOC f (BiCons x y z) 
+ | f x == True = Just x
+ | f y == True = Just y
+ | otherwise = findOC f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+ | f x == True = Just x
+ | otherwise = Nothing
+ findOC f (BiCons x y z) 
+ | f x == True = Just x
+ | f y == True = Just y
+ | otherwise = findOC f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+| f x == True = Just x
+| otherwise = Nothing
+findOC f (BiCons x y z) 
+| f x == True = Just x
+| f y == True = Just y
+| otherwise = findOC f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+ | f x == True = Just x
+ | otherwise = Nothing
+ findOC f (BiCons x y z) 
+ | f x == True = Just x
+ | f y == True = Just y
+ | otherwise = findOC f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC (BiCons x y z) = x + y + sumOC z
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+ | f x == True = Just x
+ | otherwise = Nothing
+findOC f (BiCons x y z) 
+ | f x == True = Just x
+ | f y == True = Just y
+ | otherwise = findOC f z</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100659.html">s100659</a></div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+headOC :: OddCont a -&gt; a
+headOC = undefined
+
+lastOC :: OddCont a -&gt; a
+lastOC = undefined
+
+headOC :: OddCont a -&gt; a
+headOC (BiCons x y z) = x
+headOC (Singl x) = x
+lastOC :: OddCont a -&gt; a
+lastOC (BiCons x y z) = lastOC z
+lastOC (Singl x) = x</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+headOC :: OddCont a -&gt; a
+headOC (BiCons q y z) = x
+headOC (Singl q) = x
+
+lastOC :: OddCont a -&gt; a
+lastOC (BiCons q y z) = lastOC z
+lastOC (Singl x) = x
+
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+headOC :: OddCont a -&gt; a
+headOC (BiCons q y z) = x
+headOC (Singl q) = x
+
+lastOC :: OddCont a -&gt; a
+lastOC (BiCons q y z) = lastOC z
+lastOC (Singl q) = x
+
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+headOC :: OddCont a -&gt; a
+headOC (BiCons q y z) = q
+headOC (Singl q) = q
+
+lastOC :: OddCont a -&gt; a
+lastOC (BiCons q y z) = lastOC z
+lastOC (Singl q) = q
+
+
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+</ul>
+
+
+
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="js/vendor/jquery.tooltipster.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
+

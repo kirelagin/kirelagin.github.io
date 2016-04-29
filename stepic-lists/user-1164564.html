@@ -1,0 +1,212 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>×</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/tooltipster.css" />
+        <link rel="stylesheet" href="css/themes/tooltipster-noir.css" />
+
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+
+        <ul id="steps">
+<li class="step">
+<div class="step_id"><a href="step-100650.html">s100650</a></div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>-- 6th task
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = f a ini
+foldrOC f ini (BiCons a b c) = foldrOC f (f b (f a ini)) c</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>-- 6th task
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = f a ini
+foldrOC f ini (BiCons a b c) = foldrOC f (f a (f b ini)) c</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>-- 6th task
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl a) = f a ini
+foldrOC f ini (BiCons a b c) = f a (f b (foldrOC f ini c)) 
+
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100651.html">s100651</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>-- prev function
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b cc) oc2             oc3 = BiCons a b (concat3OC cc oc2 oc3)
+concat3OC (Singl a)       (BiCons b c dc) oc3 = BiCons a b (concat3OC (Singl c) dc oc3)
+concat3OC (Singl a)       (Singl b)       oc3 = BiCons a b oc3
+
+-- 8th task
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl oc) = oc
+concatOC (BiCons ac bc occ) = concat3OC ac bc (concatOC occ)
+
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100652.html">s100652</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>-- 4th task
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n _ | n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+takeNCons _ (Singl a)      = Singl a
+takeNCons 1 (BiCons a _ _) = Singl a
+takeNCons n (BiCons a b c) = BiCons a b (takeNCons (n-1) c)
+        
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100653.html">s100653</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>-- 7th task
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b cc) oc2             oc3 = BiCons a b (concat3OC cc oc2 oc3)
+concat3OC (Singl a)       (BiCons b c dc) oc3 = BiCons a b (concat3OC (Singl c) dc oc3)
+concat3OC (Singl a)       (Singl b)       oc3 = BiCons a b oc3
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100654.html">s100654</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>lenOC :: OddCont a -&gt; Int
+lenOC = \a -&gt; helper a 0
+    where
+        helper (Singl _) n = n + 1
+        helper (BiCons a b c) n = helper c (n + 2)
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC = \a -&gt; helper a 0
+    where
+        helper (Singl _) n = n + 1
+        helper (BiCons a b c) n = helper c (n + 1)
+
+
+
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100655.html">s100655</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>-- 5th task
+instance Functor OddCont where
+    fmap f (Singl a) = Singl (f a)
+    fmap f (BiCons a b c) = BiCons (f a) (f b) (fmap f c)
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100656.html">s100656</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>-- 3rd task
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC = \a -&gt; helper a 0
+    where
+        helper (Singl a) sum = sum + a
+        helper (BiCons a b c) sum = helper c (sum + a + b)
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC pred (Singl a) = case pred a of
+    True  -&gt; Just a
+    False -&gt; Nothing
+findOC pred (BiCons a b c) =
+    if pred a then Just a else
+        if pred b then Just b else
+            findOC pred c
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100658.html">s100658</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>-- 5th task
+instance Functor OddCont where
+    fmap f (Singl a) = Singl (f a)
+    fmap f (BiCons a b c) = BiCons (f a) (f b) (fmap f c)
+
+-- 7th task
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b cc) oc2             oc3 = BiCons a b (concat3OC cc oc2 oc3)
+concat3OC (Singl a)       (BiCons b c dc) oc3 = BiCons a b (concat3OC (Singl c) dc oc3)
+concat3OC (Singl a)       (Singl b)       oc3 = BiCons a b oc3
+
+-- 8th task
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl oc) = oc
+concatOC (BiCons ac bc occ) = concat3OC ac bc (concatOC occ)
+
+
+-- 9th task
+instance Monad OddCont where
+    return value = Singl value
+    (&gt;&gt;=) oc fk  = concatOC (fmap fk oc)
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100659.html">s100659</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+headOC :: OddCont a -&gt; a
+headOC (Singl a) = a
+headOC (BiCons a _ _) = a
+
+lastOC :: OddCont a -&gt; a
+lastOC (Singl a) = a
+lastOC (BiCons _ _ c) = lastOC c
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+</ul>
+
+
+
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="js/vendor/jquery.tooltipster.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
+

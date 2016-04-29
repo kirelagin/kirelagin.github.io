@@ -1,0 +1,524 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>×</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/tooltipster.css" />
+        <link rel="stylesheet" href="css/themes/tooltipster-noir.css" />
+
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+
+        <ul id="steps">
+<li class="step">
+<div class="step_id"><a href="step-100650.html">s100650</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini (Singl x) = x `f` ini
+foldrOC f ini a = foldr_OC f ini a where
+  foldr_OC f ini (Singl x) = x `f` ini
+  foldr_OC f ini (BiCons x y z) = x `f` (y `f` (foldr_OC f ini z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC f ini a = foldr_OC f ini a where
+  foldr_OC f ini (Singl x) = x `f` ini
+  foldr_OC f ini (BiCons x y z) = x `f` (y `f` (foldr_OC f ini z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>foldrOC f ini (Singl x) = x `f` ini
+foldrOC f ini (BiCons x y z) = x `f` (y `f` (foldrOC f ini z))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100651.html">s100651</a></div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b c) (BiCons d e f) (BiCons x y z)  =
+  concat3OC (Singl a) (Singl b) (concat3OC c (Singl d) (concat3OC (Singl e) f (concat3OC (Singl x) (Singl y) z)))
+concat3OC (Singl x) (Singl y) (Singl z) = BiCons x y (Singl z)
+concat3OC (Singl x) (Singl y) (BiCons a b c) = BiCons x y (concat3OC (Singl a) (Singl b) c)
+concat3OC (Singl x) (BiCons a b c) (Singl y) = BiCons x a (concat3OC (Singl b) c (Singl y))
+concat3OC (BiCons a b c) (Singl x) (Singl y) = BiCons a b (concat3OC c (Singl x) (Singl y))
+concat3OC (Singl x) (BiCons a b c) (BiCons d e f) =
+    BiCons x a (concat3OC (Singl b) c (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (Singl x) (BiCons d e f) =
+  BiCons a b (concat3OC c (Singl x) (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (BiCons d e f) (Singl x) =
+  BiCons a b (concat3OC c (Singl d) (concat3OC (Singl e) f (Singl x)))
+--
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)
+concatOC (Singl (Singl x)) = (Singl x)
+concatOC (Singl (BiCons a b c)) = concat3OC (Singl a) (Singl b) c</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b c) (BiCons d e f) (BiCons x y z)  =
+  concat3OC (Singl a) (Singl b) (concat3OC c (Singl d) (concat3OC (Singl e) f (concat3OC (Singl x) (Singl y) z)))
+concat3OC (Singl x) (Singl y) (Singl z) = BiCons x y (Singl z)
+concat3OC (Singl x) (Singl y) (BiCons a b c) = BiCons x y (concat3OC (Singl a) (Singl b) c)
+concat3OC (Singl x) (BiCons a b c) (Singl y) = BiCons x a (concat3OC (Singl b) c (Singl y))
+concat3OC (BiCons a b c) (Singl x) (Singl y) = BiCons a b (concat3OC c (Singl x) (Singl y))
+concat3OC (Singl x) (BiCons a b c) (BiCons d e f) =
+    BiCons x a (concat3OC (Singl b) c (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (Singl x) (BiCons d e f) =
+  BiCons a b (concat3OC c (Singl x) (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (BiCons d e f) (Singl x) =
+  BiCons a b (concat3OC c (Singl d) (concat3OC (Singl e) f (Singl x)))
+--
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)
+concatOC (Singl (Singl x)) = (Singl x)
+concatOC (Singl (BiCons a b c)) = concat3OC (Singl a) (Singl b) c</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b c) (BiCons d e f) (BiCons x y z)  =
+  concat3OC (Singl a) (Singl b) (concat3OC c (Singl d) (concat3OC (Singl e) f (concat3OC (Singl x) (Singl y) z)))
+concat3OC (Singl x) (Singl y) (Singl z) = BiCons x y (Singl z)
+concat3OC (Singl x) (Singl y) (BiCons a b c) = BiCons x y (concat3OC (Singl a) (Singl b) c)
+concat3OC (Singl x) (BiCons a b c) (Singl y) = BiCons x a (concat3OC (Singl b) c (Singl y))
+concat3OC (BiCons a b c) (Singl x) (Singl y) = BiCons a b (concat3OC c (Singl x) (Singl y))
+concat3OC (Singl x) (BiCons a b c) (BiCons d e f) =
+    BiCons x a (concat3OC (Singl b) c (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (Singl x) (BiCons d e f) =
+  BiCons a b (concat3OC c (Singl x) (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (BiCons d e f) (Singl x) =
+  BiCons a b (concat3OC c (Singl d) (concat3OC (Singl e) f (Singl x)))
+--
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)
+concatOC (Singl x) = x
+concatOC (Singl (BiCons a b c)) = concat3OC (Singl a) (Singl b) c</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b c) (BiCons d e f) (BiCons x y z)  =
+  concat3OC (Singl a) (Singl b) (concat3OC c (Singl d) (concat3OC (Singl e) f (concat3OC (Singl x) (Singl y) z)))
+concat3OC (Singl x) (Singl y) (Singl z) = BiCons x y (Singl z)
+concat3OC (Singl x) (Singl y) (BiCons a b c) = BiCons x y (concat3OC (Singl a) (Singl b) c)
+concat3OC (Singl x) (BiCons a b c) (Singl y) = BiCons x a (concat3OC (Singl b) c (Singl y))
+concat3OC (BiCons a b c) (Singl x) (Singl y) = BiCons a b (concat3OC c (Singl x) (Singl y))
+concat3OC (Singl x) (BiCons a b c) (BiCons d e f) =
+    BiCons x a (concat3OC (Singl b) c (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (Singl x) (BiCons d e f) =
+  BiCons a b (concat3OC c (Singl x) (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (BiCons d e f) (Singl x) =
+  BiCons a b (concat3OC c (Singl d) (concat3OC (Singl e) f (Singl x)))
+--
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)
+-- concatOC (Singl (BiCons a b c)) = concat3OC (Singl a) (Singl b) c
+concatOC (Singl x) = x</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b c) (BiCons d e f) (BiCons x y z)  =
+  concat3OC (Singl a) (Singl b) (concat3OC c (Singl d) (concat3OC (Singl e) f (concat3OC (Singl x) (Singl y) z)))
+concat3OC (Singl x) (Singl y) (Singl z) = BiCons x y (Singl z)
+concat3OC (Singl x) (Singl y) (BiCons a b c) = BiCons x y (concat3OC (Singl a) (Singl b) c)
+concat3OC (Singl x) (BiCons a b c) (Singl y) = BiCons x a (concat3OC (Singl b) c (Singl y))
+concat3OC (BiCons a b c) (Singl x) (Singl y) = BiCons a b (concat3OC c (Singl x) (Singl y))
+concat3OC (Singl x) (BiCons a b c) (BiCons d e f) =
+    BiCons x a (concat3OC (Singl b) c (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (Singl x) (BiCons d e f) =
+  BiCons a b (concat3OC c (Singl x) (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (BiCons d e f) (Singl x) =
+  BiCons a b (concat3OC c (Singl d) (concat3OC (Singl e) f (Singl x)))
+--
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (BiCons a b c) = concat3OC a b $ (concatOC c)
+-- concatOC (Singl (BiCons a b c)) = concat3OC (Singl a) (Singl b) c
+concatOC (Singl x) = x</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b c) (BiCons d e f) (BiCons x y z)  =
+  concat3OC (Singl a) (Singl b) (concat3OC c (Singl d) (concat3OC (Singl e) f (concat3OC (Singl x) (Singl y) z)))
+concat3OC (Singl x) (Singl y) t@(Singl z) = BiCons x y t
+concat3OC (Singl x) (Singl y) (BiCons a b c) = BiCons x y (concat3OC (Singl a) (Singl b) c)
+concat3OC (Singl x) (BiCons a b c) t@(Singl y) = BiCons x a (concat3OC (Singl b) c t)
+concat3OC (BiCons a b c) t@(Singl x) t2@(Singl y) = BiCons a b (concat3OC c t t2)
+concat3OC (Singl x) (BiCons a b c) (BiCons d e f) =
+    BiCons x a (concat3OC (Singl b) c (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) t@(Singl x) (BiCons d e f) =
+  BiCons a b (concat3OC c t (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (BiCons d e f) t@(Singl x) =
+  BiCons a b (concat3OC c (Singl d) (concat3OC (Singl e) f t))
+--
+-- concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl (BiCons a b c)) = concat3OC (Singl a) (Singl b) c
+concatOC (Singl x) = x
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b c) (BiCons d e f) (BiCons x y z)  =
+  concat3OC (Singl a) (Singl b) (concat3OC c (Singl d) (concat3OC (Singl e) f (concat3OC (Singl x) (Singl y) z)))
+concat3OC (Singl x) (Singl y) t@(Singl z) = BiCons x y t
+concat3OC (Singl x) (Singl y) (BiCons a b c) = BiCons x y (concat3OC (Singl a) (Singl b) c)
+concat3OC (Singl x) (BiCons a b c) t@(Singl y) = BiCons x a (concat3OC (Singl b) c t)
+concat3OC (BiCons a b c) t@(Singl x) t2@(Singl y) = BiCons a b (concat3OC c t t2)
+concat3OC (Singl x) (BiCons a b c) (BiCons d e f) =
+    BiCons x a (concat3OC (Singl b) c (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) t@(Singl x) (BiCons d e f) =
+  BiCons a b (concat3OC c t (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (BiCons d e f) t@(Singl x) =
+  BiCons a b (concat3OC c (Singl d) (concat3OC (Singl e) f t))
+--
+concatOC :: (Show a) =&gt; OddCont (OddCont a) -&gt; OddCont a
+concatOC x = traceShow x undefined
+
+concatOC_ (Singl (BiCons a b c)) = concat3OC (Singl a) (Singl b) c
+concatOC_ (Singl x) = x
+concatOC_ (BiCons a b c) = concat3OC a b (concatOC_ c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>import Debug.Trace
+
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b c) (BiCons d e f) (BiCons x y z)  =
+  concat3OC (Singl a) (Singl b) (concat3OC c (Singl d) (concat3OC (Singl e) f (concat3OC (Singl x) (Singl y) z)))
+concat3OC (Singl x) (Singl y) t@(Singl z) = BiCons x y t
+concat3OC (Singl x) (Singl y) (BiCons a b c) = BiCons x y (concat3OC (Singl a) (Singl b) c)
+concat3OC (Singl x) (BiCons a b c) t@(Singl y) = BiCons x a (concat3OC (Singl b) c t)
+concat3OC (BiCons a b c) t@(Singl x) t2@(Singl y) = BiCons a b (concat3OC c t t2)
+concat3OC (Singl x) (BiCons a b c) (BiCons d e f) =
+    BiCons x a (concat3OC (Singl b) c (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) t@(Singl x) (BiCons d e f) =
+  BiCons a b (concat3OC c t (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (BiCons d e f) t@(Singl x) =
+  BiCons a b (concat3OC c (Singl d) (concat3OC (Singl e) f t))
+--
+concatOC :: (Show a) =&gt; OddCont (OddCont a) -&gt; OddCont a
+concatOC x = traceShow x undefined
+
+concatOC_ (Singl (BiCons a b c)) = concat3OC (Singl a) (Singl b) c
+concatOC_ (Singl x) = x
+concatOC_ (BiCons a b c) = concat3OC a b (concatOC_ c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>
+concatOC (Singl (BiCons a b c)) = concat3OC (Singl a) (Singl b) c
+concatOC (Singl x) = x
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>concat3OC (Singl x) (Singl y) z = BiCons x y z
+concat3OC (BiCons x y z) q w = BiCons x y (concat3OC z q w)
+concat3OC (Singl x) (BiCons y z q) w = BiCons x y (concat3OC (Singl z) q w)
+
+concatOC (Singl (BiCons a b c)) = concat3OC (Singl a) (Singl b) c
+concatOC (Singl x) = x
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100652.html">s100652</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n _ | n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+takeNCons n (Singl x) = (Singl x)
+takeNCons n a = tNC n a where
+  tNC 1 (BiCons x y z) = Singl x
+  tNC n (Singl x) = (Singl x)
+  tNC n (BiCons x y z) = (BiCons x y (tNC (n-1) z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+takeNCons n a = tNC n a where
+  tNC 1 (BiCons x y z) = Singl x
+  tNC n (Singl x) = (Singl x)
+  tNC n (BiCons x y z) = (BiCons x y (tNC (n-1) z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>takeNCons 1 (BiCons x y z) = Singl x
+takeNCons n (Singl x) = (Singl x)
+takeNCons n (BiCons x y z) = (BiCons x y (takeNCons (n-1) z))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100653.html">s100653</a></div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b c) (BiCons d e f) (BiCons x y z)  =
+  concat3OC (Singl a) (Singl b) (concat3OC c (Singl d) (concat3OC (Singl e) f (concat3OC (Singl x) (Singl y) z)))
+
+concat3OC (Singl x) (Singl y) (Singl z) = BiCons x y (Singl z)
+--
+concat3OC (Singl x) (Singl y) (BiCons a b c) = BiCons x y (concat3OC (Singl a) (Singl b) c)
+concat3OC (Singl x) (BiCons a b c) (Singl y) = BiCons x a (concat3OC (Singl b) c (Singl y))
+concat3OC (BiCons a b c) (Singl x) (Singl y) = BiCons a b (concat3OC c (Singl x) (Singl y))
+--
+concat3OC (Singl x) (BiCons a b c) (BiCons d e f) =
+    BiCons x a (concat3OC (Singl b) c (concat3OC (Singl d) (Singl e) f))
+
+concat3OC (BiCons a b c) (Singl x) (BiCons d e f) =
+  BiCons a b (concat3OC c (Singl x) (concat3OC (Singl d) (Singl e) f))
+--
+concat3OC x y z = trace ((show x) ++ &quot; ___ &quot; ++ (show y) ++ &quot; ___ &quot; ++ (show z)) undefined</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>import Debug.Trace
+
+{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b c) (BiCons d e f) (BiCons x y z)  =
+  concat3OC (Singl a) (Singl b) (concat3OC c (Singl d) (concat3OC (Singl e) f (concat3OC (Singl x) (Singl y) z)))
+
+concat3OC (Singl x) (Singl y) (Singl z) = BiCons x y (Singl z)
+--
+concat3OC (Singl x) (Singl y) (BiCons a b c) = BiCons x y (concat3OC (Singl a) (Singl b) c)
+concat3OC (Singl x) (BiCons a b c) (Singl y) = BiCons x a (concat3OC (Singl b) c (Singl y))
+concat3OC (BiCons a b c) (Singl x) (Singl y) = BiCons a b (concat3OC c (Singl x) (Singl y))
+--
+concat3OC (Singl x) (BiCons a b c) (BiCons d e f) =
+    BiCons x a (concat3OC (Singl b) c (concat3OC (Singl d) (Singl e) f))
+
+concat3OC (BiCons a b c) (Singl x) (BiCons d e f) =
+  BiCons a b (concat3OC c (Singl x) (concat3OC (Singl d) (Singl e) f))
+--
+concat3OC x y z = trace ((show x) ++ &quot; ___ &quot; ++ (show y) ++ &quot; ___ &quot; ++ (show z)) undefined</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b c) (BiCons d e f) (BiCons x y z)  =
+  concat3OC (Singl a) (Singl b) (concat3OC c (Singl d) (concat3OC (Singl e) f (concat3OC (Singl x) (Singl y) z)))
+
+concat3OC (Singl x) (Singl y) (Singl z) = BiCons x y (Singl z)
+--
+concat3OC (Singl x) (Singl y) (BiCons a b c) = BiCons x y (concat3OC (Singl a) (Singl b) c)
+concat3OC (Singl x) (BiCons a b c) (Singl y) = BiCons x a (concat3OC (Singl b) c (Singl y))
+concat3OC (BiCons a b c) (Singl x) (Singl y) = BiCons a b (concat3OC c (Singl x) (Singl y))
+--
+concat3OC (Singl x) (BiCons a b c) (BiCons d e f) =
+    BiCons x a (concat3OC (Singl b) c (concat3OC (Singl d) (Singl e) f))
+
+concat3OC (BiCons a b c) (Singl x) (BiCons d e f) =
+  BiCons a b (concat3OC c (Singl x) (concat3OC (Singl d) (Singl e) f))
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b c) (BiCons d e f) (BiCons x y z)  =
+  concat3OC (Singl a) (Singl b) (concat3OC c (Singl d) (concat3OC (Singl e) f (concat3OC (Singl x) (Singl y) z)))
+
+concat3OC (Singl x) (Singl y) (Singl z) = BiCons x y (Singl z)
+--
+concat3OC (Singl x) (Singl y) (BiCons a b c) = BiCons x y (concat3OC (Singl a) (Singl b) c)
+concat3OC (Singl x) (BiCons a b c) (Singl y) = BiCons x a (concat3OC (Singl b) c (Singl y))
+concat3OC (BiCons a b c) (Singl x) (Singl y) = BiCons a b (concat3OC c (Singl x) (Singl y))
+--
+concat3OC (Singl x) (BiCons a b c) (BiCons d e f) =
+    BiCons x a (concat3OC (Singl b) c (concat3OC (Singl d) (Singl e) f))
+
+concat3OC (BiCons a b c) (Singl x) (BiCons d e f) =
+  BiCons a b (concat3OC c (Singl x) (concat3OC (Singl d) (Singl e) f))
+
+concat3OC (BiCons a b c) (BiCons d e f) (Singl x) =
+  BiCons a b (concat3OC c (Singl d) (concat3OC (Singl e) f (Singl x)))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b c) (BiCons d e f) (BiCons x y z)  =
+  concat3OC (Singl a) (Singl b) (concat3OC c (Singl d) (concat3OC (Singl e) f (concat3OC (Singl x) (Singl y) z)))
+concat3OC (Singl x) (Singl y) (Singl z) = BiCons x y (Singl z)
+concat3OC (Singl x) (Singl y) (BiCons a b c) = BiCons x y (concat3OC (Singl a) (Singl b) c)
+concat3OC (Singl x) (BiCons a b c) (Singl y) = BiCons x a (concat3OC (Singl b) c (Singl y))
+concat3OC (BiCons a b c) (Singl x) (Singl y) = BiCons a b (concat3OC c (Singl x) (Singl y))
+concat3OC (Singl x) (BiCons a b c) (BiCons d e f) =
+    BiCons x a (concat3OC (Singl b) c (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (Singl x) (BiCons d e f) =
+  BiCons a b (concat3OC c (Singl x) (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (BiCons d e f) (Singl x) =
+  BiCons a b (concat3OC c (Singl d) (concat3OC (Singl e) f (Singl x)))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (BiCons a b c) (BiCons d e f) (BiCons x y z)  =
+  concat3OC (Singl a) (Singl b) (concat3OC c (Singl d) (concat3OC (Singl e) f (concat3OC (Singl x) (Singl y) z)))
+concat3OC (Singl x) (Singl y) t@(Singl z) = BiCons x y t
+concat3OC (Singl x) (Singl y) (BiCons a b c) = BiCons x y (concat3OC (Singl a) (Singl b) c)
+concat3OC (Singl x) (BiCons a b c) t@(Singl y) = BiCons x a (concat3OC (Singl b) c t)
+concat3OC (BiCons a b c) t@(Singl x) t2@(Singl y) = BiCons a b (concat3OC c t t2)
+concat3OC (Singl x) (BiCons a b c) (BiCons d e f) =
+    BiCons x a (concat3OC (Singl b) c (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) t@(Singl x) (BiCons d e f) =
+  BiCons a b (concat3OC c t (concat3OC (Singl d) (Singl e) f))
+concat3OC (BiCons a b c) (BiCons d e f) t@(Singl x) =
+  BiCons a b (concat3OC c (Singl d) (concat3OC (Singl e) f t))</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC (Singl x) (Singl y) z = BiCons x y z
+concat3OC (BiCons x y z) q w = BiCons x y (concat3OC z q w)
+concat3OC (Singl x) (BiCons y z q) w = BiCons x y (concat3OC (Singl z) q w)
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100654.html">s100654</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons x y z) = countOC (BiCons x y z) 0 where
+  countOC (BiCons x y z) len = countOC z (len+1)
+  countOC (Singl _) len = (len+1)
+
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _) = 1
+lenOC (BiCons x y z) = lOC (BiCons x y z) 0 where
+  lOC (BiCons x y z) len = lOC z (len+2)
+  lOC (Singl _) len = (len+1)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100655.html">s100655</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f a = f_map f a where
+    f_map f (Singl x) = Singl (f x)
+    f_map f (BiCons x y z) = (BiCons (f x) (f y) (f_map f z))</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap = undefined</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f (BiCons x y z) = (BiCons (f x) (f y) (fmap f z))</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100656.html">s100656</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC a = sOC a 0 where
+  sOC (Singl x) su = su+x
+  sOC (BiCons x y z) su = sOC z (su + x + y)
+
+
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+  | f x = Just x
+  | otherwise = Nothing
+findOC f a = fOC f a where
+  fOC f (Singl x)
+    | f x = Just x
+    | otherwise = Nothing
+  fOC f (BiCons x y z)
+    | f x = Just x
+    | f y = Just y
+    | otherwise = fOC f z</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl x) = x
+sumOC a = sOC a 0 where
+  sOC (Singl x) su = su+x
+  sOC (BiCons x y z) su = sOC z (su + x + y)
+
+
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl x)
+  | f x = Just x
+  | otherwise = Nothing
+findOC f (BiCons x y z)
+  | f x = Just x
+  | f y = Just y
+  | otherwise = findOC f z</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100658.html">s100658</a></div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>instance Monad OddCont where
+  return = Singl
+  xs &gt;&gt;= x = concatOC (fmap x xs)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>concat3OC (Singl x) (Singl y) z = BiCons x y z
+concat3OC (BiCons x y z) q w = BiCons x y (concat3OC z q w)
+concat3OC (Singl x) (BiCons y z q) w = BiCons x y (concat3OC (Singl z) q w)
+
+concatOC (Singl (BiCons a b c)) = concat3OC (Singl a) (Singl b) c
+concatOC (Singl x) = x
+concatOC (BiCons a b c) = concat3OC a b (concatOC c)
+
+instance Functor OddCont where
+  fmap f (Singl x) = Singl (f x)
+  fmap f (BiCons x y z) = (BiCons (f x) (f y) (fmap f z))
+
+instance Monad OddCont where
+  return = Singl
+  xs &gt;&gt;= x = concatOC (fmap x xs)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100659.html">s100659</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>headOC :: OddCont a -&gt; a
+headOC (Singl x) = x
+headOC (BiCons x _ _) = x
+
+
+
+lastOC :: OddCont a -&gt; a
+lastOC (Singl x) = x
+lastOC (BiCons x y z) = lOC (BiCons x y z) where
+  lOC (Singl x) = x
+  lOC (BiCons x y z) = lOC z</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>headOC :: OddCont a -&gt; a
+headOC (Singl x) = x
+headOC (BiCons x _ _) = x
+
+
+
+lastOC :: OddCont a -&gt; a
+lastOC (Singl x) = x
+lastOC (BiCons _ _ z) = lastOC z</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+</ul>
+
+
+
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="js/vendor/jquery.tooltipster.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
+

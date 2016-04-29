@@ -1,0 +1,315 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>×</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/tooltipster.css" />
+        <link rel="stylesheet" href="css/themes/tooltipster-noir.css" />
+
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+
+        <ul id="steps">
+<li class="step">
+<div class="step_id"><a href="step-100650.html">s100650</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini oc@(Singl a) = f a ini
+foldrOC f ini (BiCons a b oc) = x
+  where
+    x = f a y
+    y = f b z
+    z = foldrOC f ini oc
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100651.html">s100651</a></div>
+<ul class="submissions">
+<li class="submission tooltip bad warn" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini oc@(Singl a) = f a ini
+foldrOC f ini (BiCons a b oc) = f a y
+  where y = f b z
+        z = foldrOC f ini oc
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC a b c = concat3ListToOC $ concat3OCtoList a b c
+
+concat3OCtoList :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; [a]
+concat3OCtoList a b c = foldrOC (:) bcs a
+  where
+    cs  = foldrOC (:) [] c
+    bcs = foldrOC (:) cs b
+
+concat3ListToOC :: [a] -&gt; OddCont a
+concat3ListToOC []       = error &quot;Even lenght list!!!&quot;
+concat3ListToOC [x]      = (Singl x)
+concat3ListToOC (x:y:xs) = (BiCons x y (concat3ListToOC xs))
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl (Singl a)) = (Singl a)
+concatOC (BiCons a b (Singl c)) = concat3ListToOC (concat3OCtoList a b c)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip bad correct warn" title="<code><pre>foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini oc@(Singl a) = f a ini
+foldrOC f ini (BiCons a b oc) = f a y
+  where y = f b z
+        z = foldrOC f ini oc
+
+buildOC :: ((a -&gt; [a] -&gt; [a]) -&gt; [t1] -&gt; t) -&gt; t
+buildOC g = g (:) []
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC a b c = concat3ListToOC $ concat3OCtoList a b c
+
+concatOCList :: OddCont (OddCont a) -&gt; [a]
+concatOCList xs = buildOC (\c n -&gt; foldrOC (\x y -&gt; foldrOC c y x) n xs)
+
+concat3OCtoList :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; [a]
+concat3OCtoList a b c = foldrOC (:) bcs a
+  where
+    cs  = foldrOC (:) [] c
+    bcs = foldrOC (:) cs b
+
+concat3ListToOC :: [a] -&gt; OddCont a
+concat3ListToOC []       = error &quot;Even lenght list!!!&quot;
+concat3ListToOC [x]      = (Singl x)
+concat3ListToOC (x:y:xs) = (BiCons x y (concat3ListToOC xs))
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC a = concat3ListToOC (concatOCList a)
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100652.html">s100652</a></div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n _ | n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+takeNCons n inp = takeNCons&#x27; n 1 inp
+takeNCons&#x27; :: Int -&gt; Int -&gt; OddCont a -&gt; OddCont a
+takeNCons&#x27; _ _ (Singl a) = (Singl a)
+takeNCons&#x27; n i (BiCons a b oc)
+  | n == i &amp;&amp; 0 == mod i 2 = (Singl a)
+  | n == i                 = (Singl b)
+  | otherwise = (BiCons a b) (takeNCons&#x27; n (i + 1) oc)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n _ | n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+takeNCons n inp = takeNCons&#x27; n (mod n 2) 0 inp
+takeNCons&#x27; :: Int -&gt; Int -&gt; Int -&gt; OddCont a -&gt; OddCont a
+takeNCons&#x27; _ _ _ (Singl a) = (Singl a)
+takeNCons&#x27; 1 _ _ (BiCons a b oc) = (Singl a)
+takeNCons&#x27; n m i (BiCons a b oc)
+  | n == (i + 1) &amp;&amp; m /= mod i 2 = (Singl a)
+  | n == (i + 1)                 = (Singl b)
+  | otherwise = (BiCons a b) (takeNCons&#x27; n m (i + 1) oc)
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100653.html">s100653</a></div>
+<ul class="submissions">
+<li class="submission tooltip bad correct warn" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini oc@(Singl a) = f a ini
+foldrOC f ini (BiCons a b oc) = f a y
+  where y = f b z
+        z = foldrOC f ini oc
+
+concat3OCtoList :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; [a]
+concat3OCtoList a b c = foldrOC (:) bcs a
+  where
+    cs  = foldrOC (:) [] c
+    bcs = foldrOC (:) cs b
+
+concat3ListToOC :: [a] -&gt; OddCont a
+concat3ListToOC []       = error &quot;Even lenght list!!!&quot;
+concat3ListToOC [x]      = (Singl x)
+concat3ListToOC (x:y:xs) = (BiCons x y (concat3ListToOC xs))
+
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+-- concat3OC = undefined
+concat3OC a b c = concat3ListToOC $ concat3OCtoList a b c
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100654.html">s100654</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int 
+lenOC (Singl _) = 1
+lenOC (BiCons _ _ oc) = 2 + lenOC oc
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _) = 1
+countConsOC (BiCons _ _ oc) = 1 + countConsOC oc
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100655.html">s100655</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+  fmap f (Singl a) = (Singl $ f a)
+  fmap f (BiCons a b oc) = (BiCons (f a) (f b) (fmap f oc))
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100656.html">s100656</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl a) = a
+sumOC (BiCons a b oc) = a + b + sumOC oc
+
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC predicate (Singl a)
+  | predicate a = Just a
+  | otherwise   = Nothing
+findOC predicate (BiCons a b oc)
+  | predicate a = Just a
+  | predicate b = Just b
+  | otherwise   = findOC predicate oc
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100658.html">s100658</a></div>
+<ul class="submissions">
+<li class="submission tooltip bad correct warn" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+  
+mapOC :: (t -&gt; a) -&gt; OddCont t -&gt; OddCont a
+mapOC f (Singl a)       = (Singl $ f a)
+mapOC f (BiCons a b oc) = (BiCons (f a) (f b) $ mapOC f oc)
+
+buildOC :: ((a -&gt; [a] -&gt; [a]) -&gt; [t1] -&gt; t) -&gt; t
+buildOC g = g (:) []
+
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f ini oc@(Singl a) = f a ini
+foldrOC f ini (BiCons a b oc) = f a y
+  where y = f b z
+        z = foldrOC f ini oc
+
+concatOCList :: OddCont (OddCont a) -&gt; [a]
+concatOCList xs = buildOC (\c n -&gt; foldrOC (\x y -&gt; foldrOC c y x) n xs)
+
+concat3ListToOC :: [a] -&gt; OddCont a
+concat3ListToOC []       = error &quot;Even lenght list!!!&quot;
+concat3ListToOC [x]      = (Singl x)
+concat3ListToOC (x:y:xs) = (BiCons x y (concat3ListToOC xs))
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC a = concat3ListToOC (concatOCList a)
+
+instance Monad OddCont where
+  return x = (Singl x)
+  xs &gt;&gt;= k = concatOC (mapOC k xs)
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100659.html">s100659</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+headOC :: OddCont a -&gt; a
+headOC (BiCons a _ _) = a
+headOC (Singl a) = a
+
+lastOC :: OddCont a -&gt; a
+lastOC (Singl z) = z
+lastOC (BiCons _ _ oc) = lastOC oc
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+</ul>
+
+
+
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="js/vendor/jquery.tooltipster.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
+

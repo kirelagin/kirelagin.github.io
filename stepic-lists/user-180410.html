@@ -1,0 +1,1274 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>×</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/tooltipster.css" />
+        <link rel="stylesheet" href="css/themes/tooltipster-noir.css" />
+
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+
+        <ul id="steps">
+<li class="step">
+<div class="step_id"><a href="step-100650.html">s100650</a></div>
+<ul class="submissions">
+<li class="submission tooltip bad warn" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+{-
+foldr :: (a -&gt; a -&gt; a) -&gt; [a] -&gt; a
+foldr f [x]     =  x
+foldr f (x:xs)  =  f x (foldr f xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+--foldrOC = undefined
+foldrOC f a       =  f a
+foldrOC f (a a b) =  f a (foldrOC f a (foldrOC f b) )
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip bad warn" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+{-
+foldr :: (a -&gt; a -&gt; a) -&gt; [a] -&gt; a
+foldr f [x]     =  x
+foldr f (x:xs)  =  f x (foldr f xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+--foldrOC = undefined
+foldrOC f a       =  a
+foldrOC f (a a b) =  f a (foldrOC f a (foldrOC f b) )
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip bad warn" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+{-
+foldr :: (a -&gt; a -&gt; a) -&gt; [a] -&gt; a
+foldr f [x]     =  x
+foldr f (x:xs)  =  f x (foldr f xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+--foldrOC = undefined
+foldrOC f x       =  x
+foldrOC f (x x x) =  f x (f x (foldrOC f x) )
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip bad warn" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+{-
+foldr :: (a -&gt; a -&gt; a) -&gt; [a] -&gt; a
+foldr f [x]     =  x
+foldr f (x:xs)  =  f x (foldr f xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+--foldrOC = undefined
+foldrOC f x       =  f x
+foldrOC f (x x x) =  f x (f x (foldrOC f x) )
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip bad warn" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+{-
+foldr :: (a -&gt; a -&gt; a) -&gt; [a] -&gt; a
+foldr f [x]     =  x
+foldr f (x:xs)  =  f x (foldr f xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+--foldrOC = undefined
+foldrOC f (Singl x) =  Singl(f x)
+foldrOC f (BiCons a b c) =  BiCons (f a (f b (foldrOC f c) ) )
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip bad warn" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+{-
+foldr :: (a -&gt; a -&gt; a) -&gt; [a] -&gt; a
+foldr f [x]     =  x
+foldr f (x:xs)  =  f x (foldr f xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+--foldrOC = undefined
+foldrOC f (Singl x) =  Singl(f x)
+foldrOC f (BiCons a b c) =  BiCons ( (f a (f b (foldrOC f c) ) ) )
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip bad warn" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+{-
+foldr :: (a -&gt; a -&gt; a) -&gt; [a] -&gt; a
+foldr f [x]     =  x
+foldr f (x:xs)  =  f x (foldr f xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+--foldrOC = undefined
+foldrOC f (Singl a)      =  f a
+foldrOC f (BiCons a b c) =  f a $ f b $ foldrOC f c 
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)      =  f a
+foldrOC f (BiCons a b c) =  (f a) (f b) (foldrOC f c) 
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)      =  Singl (f a)
+foldrOC f (BiCons a b c) =  Singl (f a) Singl (f b) (foldrOC f BiCons ( c ) ) -- бля, ну что не так то 
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)      =  Singl (f a)
+foldrOC f (BiCons a b c) =  f Singl(a) $ f Singl(b) $ foldrOC f (BiCons c ) -- бля, ну что не так то 
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)      =  f a
+foldrOC f (BiCons a b c) =  f Singl(a) $ f Singl(b) $ foldrOC f (BiCons c ) -- бля, ну что не так то 
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)      =  f a
+foldrOC f (BiCons a b c) =  f a $ f b $ foldrOC f c -- бля, ну что не так то 
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)      =  f a
+foldrOC f (BiCons a b c) =  (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то 
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)      =  Singl (f a)
+foldrOC f (BiCons a b c) =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то 
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)      =  Singl (f a)
+--foldrOC f (BiCons a b c) =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a b c) = BiCons a b ( foldrOC f c )
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)      =  Singl (f a)
+--foldrOC f (BiCons a b c) =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a b c) = f a $ f b $ BiCons ( foldrOC f c )
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)      =  f a -- Singl (f a)
+--foldrOC f (BiCons a b c) =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a b c) = Singl(f a) $ Singl(f b) $ BiCons ( foldrOC f c )
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)      =  Singl (f a)
+--foldrOC f (BiCons a b c) =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a b c) = f (Singl a) $ f (Singl b) $ BiCons ( foldrOC f c )
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)      =  return f a --Singl (f a)
+--foldrOC f (BiCons a b c) =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a b c) = f (Singl a) $ f (Singl b) $ BiCons ( foldrOC f c )
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)      =  return f a --Singl (f a)
+--foldrOC f (BiCons a b c) =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (Singl  a b )  = Singl (f a) $ ( foldrOC f b )
+foldrOC f (BiCons a b c) = Singl (f a) $ ( foldrOC f b c )</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)          =  return f a --Singl (f a)
+--foldrOC f (BiCons a b c)   =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (Singl a Singl b ) = Singl (f a) $ ( foldrOC f b )
+foldrOC f (BiCons a b c)     = Singl (f a) $ ( foldrOC f b c )</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)          =  return f a --Singl (f a)
+--foldrOC f (BiCons a b c)   =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (Singl a Singl b ) = Singl (f a) $ Singl (f b )
+foldrOC f (BiCons a b c)     = Singl (f a) $ ( foldrOC f b c )</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)          =  return f a --Singl (f a)
+--foldrOC f (BiCons a b c)   =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (Singl a Singl b _) = Singl (f a) $ Singl (f b )
+foldrOC f (BiCons a b c)     = Singl (f a) $ ( foldrOC f b c )</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)          =  return f a --Singl (f a)
+--foldrOC f (BiCons a b c)   =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (Singl a Singl b _) = Singl (f a) $ Singl (f b ) $ foldrOC f _
+foldrOC f (BiCons a b c)     = Singl (f a) $ ( foldrOC f b c )</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)          =  return f a --Singl (f a)
+--foldrOC f (BiCons a b c)   =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a _ _)     = Singl (f a) $ foldrOC f _ _
+foldrOC f (a b)              = Singl (f a) $ ( foldrOC f b)</pre></code>">&nbsp;</li>
+<li class="submission tooltip bad warn" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+foldr f x0 []      =  x0
+foldr f x0 (x:xs)  =  f x (foldr f x0 xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)          =  Singl (f a)
+--foldrOC f (BiCons a b c)   =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a _ _)     = Singl (f a) $ foldrOC f _ _
+foldrOC f (a b)              = Singl (f a) $ ( foldrOC f b)
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip bad warn" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+foldr f x0 []      =  x0
+foldr f x0 (x:xs)  =  f x (foldr f x0 xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)          =  Singl (f a)
+--foldrOC f (BiCons a b c)   =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a b c)     = Singl (f a) Singl (f b) foldrOC f c
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip bad warn" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+foldr f x0 []      =  x0
+foldr f x0 (x:xs)  =  f x (foldr f x0 xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)          =  return f a --Singl (f a)
+--foldrOC f (BiCons a b c)   =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a b c)     = Singl (f a) Singl (f b) foldrOC f c
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip bad warn" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+foldr f x0 []      =  x0
+foldr f x0 (x:xs)  =  f x (foldr f x0 xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)          =  return f a --Singl (f a)
+--foldrOC f (BiCons a b c)   =  BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a b c)     = Singl (f a) Singl (f b) BiCons(foldrOC f c)
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip bad warn" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+foldr f x0 []      =  x0
+foldr f x0 (x:xs)  =  f x (foldr f x0 xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)          = return f a --Singl (f a)
+--foldrOC f (BiCons a b c)   = BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a b c)     = f a f b foldrOC f c
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip bad warn" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+foldr f x0 []      =  x0
+foldr f x0 (x:xs)  =  f x (foldr f x0 xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)          = f a --Singl (f a)
+--foldrOC f (BiCons a b c)   = BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a b c)     = f a f b foldrOC f c
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip bad warn" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+foldr f x0 []      =  x0
+foldr f x0 (x:xs)  =  f x (foldr f x0 xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)          = f a --Singl (f a)
+--foldrOC f (BiCons a b c)   = BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a b c)     = f a $ f b $ foldrOC f c
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip bad warn" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+foldr f x0 []      =  x0
+foldr f x0 (x:xs)  =  f x (foldr f x0 xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)          = f a --Singl (f a)
+--foldrOC f (BiCons a b c)   = BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a b c)     = f a $ f b $ foldrOC f $ c
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip bad warn" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+foldr f x0 []      =  x0
+foldr f x0 (x:xs)  =  f x (foldr f x0 xs)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)          = f a --Singl (f a)
+--foldrOC f (BiCons a b c)   = BiCons (f a ( f b ( foldrOC f c) ) ) -- бля, ну что не так то
+foldrOC f (BiCons a b c)     = f a $ f b $ foldrOC $ f c
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+foldrOC f (Singl a)           = f a --Singl (f a)
+--foldrOC f (BiCons a b c)    = BiCons (f a ( f b ( foldrOC f c) ) )
+--foldrOC f (BiCons a b c)     = f a $ f b $ foldrOC $ f c
+foldrOC f a (Singl b)         = f b a 
+foldrOC f a (BiCons a&#x27; b&#x27; c&#x27;) = f a&#x27; $ f b&#x27; $ foldrOC f a c&#x27;</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+foldrOC :: (a -&gt; b -&gt; b) -&gt; b -&gt; OddCont a -&gt; b
+--foldrOC f (BiCons a b c)    = BiCons (f a ( f b ( foldrOC f c) ) )
+--foldrOC f (BiCons a b c)     = f a $ f b $ foldrOC $ f c
+foldrOC f a (Singl b)         = f b a 
+--foldrOC f (Singl a)           = f a --Singl (f a)
+foldrOC f a (BiCons a&#x27; b&#x27; c&#x27;) = f a&#x27; $ f b&#x27; $ foldrOC f a c&#x27;</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100651.html">s100651</a></div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC Singl (Singl a) = Singl a
+concatOC BiCons (a b c) = Singl (concatOC a) Singl (concatOC a) BiCons(concatOC c)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC Singl (Singl a) = Singl a
+concatOC BiCons (a b c) = Singl (concatOC a) Singl (concatOC b) BiCons(concatOC c)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC Singl (Singl a) = concat Singl a
+concatOC BiCons (a b c) = Singl (concatOC a) Singl (concatOC b) BiCons(concatOC c)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC Singl (Singl a) = Singl(a)
+concatOC BiCons (a b c) = Singl (concatOC a) Singl (concatOC b) BiCons(concatOC c)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC Singl (Singl a) = Singl(a)
+concatOC BiCons (a b c) = concatOC a $ concatOC b $ BiCons(concatOC c)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC Singl (Singl a) = (Singl a)
+concatOC BiCons (a b c) = concatOC a $ concatOC b $ BiCons(concatOC c)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC Singl (Singl x) = (Singl x)
+concatOC BiCons (x y z) = concatOC x $ concatOC y $ BiCons(concatOC z)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC Singl (Singl x) = x
+concatOC BiCons (x y z) = concatOC x $ concatOC y $ BiCons(concatOC z)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC Singl (Singl x) = concatOC (Singl x)
+concatOC BiCons (x y z) = concatOC x $ concatOC y $ BiCons(concatOC z)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl x) = x
+concatOC Singl (Singl x) = concatOC (Singl x)
+concatOC (BiCons x y z) = concatOC (Singl x) $ concatOC (Singl y) $ BiCons(concatOC z)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC Singl (Singl x) = (Singl x)
+concatOC (BiCons x y z) = concatOC (Singl x) $ concatOC (Singl y) $ BiCons(concatOC z)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC Singl (Singl x) = Singl (x)
+concatOC (Singl a b)     = Singl(concat a b)
+concatOC (BiCons x y z) = concatOC (Singl x y) $ concatOC (BiCons z)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC Singl(Singl x) = Singl(x)
+concatOC (Singl a)(Singl b)     = Singl(concat a b)
+concatOC (BiCons x y z) = concatOC (x y) $ concatOC (BiCons z)
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC Singl(Singl x)     = Singl(x)
+concatOC (Singl a)(Singl b) = Singl(concat a b)
+concatOC (BiCons x y z)     = concatOC x y $ concatOC z
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl(Singl x))   = Singl(x)
+concatOC (Singl x)          = Singl(x)
+concatOC (Singl a)(Singl b) = Singl(concat a b)
+concatOC (BiCons x y z)     = concatOC x y $ concatOC z
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+concatOC :: OddCont (OddCont a) -&gt; OddCont a
+concatOC (Singl(Singl x))   = concatOC (Singl x)
+concatOC (Singl x)          = Singl(x)
+concatOC (Singl a)(Singl b) = Singl(concat a b)
+concatOC (BiCons x y z)     = concatOC (concatOC x y $ concatOC z)
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100652.html">s100652</a></div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n _ | n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+takeNCons _ (Single a) = Single a
+takeNCons 1 (BiCons a _ _) = Single a                    
+takeNCons n (BiCons a b c) = BiCons a b ( takeNCons ( n - 1 ) c )</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n _ | n &lt;= 0 = error &quot;Only positive n allowed!&quot;
+takeNCons _ (Singl a) = Singl a
+takeNCons 1 (BiCons a _ _) = Singl a                    
+takeNCons n (BiCons a b c) = BiCons a b ( takeNCons ( n - 1 ) c )</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+takeNCons :: Int -&gt; OddCont a -&gt; OddCont a
+takeNCons n _ | n &lt;= 0     = error &quot;Only positive n allowed!&quot;
+takeNCons _ (Singl a)      = Singl a
+takeNCons 1 (BiCons a _ _) = Singl a                    
+takeNCons n (BiCons a b c) = BiCons a b ( takeNCons ( n - 1 ) c )</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100653.html">s100653</a></div>
+<ul class="submissions">
+<li class="submission tooltip bad correct warn" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+concat3OC :: OddCont a -&gt; OddCont a -&gt; OddCont a -&gt; OddCont a
+concat3OC a b c = extract $ concat [winrar a, winrar b, winrar c] where
+                  extract [a]           = Singl a
+                  extract (a:b:c)       = BiCons a b $ extract c
+                  winrar (Singl a)      = [a]
+                  winrar (BiCons a b c) = a:b: winrar c
+                  
+ </pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100654.html">s100654</a></div>
+<ul class="submissions">
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _)      = 1
+lenOC (BiCons _ _ c) = 2 + lenOC c
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _)     = 1
+countConsOC (BiCons _ _ c) = 1 + countConsOC c</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _)      = 1
+lenOC (BiCons _ _ c) = 2 + lenOC c
+ 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Single _)     = 1
+countConsOC (BiCons _ _ c) = 1 + countConsOC c</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+lenOC :: OddCont a -&gt; Int
+lenOC (Singl _)      = 1
+lenOC (BiCons _ _ c) = 2 + lenOC c
+ 
+
+countConsOC :: OddCont a -&gt; Int
+countConsOC (Singl _)      = 1
+countConsOC (BiCons _ _ c) = 1 + countConsOC c</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100655.html">s100655</a></div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap _ Singl a = Singl a
+  fmap f BiCons a a a = BiCons (f a f a f a)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap _ Singl a = Singl a
+  fmap f BiCons x y z = BiCons (f x f y f z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap _ Singl a = Singl a
+  fmap f BiCons x y z = BiCons (f x $ f y $ f z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap f Singl a = f a
+  fmap f BiCons x y z = BiCons (f x $ f y $ f z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap f a = f a
+  fmap f x y z = (f x $ f y $ f z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap f Singl = f Singl
+  fmap f x y z = (f x $ f y $ f z)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap f Singl  = f Singl
+  fmap f BiCons = (f Singl $ f Singl $ f OddCont)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap f Singl  = f Singl
+  fmap f BiCons = (f Singl $ f Singl $ f BiCons)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap f Singl a = f a
+  fmap f BiCons = (f Singl $ f Singl $ f BiCons)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap f Singl a = f Singl a
+  fmap f BiCons = (f Singl $ f Singl $ f BiCons)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap f Singl a = f Singl a
+  fmap f BiCons a b c = (f Singl a $ f Singl b $ f BiCons c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap f Singl a = f a
+  fmap f BiCons a b c = (fmap f a $ fmap f b $ fmap f c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap f a = f a
+  fmap f a b c = (fmap f a $ fmap f b $ fmap f c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap f a = f a
+  fmap f a b c = fmap f a $ fmap f b $ fmap f c</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap f (Single a)     = Single (f a)
+  fmap f (BiCons a b c) = BiCons (f a) (f a) (fmap f c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap f (Singl a)     = Singl (f a)
+  fmap f (BiCons a b c) = BiCons (f a) (f a) (fmap f c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Functor OddCont where
+--  fmap = undefined
+  fmap f (Singl a)      = Singl (f a)
+  fmap f (BiCons a b c) = BiCons (f a) (f b) (fmap f c)</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100656.html">s100656</a></div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl a) = a
+sumOC (BiCons a b c) = a + b + sumOC c
+ 
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC = undefined</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+sumOC :: Num a =&gt; OddCont a -&gt; a
+sumOC (Singl a) = a
+sumOC (BiCons a b c) = a + b + sumOC c
+ 
+findOC :: (a -&gt; Bool) -&gt; OddCont a -&gt; Maybe a
+findOC f (Singl a)      | f a       = Just a
+                        | otherwise = Nothing
+findOC f (BiCons a b c) | f a       = Just a
+                        | f b       = Just b
+                        | otherwise = findOC f c
+ </pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100658.html">s100658</a></div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return = a -&gt; m a
+  (&gt;&gt;=) = m a -&gt; (m -&gt; a b) -&gt; m b</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return = a -&gt; OddCont a
+  (&gt;&gt;=) = OddCont a -&gt; (OddCont -&gt; a b) -&gt; OddCont b</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return = OddCont
+  (&gt;&gt;=) = OddCont a -&gt; (OddCont -&gt; a b) -&gt; OddCont b</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return = Singl
+  (&gt;&gt;=) = OddCont a -&gt; (OddCont -&gt; a b) -&gt; OddCont b</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return a = OddCont a
+  (&gt;&gt;=) = OddCont a -&gt; (OddCont -&gt; a b) -&gt; OddCont b</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return a = OddCont a
+  a (&gt;&gt;=) OddCont = OddCont a</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return = OddCont
+  Singl (&gt;&gt;=) BiCons = BiCons Singl</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return = Singl
+  Singl (&gt;&gt;=) BiCons = BiCons Singl</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return = BiCons
+  Singl (&gt;&gt;=) a = a Singl</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return = BiCons
+  (&gt;&gt;=) = a a Singl a</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return = BiCons
+  a (&gt;&gt;=) OddCont = a a Singl a</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return = BiCons
+  (&gt;&gt;=) = Singl</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return OddCont a = a
+  (&gt;&gt;=) = Singl</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return a = a
+  (&gt;&gt;=) = Singl</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return (Singl a) = a
+  Singl a &gt;&gt;= f      = f a
+  BiCons a b c &gt;&gt;= f = f a $ f b $ f c</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return (Singl a)     = a
+  (Singl a) &gt;&gt;= f      = Singl(f a)
+  (BiCons a b c) &gt;&gt;= f = Singl(f a) $ Singl(f b) $ BiCons(f c)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return               = Singl
+  Singl a &gt;&gt;= f        = f a
+  (BiCons a b c) &gt;&gt;= f = BiCons(a &gt;&gt;= f) (b &gt;&gt;= f) (c &gt;&gt;= f)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return               = Singl
+  Singl a &gt;&gt;= f        = f a
+  (BiCons a b c) &gt;&gt;= f = Singl(a &gt;&gt;= f) Singl(b &gt;&gt;= f) BiCons(c &gt;&gt;= f)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return               = Singl
+  Singl a &gt;&gt;= f        = f a
+  (BiCons a b c) &gt;&gt;= f = Singl(a &gt;&gt;= f) Singl(b &gt;&gt;= f) (BiCons c) &gt;&gt;= f)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return               = Singl
+  Singl a &gt;&gt;= f        = f a
+  (BiCons a b c) &gt;&gt;= f = Singl(a &gt;&gt;= f) Singl(b &gt;&gt;= f) (BiCons c) &gt;&gt;= f</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return               = Singl
+  Singl a &gt;&gt;= f        = f a
+  (BiCons a b c) &gt;&gt;= f = (a &gt;&gt;= f) (b &gt;&gt;= f) (c &gt;&gt;= f)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return               = Singl
+  Singl a &gt;&gt;= f        = Singl(f a)
+  (BiCons a b c) &gt;&gt;= f = BiCons(a &gt;&gt;= f) (b &gt;&gt;= f) (c &gt;&gt;= f)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return               = Singl
+  Singl a &gt;&gt;= f        = Singl(f a)
+  (BiCons a b c) &gt;&gt;= f = BiCons( (a &gt;&gt;= f) (b &gt;&gt;= f) (c &gt;&gt;= f) )</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return               = Singl
+  Singl a &gt;&gt;= f        = Singl(f a)
+  (BiCons a b c) &gt;&gt;= f = (Singl a &gt;&gt;= f) $ (Singl b &gt;&gt;= f) $ (BiCons c &gt;&gt;= f)</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return               = Singl
+  Singl a &gt;&gt;= f        = Singl(f a)
+  (BiCons a b c) &gt;&gt;= f = BiCons( (Singl a &gt;&gt;= f) (Singl b &gt;&gt;= f) (BiCons c &gt;&gt;= f) )</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return               = Singl
+  Singl a &gt;&gt;= f        = f a
+  (BiCons a b c) &gt;&gt;= f = BiCons( a &gt;&gt;= f $ b &gt;&gt;= f $ (BiCons c) &gt;&gt;= f )</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return               = Singl
+  Singl a &gt;&gt;= f        = f a
+  (BiCons a b c) &gt;&gt;= f = BiCons( a &gt;&gt;= f $ b &gt;&gt;= f $ c &gt;&gt;= f )</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return               = Singl
+  Singl a &gt;&gt;= f        = f a
+  (BiCons a b c) &gt;&gt;= f = ( a &gt;&gt;= f )( b &gt;&gt;= f ) (c &gt;&gt;= f )</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return               = Singl
+  Singl a &gt;&gt;= f        = f a
+  (BiCons a b c) &gt;&gt;= f = ( Singl a &gt;&gt;= f )( Singl b &gt;&gt;= f ) (BiCons c &gt;&gt;= f )</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  --return               = Singl
+  --Singl a &gt;&gt;= f        = f a
+  --(BiCons a b c) &gt;&gt;= f = ( Singl a &gt;&gt;= f )( Singl b &gt;&gt;= f ) (BiCons c &gt;&gt;= f )
+    return = pure
+    (&gt;&gt;=) = flip ((abcJoin .) . fmap)
+
+abcJoin :: OddCont (OddCont a) -&gt; OddCont a
+abcJoin Singl = Singl
+abcJoin (Singl a&#x27; b&#x27; (Singl a b c)) = Singl a&#x27; Singl b&#x27; (Singl a b (abcJoin c))
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  --return               = Singl
+  --Singl a &gt;&gt;= f        = f a
+  --(BiCons a b c) &gt;&gt;= f = ( Singl a &gt;&gt;= f )( Singl b &gt;&gt;= f ) (BiCons c &gt;&gt;= f )
+    return = Singl
+    (&gt;&gt;=) = flip ((abcJoin .) . fmap)
+
+abcJoin :: OddCont (OddCont a) -&gt; OddCont a
+abcJoin Singl = Singl
+abcJoin (Singl a&#x27; b&#x27; (Singl a b c)) = Singl a&#x27; Singl b&#x27; (Singl a b (abcJoin c))
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return               = Singl
+  Singl  a     &gt;&gt;= f   = f a
+  BiCons a b c &gt;&gt;= f   = ( a &gt;&gt;= f )( b &gt;&gt;= f ) ( c &gt;&gt;= f )
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return               = Singl
+  Singl  a     &gt;&gt;= f   = f a
+  BiCons a b c &gt;&gt;= f   = a &gt;&gt;= f $ b &gt;&gt;= f $ c &gt;&gt;= f
+
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return               = Singl
+  Singl  a     &gt;&gt;= f   = f a
+--BiCons a b c &gt;&gt;= f   = a &gt;&gt;= f $ b &gt;&gt;= f $ c &gt;&gt;= f
+  BiCons a b c &gt;&gt;= f   | (Singl a) &gt;&gt;= f = f a
+                       | (Singl b) &gt;&gt;= f = f b
+                       | otherwise       = f c
+ 
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return               = Singl
+  Singl  a     &gt;&gt;= f   = f a
+--BiCons a b c &gt;&gt;= f   = a &gt;&gt;= f $ b &gt;&gt;= f $ c &gt;&gt;= f
+  BiCons a b c &gt;&gt;= f   | (Singl a) &gt;&gt;= f = f a
+                       | (Singl b) &gt;&gt;= f = f b
+                       | otherwise       = c &gt;&gt;= f
+ 
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return               = Singl
+  Singl  a     &gt;&gt;= f   = f a
+--BiCons a b c &gt;&gt;= f   = a &gt;&gt;= f $ b &gt;&gt;= f $ c &gt;&gt;= f
+  BiCons a b c &gt;&gt;= f   | (Singl a) &gt;&gt;= f = f a
+                       | (Singl b) &gt;&gt;= f = f b
+                    -- | otherwise       = c &gt;&gt;= f   --  все же правильно пропихиваю, почему не работает?!!!!! 
+                       | otherwise       = BiCons c &gt;&gt;= f
+</pre></code>">&nbsp;</li>
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+instance Monad OddCont where
+  return               = Singl
+  Singl  a     &gt;&gt;= f   = f a
+--BiCons a b c &gt;&gt;= f   = a &gt;&gt;= f $ b &gt;&gt;= f $ c &gt;&gt;= f
+  BiCons a b c &gt;&gt;= f   | (Singl a) &gt;&gt;= f = f a
+                       | (Singl b) &gt;&gt;= f = f b
+                    -- | otherwise       = c &gt;&gt;= f   --  все же правильно пропихиваю, почему не работает?!!!!! 
+                       | otherwise       = BiCons c &gt;&gt;= f
+</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+<li class="step">
+<div class="step_id"><a href="step-100659.html">s100659</a></div>
+<ul class="submissions">
+<li class="submission tooltip " title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+headOC :: OddCont a -&gt; a
+headOc (Singl a)      = a
+headOc (BiCons a _ _) = a
+
+lastOC :: OddCont a -&gt; a
+lastOC (Singl a)      = a
+lastOc (BiCons _ _ c) = lastOC c</pre></code>">&nbsp;</li>
+<li class="submission tooltip correct" title="<code><pre>{-
+Тип данных OddCont определен в вызывающем модуле, переопределять его не надо.
+data OddCont a = Singl a | BiCons a a (OddCont a)  deriving (Eq,Show)
+-}
+
+headOC :: OddCont a -&gt; a
+headOC (Singl a)      = a
+headOC (BiCons a _ _) = a
+
+lastOC :: OddCont a -&gt; a
+lastOC (Singl a)      = a
+lastOC (BiCons _ _ c) = lastOC c</pre></code>">&nbsp;</li>
+</ul>
+
+
+</li>
+
+</ul>
+
+
+
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="js/vendor/jquery.tooltipster.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
+
